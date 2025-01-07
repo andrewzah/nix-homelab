@@ -9,4 +9,8 @@
   };
 
   services.openssh.enable = true;
+
+  #services.vaultwarden = {
+  #  enable = true;
+  #};
 }
