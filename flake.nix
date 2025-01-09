@@ -4,8 +4,7 @@
   outputs = {
     self,
     nixpkgs,
-    #home-manager,
-    #nixos-hardware,
+    sops-nix,
     ...
   } @ inputs: {
     nixosConfigurations = {
@@ -24,6 +23,7 @@
         specialArgs = {inherit inputs;};
         modules = [
           ./hosts/eternia/default.nix
+          sops-nix.nixosModules.sops
         ];
       };
     };
@@ -31,6 +31,8 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+    sops-nix.url = "github:Mic92/sops-nix";
+
     #home-manager.url = "github:nix-community/home-manager/release-24.05";
     #home-manager.inputs.nixpkgs.follows = "nixpkgs";
     #nix-hardware.url = "github:NixOS/nixos-hardware/master";

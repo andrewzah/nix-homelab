@@ -1,0 +1,12 @@
+---
+
+keys:
+  - &admin_andrew D87BD9DCF11BACD6CDB40CB213732FB13E61E0BE
+  - &server_eternia age190ap7t3z5pvntgypd64zanz9anzmpna7fksusuajnedwzewfkqlqum4ncz
+creation_rules:
+  - path_regex: secrets.yaml$
+    key_groups:
+    - pgp:
+      - *admin_andrew
+      age:
+      - *server_eternia
