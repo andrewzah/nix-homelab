@@ -11,6 +11,9 @@
 
   networking.hostName = "sparrow"; # Define your hostname.
   networking.networkmanager.enable = true;
+  networking.firewall.allowedTCPPorts = [
+    9090 #prometheus
+  ];
 
   time.timeZone = "America/New_York";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -28,15 +31,15 @@
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.notandrew = {
+  users.users.junjae = {
     isNormalUser = true;
-    description = "notandrew";
+    description = "junjae";
     extraGroups = ["networkmanager"];
     packages = [];
     uid = 1000;
   };
 
-  environment.systemPackages = (with pkgs; [ vim ]);
+  environment.systemPackages = with pkgs; [vim];
 
   system.stateVersion = "24.05";
 }

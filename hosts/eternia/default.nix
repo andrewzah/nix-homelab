@@ -4,7 +4,7 @@
     ./services.nix
   ];
   sops.defaultSopsFile = ../../secrets.yaml;
-  sops.age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+  sops.age.sshKeyPaths = ["/etc/ssh/ssh_host_ed25519_key"];
   sops.age.keyFile = "/var/lib/sops-nix/key.txt";
   sops.age.generateKey = true;
   sops.secrets.example-key = {};
@@ -33,17 +33,17 @@
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.notandrew = {
+  users.users.junjae = {
     isNormalUser = true;
-    description = "notandrew";
+    description = "junjae";
     extraGroups = ["networkmanager"];
     packages = [];
     uid = 1000;
   };
 
-  environment.systemPackages = (with pkgs; [
+  environment.systemPackages = with pkgs; [
     vim
-  ]);
+  ];
 
   system.stateVersion = "24.05";
 }
