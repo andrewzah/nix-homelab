@@ -7,9 +7,8 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelParams = ["nomodeset"];
 
-  networking.hostName = "sparrow"; # Define your hostname.
+  networking.hostName = "eternia";
   networking.networkmanager.enable = true;
 
   time.timeZone = "America/New_York";
@@ -36,7 +35,9 @@
     uid = 1000;
   };
 
-  environment.systemPackages = (with pkgs; [ vim ]);
+  environment.systemPackages = (with pkgs; [
+    vim
+  ]);
 
   system.stateVersion = "24.05";
 }

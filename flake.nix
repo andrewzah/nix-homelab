@@ -9,11 +9,21 @@
     ...
   } @ inputs: {
     nixosConfigurations = {
+      # dev machine; currently WNDWKR02 SFF
       sparrow = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs;};
         modules = [
           ./hosts/sparrow/default.nix
+        ];
+      };
+
+      # framework
+      eternia = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./hosts/eternia/default.nix
         ];
       };
     };
