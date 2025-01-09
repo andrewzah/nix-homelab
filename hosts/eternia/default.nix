@@ -1,4 +1,4 @@
-{pkgs, sops, ...}: {
+{pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
     ./services.nix
