@@ -6,7 +6,20 @@
     nixpkgs,
     sops-nix,
     ...
-  } @ inputs: {
+  } @ inputs: let
+    system = "x86_64-linux";
+    pkgs = import nixpkgs {
+      inherit system;
+    };
+  in {
+    devShells."${system}".default = pkgs.mkShellNoCC {
+      packages = (with pkgs; [
+        age
+        sops
+        ssh-to-age
+      ]);
+    };
+
     nixosConfigurations = {
       # dev machine; currently WNDWKR02 SFF
       sparrow = nixpkgs.lib.nixosSystem {
@@ -14,6 +27,7 @@
         specialArgs = {inherit inputs;};
         modules = [
           ./hosts/sparrow/default.nix
+          sops-nix.nixosModules.sops
         ];
       };
 

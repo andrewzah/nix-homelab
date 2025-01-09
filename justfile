@@ -3,3 +3,6 @@ eternia:
 
 sparrow:
   nixos-rebuild switch --flake .#sparrow --target-host root@sparrow --build-host root@sparrow
+
+updatekeys:
+  sops updatekeys secrets.yaml
