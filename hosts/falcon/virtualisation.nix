@@ -18,6 +18,7 @@
   ### containers ###
   ##################
 
+  virtualisation.oci-containers.backend = "docker";
   virtualisation.oci-containers.containers = {
     whoami = {
       autoStart = true;
