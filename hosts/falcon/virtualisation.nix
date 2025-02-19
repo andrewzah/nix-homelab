@@ -1,4 +1,4 @@
-{...}: {
+{sops, ...}: {
   ##################
   ### virt setup ###
   ##################
@@ -27,6 +27,18 @@
       environmentFiles = [ "/var/run/secrets/example-key" ];
     };
 
+    postgres = {
+      autoStart = true;
+      image = "docker.io/library/postgres:15-alpine";
+      ports = ["5432:5432"];
+      environment = {
+        PGDATA = "/var/lib/postgresql/data";
+      };
+      volumes = [
+        "/eagle/data/docker/postgres15/:/var/lib/postgresql/data/:rw"
+      ];
+    };
+
     traefik = {
       autoStart = true;
       image = "docker.io/library/traefik:v3.1.4@sha256:6215528042906b25f23fcf51cc5bdda29e078c6e84c237d4f59c00370cb68440";
@@ -37,8 +49,10 @@
         "8080:8080"
         "11371:11371"
       ];
-      ## TODO: gandi / porkbun dns challenge secrets
-      #environmentFiles = [ "/var/run/secrets/example-key" ];
+      environmentFiles = [
+        sops.secrets."traefik/CLOUDFLARE_EMAIL".path
+        sops.secrets."traefik/CLOUDFLARE_DNS_API_TOKEN".path
+      ];
     };
   };
 }
