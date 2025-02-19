@@ -4,6 +4,9 @@
     ./virtualisation.nix
 
     ./services/pam-session-notify.nix
+
+    ## containers
+    ./services/com-andrewzah.nix
     ./services/traefik.nix
     ./services/postgres.nix
     ./services/whoami.nix
