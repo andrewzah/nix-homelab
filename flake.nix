@@ -47,6 +47,7 @@
         specialArgs = {inherit inputs;};
         modules = [
           ./hosts/falcon/default.nix
+          sops-nix.nixosModules.sops
         ];
       };
     };

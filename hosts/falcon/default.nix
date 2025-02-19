@@ -1,5 +1,15 @@
 {pkgs, ...}: {
-  imports = [./hardware-configuration.nix];
+  imports = [
+    ./hardware-configuration.nix
+
+    ./virtualisation.nix
+  ];
+
+  sops.defaultSopsFile = ../../secrets.yaml;
+  sops.age.sshKeyPaths = ["/etc/ssh/ssh_host_ed25519_key"];
+  sops.age.keyFile = "/var/lib/sops-nix/key.txt";
+  sops.age.generateKey = true;
+  sops.secrets.example-key = {};
 
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/nvme0n1";
@@ -10,11 +20,10 @@
   users.users.dragon = {
     isNormalUser = true;
     extraGroups = ["wheel"];
-    packages = with pkgs; [];
+    packages = (with pkgs; []);
   };
 
-  environment.systemPackages = with pkgs; [vim];
-
+  environment.systemPackages = (with pkgs; [vim]);
   services.openssh.enable = true;
-  system.stateVersion = "24.11"; # Did you read the comment?
+  system.stateVersion = "24.11";
 }
