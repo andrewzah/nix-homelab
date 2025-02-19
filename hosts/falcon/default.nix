@@ -1,10 +1,11 @@
 {pkgs, ...}: {
   imports = [
-    # TODO: is storing it in git safe / better?
-    #/etc/nixos/hardware-configuration.nix
     ./hardware-configuration.nix
-
     ./virtualisation.nix
+
+    ./services/traefik.nix
+    ./services/postgres.nix
+    ./services/whoami.nix
   ];
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
