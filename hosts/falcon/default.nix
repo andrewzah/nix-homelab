@@ -20,7 +20,7 @@
   users.users.dragon = {
     isNormalUser = true;
     extraGroups = ["wheel"];
-    packages = (with pkgs; []);
+    packages = [];
   };
 
   environment.systemPackages = (with pkgs; [vim]);
