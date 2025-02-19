@@ -3,6 +3,7 @@
     ./hardware-configuration.nix
     ./virtualisation.nix
 
+    ./services/pam-session-notify.nix
     ./services/traefik.nix
     ./services/postgres.nix
     ./services/whoami.nix
