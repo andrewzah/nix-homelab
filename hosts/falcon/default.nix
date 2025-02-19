@@ -1,5 +1,7 @@
 {pkgs, ...}: {
   imports = [
+    # TODO: is storing it in git safe / better?
+    #/etc/nixos/hardware-configuration.nix
     ./hardware-configuration.nix
 
     ./virtualisation.nix
@@ -15,6 +17,7 @@
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/nvme0n1";
   boot.supportedFilesystems = ["zfs" "btrfs"];
+  boot.zfs.extraPools = [ "eagle" ];
 
   networking.hostName = "falcon";
   networking.hostId = "958299a5";
