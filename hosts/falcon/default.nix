@@ -14,8 +14,10 @@
 
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/nvme0n1";
+  boot.supportedFilesystems = ["zfs" "btrfs"];
 
   networking.hostName = "falcon";
+  networking.hostId = "958299a5";
   time.timeZone = "America/New_York";
 
   users.users.dragon = {
