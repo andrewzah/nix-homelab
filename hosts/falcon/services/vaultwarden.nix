@@ -21,6 +21,13 @@
     extraOptions = [
       "--net=internal"
       "--net=external"
+
+      "--health-cmd"
+      "curl -f http://localhost:80"
+      "--health-interval=5s"
+      "--health-timeout=10s"
+      "--health-retries=5"
+      "--health-start-period=5s"
     ];
     labels = {
       "traefik.enable" = "true";

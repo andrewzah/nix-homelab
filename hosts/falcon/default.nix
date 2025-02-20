@@ -11,6 +11,7 @@
     ./services/postgres.nix
     ./services/whoami.nix
     ./services/vaultwarden.nix
+    ./services/goatcounter.nix
   ];
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
