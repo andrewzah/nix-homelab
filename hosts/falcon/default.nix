@@ -4,6 +4,7 @@
     ./virtualisation.nix
 
     ./services/pam-session-notify.nix
+    ./services/smartd.nix
 
     ## containers
     ./services/com-andrewzah.nix
