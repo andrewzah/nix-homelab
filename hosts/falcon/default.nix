@@ -22,7 +22,7 @@
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/nvme0n1";
   boot.supportedFilesystems = ["zfs" "btrfs"];
-  boot.zfs.extraPools = [ "eagle" ];
+  boot.zfs.extraPools = ["eagle"];
 
   networking.hostName = "falcon";
   networking.hostId = "958299a5";
@@ -34,7 +34,7 @@
     packages = [];
   };
 
-  environment.systemPackages = (with pkgs; [vim]);
+  environment.systemPackages = with pkgs; [vim];
   services.openssh.enable = true;
   system.stateVersion = "24.11";
 }

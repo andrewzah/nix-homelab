@@ -13,11 +13,11 @@
     };
   in {
     devShells."${system}".default = pkgs.mkShellNoCC {
-      packages = (with pkgs; [
+      packages = with pkgs; [
         age
         sops
         ssh-to-age
-      ]);
+      ];
     };
 
     nixosConfigurations = {

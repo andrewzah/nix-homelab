@@ -1,6 +1,10 @@
 ## Pings me whenever someone ssh's in,
 ## via pushover.net
-{pkgs, config, ...}: let
+{
+  pkgs,
+  config,
+  ...
+}: let
   inherit (pkgs.lib) mkDefault mkAfter;
 
   pamPath = config.sops.secrets."pushover/pam".path;

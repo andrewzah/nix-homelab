@@ -17,7 +17,7 @@
     volumes = [
       "/eagle/data/docker/bitwarden-rs/:/data/:rw"
     ];
-    dependsOn = [ "traefik" "postgres" ];
+    dependsOn = ["traefik" "postgres"];
     extraOptions = [
       "--net=internal"
       "--net=external"
