@@ -1,4 +1,5 @@
 {config, ...}: {
+  sops.secrets."traefik/env" = {};
   sops.secrets."traefik/CLOUDFLARE_EMAIL" = {};
   sops.secrets."traefik/CLOUDFLARE_DNS_API_TOKEN" = {};
 
@@ -8,6 +9,8 @@
     cmd = [
       "--api.insecure=false"
       "--api.dashboard=false"
+
+      "--log.level=INFO" # ERROR default
 
       ## providers
       "--providers.docker=true"
@@ -51,8 +54,7 @@
       "11371:11371"
     ];
     environmentFiles = [
-      config.sops.secrets."traefik/CLOUDFLARE_EMAIL".path
-      config.sops.secrets."traefik/CLOUDFLARE_DNS_API_TOKEN".path
+      config.sops.secrets."traefik/env".path
     ];
     labels = {
       "traefik.enable" = "true";
