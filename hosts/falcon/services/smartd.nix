@@ -23,3 +23,5 @@ in {
     ];
   };
 }
+
+# see: https://github.com/turlando/antigone/blob/6ef2cb728ffc2fca96d1eda15601e49d589e0be4/config/alerting.nix#L45

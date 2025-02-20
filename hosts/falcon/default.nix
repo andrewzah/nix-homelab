@@ -5,6 +5,7 @@
 
     ./services/pam-session-notify.nix
     ./services/smartd.nix
+    ./services/zfs-zed.nix
 
     ## containers
     ./services/com-andrewzah.nix
