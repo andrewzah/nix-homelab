@@ -9,12 +9,13 @@
     #./services/prometheus.nix
 
     ## containers
+    ./services/baikal.nix
     ./services/com-andrewzah.nix
-    ./services/traefik.nix
-    ./services/postgres.nix
-    ./services/whoami.nix
-    ./services/vaultwarden.nix
     ./services/goatcounter.nix
+    ./services/postgres.nix
+    ./services/traefik.nix
+    ./services/vaultwarden.nix
+    ./services/whoami.nix
   ];
   nix.settings.experimental-features = ["nix-command" "flakes"];
 

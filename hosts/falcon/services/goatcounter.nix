@@ -16,14 +16,16 @@
     extraOptions = ["--net=internal" "--net=external"];
     labels = {
       "traefik.enable" = "true";
+
       ## dns-challenge
       "traefik.http.routers.goatcounter-dns.rule" = "Host(`stats.andrewzah.com`) || Host(`stats.worldwarrior.online`)";
       "traefik.http.routers.goatcounter-dns.entrypoints" = "websecure";
       "traefik.http.routers.goatcounter-dns.tls.certresolver" = "cloudflare";
+
       ## tls-challenge
       "traefik.http.routers.goatcounter-tls.rule" = "Host(`stats.benzah.com`) || Host(`stats.homegrownbinaries.com`)";
       "traefik.http.routers.goatcounter-tls.entrypoints" = "websecure";
-      "traefik.http.routers.goatcounter-tls.tls.certresolver" = "myresolver";
+      "traefik.http.routers.goatcounter-tls.tls.certresolver" = "generic";
     };
   };
 }
