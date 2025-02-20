@@ -1,6 +1,7 @@
 {...}: {
   virtualisation.oci-containers.containers.postgres = {
     autoStart = true;
+    hostname = "postgres";
     image = "docker.io/library/postgres:15-alpine";
     ports = ["5432:5432"];
     environment = {
