@@ -7,6 +7,7 @@
     environment = {
       PGDATA = "/var/lib/postgresql/data";
     };
+    extraOptions = [ "--net=internal" ];
     volumes = [
       "/eagle/data/docker/postgres15/:/var/lib/postgresql/data/:rw"
     ];
