@@ -1,4 +1,6 @@
-{...}: {
+{config, ...}: {
+  sops.secrets."postgres/env" = {};
+
   virtualisation.oci-containers.containers.postgres = {
     autoStart = true;
     hostname = "postgres";
@@ -7,6 +9,7 @@
     environment = {
       PGDATA = "/var/lib/postgresql/data";
     };
+    environmentFiles = [config.sops.secrets."postgres/env".path];
     extraOptions = ["--net=internal"];
     volumes = [
       "/eagle/data/docker/postgres15/:/var/lib/postgresql/data/:rw"
