@@ -1,7 +1,5 @@
 {config, ...}: {
   sops.secrets."traefik/env" = {};
-  sops.secrets."traefik/CLOUDFLARE_EMAIL" = {};
-  sops.secrets."traefik/CLOUDFLARE_DNS_API_TOKEN" = {};
 
   virtualisation.oci-containers.containers.traefik = {
     autoStart = true;
