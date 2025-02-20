@@ -17,13 +17,8 @@
     after = ["network.target"];
     wants = ["network-online.target"];
     script = ''
-      if ! ${pkgs.docker}/bin/docker network ls | grep -q external >/dev/null 2>&1; then
-        ${pkgs.docker}/bin/docker network create external &2>/dev/null || true
-      fi
-
-      if ! ${pkgs.docker}/bin/docker network ls | grep -q internal >/dev/null 2>&1; then
-        ${pkgs.docker}/bin/docker network create internal &2>/dev/null || true
-      fi
+      ${pkgs.docker}/bin/docker network inspect internal || ${pkgs.docker}/bin/docker network create internal
+      ${pkgs.docker}/bin/docker network inspect external || ${pkgs.docker}/bin/docker network create external
     '';
     serviceConfig = {
       Type = "oneshot";
@@ -31,12 +26,4 @@
     };
     wantedBy = ["multi-user.target"];
   };
-
-  # need to make networks manually in order
-  # for containers to connect by hostname
-  # e.g. postgres
-  #system.activationScripts.mkDockerNetworks = ''
-  #  ${pkgs.docker}/bin/docker network create internal &2>/dev/null || true
-  #  ${pkgs.docker}/bin/docker network create external &2>/dev/null || true
-  #'';
 }
