@@ -1,6 +1,6 @@
 {config, ...}: {
   # TODO: templating?
-  sops.secrets."vaultwarden/DATABASE_URL" = {};
+  sops.secrets."vaultwarden/env" = {};
 
   virtualisation.oci-containers.containers.vaultwarden = {
     autoStart = true;
@@ -12,7 +12,7 @@
       SIGNUPS_ALLOWED = "false";
     };
     environmentFiles = [
-      config.sops.secrets."vaultwarden/DATABASE_URL".path
+      config.sops.secrets."vaultwarden/env".path
     ];
     volumes = [
       "/eagle/data/docker/bitwarden-rs/:/data/:rw"
