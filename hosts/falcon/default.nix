@@ -10,6 +10,7 @@
     ./services/traefik.nix
     ./services/postgres.nix
     ./services/whoami.nix
+    ./services/vaultwarden.nix
   ];
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
