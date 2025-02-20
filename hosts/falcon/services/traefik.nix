@@ -32,7 +32,7 @@
       "--certificatesresolvers.generic.acme.tlschallenge=true"
       "--certificatesresolvers.generic.acme.email=admin@andrewzah.com"
       "--certificatesresolvers.generic.acme.storage=/letsencrypt/acme.json"
-      "--certificatesResolvers.generic.acme.caServer=https://acme-staging-v02.api.letsencrypt.org/directory"
+      #"--certificatesResolvers.generic.acme.caServer=https://acme-staging-v02.api.letsencrypt.org/directory"
 
       ## cloudflare resolver
       "--certificatesresolvers.cloudflare.acme.storage=/letsencrypt/cloudflare-acme.json"
@@ -41,7 +41,7 @@
       "--certificatesresolvers.cloudflare.acme.dnsChallenge.provider=cloudflare"
       "--certificatesresolvers.cloudflare.acme.dnsChallenge.delayBeforeCheck=0"
       "--certificatesresolvers.cloudflare.acme.dnsChallenge.resolvers=1.1.1.1:53"
-      "--certificatesResolvers.cloudflare.acme.caServer=https://acme-staging-v02.api.letsencrypt.org/directory"
+      #"--certificatesResolvers.cloudflare.acme.caServer=https://acme-staging-v02.api.letsencrypt.org/directory"
     ];
     ports = [
       #"22:22"
