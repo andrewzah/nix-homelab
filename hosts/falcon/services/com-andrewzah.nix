@@ -8,6 +8,7 @@
       "traefik.http.routers.com-andrewzah.entrypoints" = "websecure";
       "traefik.http.routers.com-andrewzah.tls.certresolver" = "cloudflare";
     };
+    extraOptions = [ "--net=external" ];
     ports = ["2020"];
   };
 }

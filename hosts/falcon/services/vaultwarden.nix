@@ -18,7 +18,10 @@
       "/eagle/data/docker/bitwarden-rs/:/data/:rw"
     ];
     dependsOn = [ "traefik" "postgres" ];
-    extraOptions = [ "--net=internal" ];
+    extraOptions = [
+      "--net=internal"
+      "--net=external"
+    ];
     labels = {
       "traefik.enable" = "true";
       "traefik.http.routers.vaultwarden-ui.rule" = "Host(`bit.zah.rocks`)";

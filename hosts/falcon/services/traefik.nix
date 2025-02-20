@@ -54,6 +54,7 @@
     environmentFiles = [
       config.sops.secrets."traefik/env".path
     ];
+    extraOptions = [ "--net=external" ];
     labels = {
       "traefik.enable" = "true";
       "traefik.http.routers.http-catchall.rule" = "hostregexp(`{host:.+}`)";
