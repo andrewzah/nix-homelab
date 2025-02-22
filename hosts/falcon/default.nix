@@ -2,6 +2,7 @@
   imports = [
     ./hardware-configuration.nix
     ./virtualisation.nix
+    ./services.nix
 
     ./services/pam-session-notify.nix
     ./services/smartd.nix
@@ -9,13 +10,14 @@
     #./services/prometheus.nix
 
     ## containers
-    ./services/baikal.nix
-    ./services/com-andrewzah.nix
-    ./services/goatcounter.nix
-    ./services/postgres.nix
-    ./services/traefik.nix
-    ./services/vaultwarden.nix
-    ./services/whoami.nix
+    ./containers/baikal.nix
+    ./containers/com-andrewzah.nix
+    ./containers/goatcounter.nix
+    ./containers/postgres.nix
+    ./containers/redis.nix
+    ./containers/traefik.nix
+    ./containers/vaultwarden.nix
+    ./containers/whoami.nix
   ];
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
@@ -40,6 +42,5 @@
   };
 
   environment.systemPackages = with pkgs; [vim];
-  services.openssh.enable = true;
   system.stateVersion = "24.11";
 }
