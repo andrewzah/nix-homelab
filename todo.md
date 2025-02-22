@@ -1,10 +1,6 @@
 ## security
-- fail2ban
-  - integrate w/ containers:
-    https://blog.lrvt.de/securing-vaultwarden-with-fail2ban/
-- crowdsec (vs fail2ban)
+- look into crowdsec
   https://github.com/crowdsecurity/crowdsec
-- endless ssh - cpu usage? - 
 - tailscale ?
 - idp: kanidm vs authentik vs keycloak
   - https://github.com/oauth2-proxy/oauth2-proxy

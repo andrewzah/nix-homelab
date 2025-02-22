@@ -1,6 +1,9 @@
 {config, ...}: {
   # TODO: templating?
   sops.secrets."vaultwarden/env" = {};
+  sops.secrets."postgres/creds/vaultwarden/username" = {};
+  sops.secrets."postgres/creds/vaultwarden/password" = {};
+  sops.secrets."postgres/creds/vaultwarden/database" = {};
 
   virtualisation.oci-containers.containers.vaultwarden = {
     autoStart = true;

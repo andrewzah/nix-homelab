@@ -2,8 +2,30 @@
   sops.secrets."authentik/env" = {};
 
   #virtualisation.oci-containers.containers.authentik = {
+  #  autoStart = true;
+  #  hostname = "authentik";
+  #  image = "ghcr.io/goauthentik/server:2024.12.3@sha256:b0c0552385922ee8732194e0fbe8d95fd9099880dc169ff7d1b36db4af52cbd8";
+  #  cmd = ["server"];
+  #  dependsOn = ["postgres" "redis"];
+  #  ports = ["9000" "9443"];
+  #  extraOptions = ["--net=internal" "--net=external"];
+  #  volumes = [
+  #    "/eagle/data/docker/authentik/custom-templates/:/templates/:rw"
+  #    "/eagle/data/docker/authentik/media/:/media/:rw"
+  #  ];
+  #};
+
+  #virtualisation.oci-containers.containers.authentik-worker = {
+  #  autoStart = true;
+  #  image = "ghcr.io/goauthentik/server:2024.12.3@sha256:b0c0552385922ee8732194e0fbe8d95fd9099880dc169ff7d1b36db4af52cbd8";
+  #  cmd = ["worker"];
   #  dependsOn = ["postgres" "redis"];
   #  extraOptions = ["--net=internal" "--net=external"];
+  #  volumes = [
+  #    "/eagle/data/docker/authentik/custom-templates/:/templates/:rw"
+  #    "/eagle/data/docker/authentik/certs/:/certs/:rw"
+  #    "/eagle/data/docker/authentik/media/:/media/:rw"
+  #  ];
   #};
 
   #virtualisation.oci-containers.containers.authentik-proxy = {

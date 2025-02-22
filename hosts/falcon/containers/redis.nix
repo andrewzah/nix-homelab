@@ -8,7 +8,16 @@
       TZ = "America/New_York";
     };
     dependsOn = ["postgres" "redis"];
-    extraOptions = ["--net=internal"];
+    extraOptions = [
+      "--net=internal"
+
+      "--health-cmd"
+      "redis-cli ping | grep PONG"
+      "--health-interval=5s"
+      "--health-timeout=10s"
+      "--health-retries=5"
+      "--health-start-period=5s"
+    ];
     volumes = [ "/eagle/data/docker/redis/data/:/data/:rw" ];
   };
 }
