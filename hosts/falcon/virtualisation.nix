@@ -13,17 +13,22 @@
   };
 
   systemd.services.create-docker-networks = {
-    description = "Create external and internal docker networks manually";
-    after = ["network.target"];
-    wants = ["network-online.target"];
-    script = ''
-      ${pkgs.docker}/bin/docker network inspect internal || ${pkgs.docker}/bin/docker network create internal
-      ${pkgs.docker}/bin/docker network inspect external || ${pkgs.docker}/bin/docker network create external
-    '';
+    description = "Create docker networks manually";
+    after = ["docker.service"];
+    wants = ["docker.service"];
+    wantedBy = [
+      "docker-traefik.service"
+      "docker-postgres.service"
+    ];
+
     serviceConfig = {
       Type = "oneshot";
       RemainAfterExit = true;
     };
-    wantedBy = ["multi-user.target"];
+
+    script = ''
+      ${pkgs.docker}/bin/docker network inspect internal || ${pkgs.docker}/bin/docker network create internal
+      ${pkgs.docker}/bin/docker network inspect external || ${pkgs.docker}/bin/docker network create external
+    '';
   };
 }

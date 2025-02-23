@@ -1,5 +1,8 @@
 {config, ...}: {
   sops.secrets."authentik/env" = {};
+  sops.secrets."postgres/creds/authentik/username" = {};
+  sops.secrets."postgres/creds/authentik/password" = {};
+  sops.secrets."postgres/creds/authentik/database" = {};
 
   #virtualisation.oci-containers.containers.authentik = {
   #  autoStart = true;
