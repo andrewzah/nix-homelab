@@ -1,6 +1,5 @@
 {...}: let
   fqdn = "whoami.zah.rocks";
-  router = "whoami";
 in {
   virtualisation.oci-containers.containers.whoami = {
     autoStart = true;
@@ -11,8 +10,8 @@ in {
     labels = {
       "traefik.enable" = "true";
       "traefik.http.routers.authentik.rule" = "Host(`${fqdn}`) && PathPrefix(`/outpost.goauthentik.io/`)";
-      "traefik.http.routers.${router}.rule" = "Host(`${fqdn}`)";
-      "traefik.http.routers.${router}.middlewares" = "authentik@docker";
+      "traefik.http.routers.whoami.rule" = "Host(`${fqdn}`)";
+      #"traefik.http.routers.whoami.middlewares" = "authentik@docker";
     };
   };
 }

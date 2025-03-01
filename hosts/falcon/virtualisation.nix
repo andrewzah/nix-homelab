@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   virtualisation = {
     docker.rootless.enable = true;
-    docker.rootless.setSocketVariable = true;
+    #docker.rootless.setSocketVariable = true;
     docker.autoPrune.enable = true;
     containerd.enable = true;
 

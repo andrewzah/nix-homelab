@@ -21,6 +21,8 @@
       "--entrypoints.web.address=:80"
       "--entrypoints.websecure.address=:443"
       "--entrypoints.ssh.address=:22"
+      #"--entryPoints.servatrice.address=:4747/tcp"
+      #"--entryPoints.servatrice-wss.address=:4748"
       "--entrypoints.web.forwardedHeaders.insecure"
       "--entrypoints.websecure.forwardedHeaders.insecure"
 
@@ -48,12 +50,12 @@
       #"22:22"
       "80:80"
       "443:443"
+      #"4747:4747"
+      #"4748:4748"
       "8080:8080"
       "11371:11371"
     ];
-    environmentFiles = [
-      config.sops.secrets."traefik/env".path
-    ];
+    environmentFiles = [config.sops.secrets."traefik/env".path];
     extraOptions = ["--net=external"];
     labels = {
       "traefik.enable" = "true";

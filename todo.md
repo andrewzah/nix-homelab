@@ -1,3 +1,9 @@
+- postgres fixup:
+  - ? custom image + entrypoint.sh
+  - nix: write init.sh scripts to $dir
+  - systemd oneshot / timer: exec command within postgres container to run
+    `docker_process_init_files`: https://github.com/docker-library/postgres/blob/729d22b104ede82d7b2d8681bb85f2f44c33eb60/docker-entrypoint.sh
+
 ## security
 - look into crowdsec
   https://github.com/crowdsecurity/crowdsec

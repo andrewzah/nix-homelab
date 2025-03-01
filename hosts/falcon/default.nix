@@ -14,8 +14,10 @@
     ./containers/baikal.nix
     ./containers/com-andrewzah.nix
     ./containers/goatcounter.nix
+    #./containers/mariadb.nix
     ./containers/postgres.nix
     ./containers/redis.nix
+    #./containers/servatrice.nix
     ./containers/traefik.nix
     ./containers/vaultwarden.nix
     ./containers/whoami.nix
