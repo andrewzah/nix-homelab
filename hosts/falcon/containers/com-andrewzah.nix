@@ -1,7 +1,7 @@
 {...}: {
   virtualisation.oci-containers.containers.com-andrewzah = {
     autoStart = true;
-    image = "docker.io/andrewzah/com-andrewzah:latest@sha256:ec05e1bc90792fe315bbe05b0d6c303f6889d8e3ad07a2bc62066092a383d5a3";
+    image = "docker.io/andrewzah/com-andrewzah:latest@sha256:84bbaf63269c3092c11ff4549b25897ed34c33a3dc2488019936fee7417385ca";
     labels = {
       "traefik.enable" = "true";
       "traefik.http.routers.com-andrewzah.rule" = "Host(`andrewzah.com`)";
