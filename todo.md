@@ -1,3 +1,8 @@
+## utmost priority
+- IDP + forward-auth - keycloak v. authentik
+  - user provisioning
+
+## general
 - postgres fixup:
   - ? custom image + entrypoint.sh
   - nix: write init.sh scripts to $dir

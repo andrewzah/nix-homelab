@@ -10,7 +10,6 @@
     #./services/prometheus.nix
 
     ## containers
-    ./containers/authentik.nix
     ./containers/baikal.nix
     ./containers/com-andrewzah.nix
     ./containers/goatcounter.nix
@@ -21,6 +20,7 @@
     ./containers/traefik.nix
     ./containers/vaultwarden.nix
     ./containers/whoami.nix
+    ./containers/zitadel.nix
   ];
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
