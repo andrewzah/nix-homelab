@@ -1,0 +1,6 @@
+b:
+  nix-build -E '{pkgs ? import <nixpkgs>{}}: (pkgs.callPackage ./default.nix{}).rekor'
+
+c:
+  nix-build -E '{pkgs ? import <nixpkgs>{}}: (pkgs.callPackage ./default.nix{}).container'
+  docker load < ./result

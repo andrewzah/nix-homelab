@@ -20,7 +20,9 @@
     ./containers/traefik.nix
     ./containers/vaultwarden.nix
     ./containers/whoami.nix
-    ./containers/zitadel.nix
+
+    ./containers/keycloak.nix
+    ./containers/openldap.nix
   ];
   nix.settings.experimental-features = ["nix-command" "flakes"];
 

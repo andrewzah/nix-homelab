@@ -1,0 +1,95 @@
+---
+services:
+  mariadb:
+    hostname: mariadb
+    image: docker.io/library/mariadb:11.7.2
+    environment:
+      MARIADB_ROOT_PASSWORD: 'zaphod'
+      MARIADB_USER: 'test'
+      MARIADB_PASSWORD: 'zaphod'
+      MARIADB_DATABASE: 'test'
+    ports:
+      - "3306"
+    volumes:
+      - "./x-data/mariadb:/var/lib/mysql:Z"
+
+  redis:
+    hostname: redis
+    image: docker.io/library/redis:7.4.2
+    ports:
+      - "6379"
+
+  migrate:
+    image: docker.io/library/mariadb:11.7.2
+    entrypoint: /createdb.sh
+    volumes:
+      - "./rekor/scripts/createdb.sh:/createdb.sh"
+      - "./rekor/scripts/storage.sql:/storage.sql"
+
+  # use `crane` registry instead
+  registry:
+    hostname: registry
+    image: docker.io/andrewzah/container-registry:0.20.3
+    command:
+      - "registry"
+      - "serve"
+      - "--address=0.0.0.0:1338"
+      - "--disk=/data"
+    ports:
+      - "1338:1338"
+    volumes:
+      - "/tmp/local-registry/data/:/data/:rw"
+
+  log_server:
+    hostname: log_server
+    image: docker.io/andrewzah/trillian:1.7.1
+    command:
+      - "-logtostderr"
+      - "-http_endpoint=0.0.0.0:8901"
+      - "-rpc_endpoint=0.0.0.0:8090"
+      - "-mysql_uri=test:zaphod@tcp(mariadb:3306)/test"
+      - "-quota_system=mysql"
+      - "-storage_system=mysql"
+    ports:
+      - "8090"
+      - "8091"
+
+  log_signer:
+    hostname: log_signer
+    image: docker.io/andrewzah/trillian:1.7.1
+    entrypoint: trillian_log_signer
+    command:
+      - "--logtostderr"
+      - "--force_master"
+      - "--rpc_endpoint=localhost:8190"
+      - "--http_endpoint=localhost:8191"
+      - "--batch_size=1000"
+      - "--sequencer_guard_window=0"
+      - "--sequencer_interval=200ms"
+      - "-http_endpoint=0.0.0.0:8901"
+      - "-rpc_endpoint=0.0.0.0:8090"
+      - "-mysql_uri=test:zaphod@tcp(mariadb:3306)/test"
+      - "-quota_system=mysql"
+      - "-storage_system=mysql"
+
+  createtree:
+    hostname: log_signer
+    image: docker.io/andrewzah/trillian:1.7.1
+    entrypoint: createtree
+    command:
+      - "--admin_server=log_server:8090"
+
+  rekor:
+    hostname: rekor
+    image: docker.io/andrewzah/rekor:1.3.6
+    command:
+      - "serve"
+      - "--host=0.0.0.0"
+      - "--port=3000"
+      - "--trillian_log_server.address=log_server"
+      - "--trillian_log_server.port=8090"
+      - "--redis_server.address=redis"
+      - "--rekor_server.hostname=rekor.sigstore.arpa"
+      - "--rekor_server.address=0.0.0.0"
+    ports:
+      - "3000:3000"
