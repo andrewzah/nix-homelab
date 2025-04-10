@@ -21,6 +21,7 @@
     ./containers/vaultwarden.nix
     ./containers/whoami.nix
 
+    ./containers/hedgedoc.nix
     ./containers/keycloak.nix
     ./containers/openldap.nix
   ];

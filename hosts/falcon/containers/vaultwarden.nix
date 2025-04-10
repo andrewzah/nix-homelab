@@ -6,9 +6,6 @@
   sops.secrets."postgres/creds/vaultwarden/database" = {};
 
   # TODO: write /entrypoint.d script
-  # have postgres 
-
-
   virtualisation.oci-containers.containers.vaultwarden = {
     autoStart = true;
     image = "docker.io/vaultwarden/server:1.33.2-alpine@sha256:63cce7624f655f83ad5bab66ef62bc3e3327116b068704bfbbda5d0c1b3003be";
@@ -18,9 +15,7 @@
       WEBSOCKET_ENABLED = "true";
       SIGNUPS_ALLOWED = "false";
     };
-    environmentFiles = [
-      config.sops.secrets."vaultwarden/env".path
-    ];
+    environmentFiles = [config.sops.secrets."vaultwarden/env".path];
     volumes = [
       "/eagle/data/docker/bitwarden-rs/:/data/:rw"
     ];
