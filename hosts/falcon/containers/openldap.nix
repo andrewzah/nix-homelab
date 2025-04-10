@@ -16,7 +16,7 @@
       DEBUG = "false";
     };
     extraOptions = ["--net=internal" "--net=external"];
-    dependsOn = ["traefik"];
+    dependsOn = ["traefik" "openldap"];
     environmentFiles = [config.sops.secrets."ldapaccountmanager/env".path];
     ports = ["80"];
     labels = {
@@ -30,7 +30,7 @@
   };
 
   virtualisation.oci-containers.containers.openldap = {
-    autoStart = false;
+    autoStart = true;
     image = "docker.io/bitnami/openldap:2.6.9@sha256:25f12e8abb34bd89b47bc4f726f92f7d3195260c2be16950b38c20dd775d0aef";
     environment = {
       LDAP_ROOT = "dc=zah,dc=rocks";
@@ -42,9 +42,10 @@
     extraOptions = ["--net=internal"];
     ports = ["1389"];
     volumes = [
-      "/eagle/data/docker/data/openldap/openldap/:/etc/ldap/slapd.d/:rw"
-      "/eagle/data/docker/data/openldap/runtime/:/var/lib/ldap/:rw"
-      "/eagle/data/docker/data/openldap/data/:/bitnami/openldap/:rw"
+      # needs to be chowned to 1001:1001
+      "/eagle/data/docker/openldap/openldap/:/etc/ldap/slapd.d/:rw"
+      "/eagle/data/docker/openldap/runtime/:/var/lib/ldap/:rw"
+      "/eagle/data/docker/openldap/data/:/bitnami/openldap/:rw"
     ];
   };
 }
