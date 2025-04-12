@@ -19,8 +19,6 @@
     extraOptions = ["--net=internal" "--net=external"];
     labels = {
       "traefik.enable" = "true";
-
-      ## tls-challenge
       "traefik.http.routers.keycloak.rule" = "Host(`idp.zah.rocks`)";
       "traefik.http.routers.keycloak.entrypoints" = "websecure";
       "traefik.http.routers.keycloak.tls.certresolver" = "generic";

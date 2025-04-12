@@ -33,10 +33,6 @@
       CMD_OAUTH2_SCOPE = "openid email profile";
     };
     extraOptions = ["--net=external" "--net=internal"];
-    volumes = [
-      "/eagle/data/docker/baikal/specific/:/var/www/baikal/Specific/:rw"
-      "/eagle/data/docker/baikal/config/:/var/www/baikal/config/:rw"
-    ];
     environmentFiles = [config.sops.secrets."hedgedoc/env".path];
     dependsOn = ["traefik" "postgres"];
     ports = ["3000"];
