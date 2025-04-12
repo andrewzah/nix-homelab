@@ -8,10 +8,11 @@
       "start"
       "--hostname=https://idp.zah.rocks"
       "--hostname-admin=https://idp.zah.rocks"
-      "--proxy-headers=forwarded"
       "--http-enabled=true"
       "--db=postgres"
       "--log=console"
+      #"--log-level=DEBUG"
+      #"--proxy-headers=xforwarded"
     ];
     environmentFiles = [config.sops.secrets."keycloak/env".path];
     #volumes = ["/eagle/data/docker/goatcounter/:/data/:rw"];

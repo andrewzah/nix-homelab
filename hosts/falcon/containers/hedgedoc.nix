@@ -20,6 +20,8 @@
       CMD_USECDN = "false";
       CMD_PROTOCOL_USESSL = "true";
       CMD_URL_ADDPORT = "false";
+      CMD_HSTS_ENABLE = "true";
+      DEBUG = "true";
 
       ### keycloak oauth
       CMD_OAUTH2_CLIENT_ID = "hedgedoc";
@@ -27,8 +29,8 @@
       CMD_OAUTH2_USER_PROFILE_USERNAME_ATTR = "preferred_username";
       CMD_OAUTH2_USER_PROFILE_DISPLAY_NAME_ATTR = "name";
       CMD_OAUTH2_USER_PROFILE_EMAIL_ATTR = "email";
-      CMD_OAUTH2_AUTHORIZATION_URL = "https://idp.zah.rocks/realms/falcon/protocol/openid-connect/auth";
       CMD_OAUTH2_TOKEN_URL = "https://idp.zah.rocks/realms/falcon/protocol/openid-connect/token";
+      CMD_OAUTH2_AUTHORIZATION_URL = "https://idp.zah.rocks/realms/falcon/protocol/openid-connect/auth";
       CMD_OAUTH2_USER_PROFILE_URL = "https://idp.zah.rocks/realms/falcon/protocol/openid-connect/userinfo";
       CMD_OAUTH2_SCOPE = "openid email profile";
     };
