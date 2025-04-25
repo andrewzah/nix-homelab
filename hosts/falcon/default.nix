@@ -20,6 +20,7 @@
     ./containers/traefik.nix
     ./containers/vaultwarden.nix
     ./containers/whoami.nix
+    ./containers/atuin.nix
 
     ./containers/hedgedoc.nix
     ./containers/keycloak.nix

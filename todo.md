@@ -1,6 +1,6 @@
 ## utmost priority
-- IDP + forward-auth - keycloak v. authentik
-  - user provisioning
+- fix keycloak <-> hedgedoc IDP error
+- get atuin up and sync history/keys
 
 ## general
 - postgres fixup:
