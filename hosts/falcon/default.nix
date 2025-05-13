@@ -11,7 +11,6 @@
 
     ## containers
     ./containers/baikal.nix
-    ./containers/com-andrewzah.nix
     ./containers/goatcounter.nix
     #./containers/mariadb.nix
     ./containers/postgres.nix
@@ -21,6 +20,9 @@
     ./containers/vaultwarden.nix
     ./containers/whoami.nix
     ./containers/atuin.nix
+
+    ./containers/com-andrewzah.nix
+    ./containers/org-scfgc.nix
 
     ./containers/hedgedoc.nix
     ./containers/keycloak.nix
