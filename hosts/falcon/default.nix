@@ -21,6 +21,7 @@
     ./containers/whoami.nix
     ./containers/atuin.nix
 
+    ./containers/club-nixseoul.nix
     ./containers/com-andrewzah.nix
     ./containers/org-scfgc.nix
 
