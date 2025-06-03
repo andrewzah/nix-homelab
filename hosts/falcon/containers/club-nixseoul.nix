@@ -6,7 +6,7 @@
       "traefik.enable" = "true";
       "traefik.http.routers.club-nixseoul.rule" = "Host(`nixseoul.club`)";
       "traefik.http.routers.club-nixseoul.entrypoints" = "websecure";
-      "traefik.http.routers.club-nixseoul.tls.certresolver" = "cloudflare";
+      "traefik.http.routers.club-nixseoul.tls.certresolver" = "generic";
     };
     extraOptions = ["--net=external"];
     ports = ["2020"];
