@@ -23,7 +23,7 @@
       "traefik.http.routers.goatcounter-dns.tls.certresolver" = "cloudflare";
 
       ## tls-challenge
-      "traefik.http.routers.goatcounter-tls.rule" = "Host(`stats.benzah.com`) || Host(`stats.homegrownbinaries.com`) || Host(`stats.nixclub.seoul`)";
+      "traefik.http.routers.goatcounter-tls.rule" = "Host(`stats.benzah.com`) || Host(`stats.homegrownbinaries.com`) || Host(`stats.nixseoul.club`)";
       "traefik.http.routers.goatcounter-tls.entrypoints" = "websecure";
       "traefik.http.routers.goatcounter-tls.tls.certresolver" = "generic";
     };
