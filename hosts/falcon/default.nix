@@ -14,6 +14,7 @@
     ./containers/baikal.nix
     ./containers/cyberchef.nix
     ./containers/forgejo.nix
+    ./containers/glance
     ./containers/goatcounter.nix
     ./containers/postgres.nix
     ./containers/redis.nix
