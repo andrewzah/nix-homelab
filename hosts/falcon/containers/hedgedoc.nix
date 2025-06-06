@@ -34,7 +34,11 @@
       CMD_OAUTH2_USER_PROFILE_URL = "https://idp.zah.rocks/realms/falcon/protocol/openid-connect/userinfo";
       CMD_OAUTH2_SCOPE = "openid email profile";
     };
-    extraOptions = ["--net=external" "--net=internal"];
+    extraOptions = [
+      "--net=external"
+      "--net=internal"
+      "--network-alias=hedgedoc.zah.rocks"
+    ];
     environmentFiles = [config.sops.secrets."hedgedoc/env".path];
     dependsOn = ["traefik" "postgres"];
     ports = ["3000"];

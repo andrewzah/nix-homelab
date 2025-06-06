@@ -54,6 +54,6 @@
     packages = [];
   };
 
-  environment.systemPackages = (with pkgs; [git vim]);
+  environment.systemPackages = (with pkgs; [git vim tcpdump]);
   system.stateVersion = "24.11";
 }

@@ -8,8 +8,12 @@
       "USER_UID" = "1000";
       "USER_GID" = "1000";
     };
-    extraOptions = ["--net=external" "--net=internal"];
     environmentFiles = [config.sops.secrets."forgejo/env".path];
+    extraOptions = [
+      "--net=external"
+      "--net=internal"
+      "--network-alias=git.andrewzah.com"
+    ];
     dependsOn = ["traefik" "postgres"];
     ports = ["3000" "2222"];
     volumes = [
