@@ -56,7 +56,7 @@
       "11371:11371"
     ];
     environmentFiles = [config.sops.secrets."traefik/env".path];
-    extraOptions = ["--net=external" "--net=internal"];
+    extraOptions = [ "--dns=192.168.1.1" "--dns=1.1.1.1"   "--net=external" "--net=internal"];
     labels = {
       "traefik.enable" = "true";
       "traefik.http.routers.http-catchall.rule" = "hostregexp(`{host:.+}`)";
