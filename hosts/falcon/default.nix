@@ -10,21 +10,24 @@
     #./services/prometheus.nix
 
     ## containers
+    ./containers/atuin.nix
     ./containers/baikal.nix
+    ./containers/forgejo.nix
     ./containers/goatcounter.nix
-    #./containers/mariadb.nix
     ./containers/postgres.nix
     ./containers/redis.nix
-    #./containers/servatrice.nix
     ./containers/traefik.nix
     ./containers/vaultwarden.nix
     ./containers/whoami.nix
-    ./containers/atuin.nix
+    #./containers/mariadb.nix
+    #./containers/servatrice.nix
 
+    ## websites
     ./containers/club-nixseoul.nix
     ./containers/com-andrewzah.nix
     ./containers/org-scfgc.nix
 
+    ## idp/sso
     ./containers/hedgedoc.nix
     ./containers/keycloak.nix
     ./containers/openldap.nix
