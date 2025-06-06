@@ -47,7 +47,7 @@
       #"--certificatesResolvers.cloudflare.acme.caServer=https://acme-staging-v02.api.letsencrypt.org/directory"
     ];
     ports = [
-      #"22:22"
+      "2222:22"
       "80:80"
       "443:443"
       #"4747:4747"
