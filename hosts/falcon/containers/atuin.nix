@@ -2,13 +2,13 @@
   sops.secrets."atuin/env" = {};
 
   virtualisation.oci-containers.containers.atuin = {
-    autoStart = false;
-    image = "ghcr.io/atuinsh/atuin:v18.5.0@sha256:f784866f13d51568c0d1673b3c64c7660508469aac7c87f1b559c2482c1d01aa";
-    ports = ["8888"];
-    cmd = ["server" "start"];
+    autoStart = true;
+    image = "ghcr.io/atuinsh/atuin:2e26f34@sha256:e1ca2601ad4c9ee00a19b588cbf82ce494243613eee55d88d28ef8e9347e404d ";
     environment = {
       RUST_LOG = "INFO";
     };
+    ports = ["8888"];
+    cmd = ["server" "start"];
     environmentFiles = [config.sops.secrets."atuin/env".path];
     dependsOn = ["traefik" "postgres"];
     extraOptions = ["--net=internal" "--net=external"];
