@@ -1,7 +1,7 @@
 {...}: {
   virtualisation.oci-containers.containers.club-nixseoul = {
     autoStart = true;
-    image = "docker.io/andrewzah/club-nixseoul:latest@sha256:7c0409eff33defc742f7eb83cd801e4243b0ae046b49f3e9326f3f295491f160";
+    image = "docker.io/andrewzah/club-nixseoul:latest@sha256:31428f578bc42efeebcecf8190c8080a7d1f9fcd16d657b61e36db3de2a609d1";
     labels = {
       "traefik.enable" = "true";
       "traefik.http.routers.club-nixseoul.rule" = "Host(`nixseoul.club`)";
