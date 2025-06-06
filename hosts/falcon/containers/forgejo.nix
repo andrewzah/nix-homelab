@@ -3,7 +3,7 @@
 
   virtualisation.oci-containers.containers.forgejo = {
     autoStart = false;
-    image = "codeberg.org/forgejo/forgejo:11@sha256:sha256:d0e930ee26d71e27582200a365d1014faa6da95250c494c002afa87db51575f1";
+    image = "codeberg.org/forgejo/forgejo:11@sha256:d0e930ee26d71e27582200a365d1014faa6da95250c494c002afa87db51575f1";
     environment = {
       "USER_UID" = "1000";
       "USER_GID" = "1000";
