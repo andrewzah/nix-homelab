@@ -12,6 +12,7 @@
     ## containers
     ./containers/atuin.nix
     ./containers/baikal.nix
+    ./containers/cyberchef.nix
     ./containers/forgejo.nix
     ./containers/goatcounter.nix
     ./containers/postgres.nix
