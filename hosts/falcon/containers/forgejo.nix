@@ -18,9 +18,11 @@
     ];
     labels = {
       "traefik.enable" = "true";
-      "traefik.http.routers.git.rule" = "Host(`git.andrewzah.com`)";
-      "traefik.http.routers.git.entrypoints" = "websecure";
-      "traefik.http.routers.git.tls.certresolver" = "cloudflare";
+      "traefik.http.routers.forgejo-web.rule" = "Host(`git.andrewzah.com`)";
+      "traefik.http.routers.forgejo-web.entrypoints" = "websecure";
+      "traefik.http.routers.forgejo-web.tls.certresolver" = "cloudflare";
+      "traefik.http.routers.forgejo-web.service" = "forgejo-web";
+      "traefik.http.services.forgejo-web.loadbalancer.server.port" = "3000";
       # ssh
       "traefik.tcp.routers.forgejo-ssh.entrypoints" = "ssh";
       "traefik.tcp.routers.forgejo-ssh.rule" = "HostSNI(`*`)";
