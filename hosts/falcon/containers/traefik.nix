@@ -3,7 +3,7 @@
 
   virtualisation.oci-containers.containers.traefik = {
     autoStart = true;
-    image = "docker.io/library/traefik:v3.1.4@sha256:6215528042906b25f23fcf51cc5bdda29e078c6e84c237d4f59c00370cb68440";
+    image = "docker.io/library/traefik:v3.4.1@sha256:cd40ab7bc1f047731d5b22595203812343efcb6538014c4e93221cfc3a77217a";
     cmd = [
       "--api.insecure=false"
       "--api.dashboard=false"
