@@ -3,7 +3,7 @@
 
   virtualisation.oci-containers.containers.forgejo = {
     autoStart = false;
-    image = "docker.io/linuxserver/hedgedoc:1.10.3@sha256:049cc4dd0e6eddaebc19990b43d5e668e6b077cf5bf12d21be3ef33acf475963";
+    image = "codeberg.org/forgejo/forgejo:11@sha256:sha256:d0e930ee26d71e27582200a365d1014faa6da95250c494c002afa87db51575f1";
     environment = {
       "USER_UID" = "1000";
       "USER_GID" = "1000";
