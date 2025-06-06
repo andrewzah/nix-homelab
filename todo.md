@@ -1,8 +1,4 @@
-## utmost priority
-- fix keycloak <-> hedgedoc IDP error
-- get atuin up and sync history/keys
-
-## general
+## to investigate
 - postgres fixup:
   - ? custom image + entrypoint.sh
   - nix: write init.sh scripts to $dir
@@ -12,22 +8,14 @@
 ## security
 - look into crowdsec
   https://github.com/crowdsecurity/crowdsec
-- tailscale ?
-- idp: kanidm vs authentik vs keycloak
-  - https://github.com/oauth2-proxy/oauth2-proxy
 - network scanning & alerting: https://github.com/jokob-sk/NetAlertX
 
 ## metrics, stats
 - node_exporter & prometheus / influxdb
-- goatcounter2
-- grafana ?
-
-## utilities
-- chef.zah.rocks - cyberchef
+- grafana
 
 ## social / games
 - minecraft ?
-- cockatrice
 
 ## consider hard before adding
 - (dashboard) https://github.com/glanceapp/glance
