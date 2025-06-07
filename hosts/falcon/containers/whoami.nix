@@ -10,7 +10,7 @@ in {
     labels = {
       "traefik.enable" = "true";
       "traefik.http.routers.whoami.rule" = "Host(`${fqdn}`)";
-      "traefik.http.routers.atuin.tls.certresolver" = "generic";
+      "traefik.http.routers.whoami.tls.certresolver" = "generic";
     };
   };
 }
