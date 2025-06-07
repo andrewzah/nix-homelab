@@ -23,7 +23,7 @@
     labels = {
       "traefik.enable" = "true";
       "traefik.http.routers.forgejo-web.rule" = "Host(`git.andrewzah.com`)";
-      "traefik.http.routers.forgejo-web.entrypoints" = "websecure";
+      "traefik.http.routers.forgejo-web.entrypoints" = "anubis";
       "traefik.http.routers.forgejo-web.tls.certresolver" = "cloudflare";
       "traefik.http.routers.forgejo-web.service" = "forgejo-web";
       "traefik.http.services.forgejo-web.loadbalancer.server.port" = "3000";
