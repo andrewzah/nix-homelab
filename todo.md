@@ -1,3 +1,6 @@
+## possible
+- https://github.com/dgtlmoon/changedetection.io?tab=readme-ov-file
+- 
 ## to investigate
 - postgres fixup:
   - ? custom image + entrypoint.sh
@@ -18,7 +21,6 @@
 - minecraft ?
 
 ## consider hard before adding
-- (dashboard) https://github.com/glanceapp/glance
 - immich - nix module?
 
 ## research / inspiration

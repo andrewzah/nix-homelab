@@ -19,6 +19,7 @@
     ./containers/goatcounter.nix
     ./containers/postgres.nix
     ./containers/redis.nix
+    ./containers/scrutiny.nix
     ./containers/traefik.nix
     ./containers/vaultwarden.nix
     ./containers/whoami.nix

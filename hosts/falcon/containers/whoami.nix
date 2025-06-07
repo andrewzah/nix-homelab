@@ -1,16 +1,17 @@
-{...}: let
-  fqdn = "whoami.zah.rocks";
-in {
+{...}: {
   virtualisation.oci-containers.containers.whoami = {
     autoStart = true;
-    ports = ["8080"];
     image = "docker.io/andrewzah/whoami:1.10.3";
+    ports = ["8080"];
     dependsOn = ["traefik"];
     extraOptions = ["--net=external"];
     labels = {
       "traefik.enable" = "true";
-      "traefik.http.routers.whoami.rule" = "Host(`${fqdn}`)";
+      "traefik.http.routers.whoami.rule" = "Host(`whoami.zah.rocks`)";
+      "traefik.http.routers.whoami.entrypoint" = "websecure";
       "traefik.http.routers.whoami.tls.certresolver" = "generic";
+      "traefik.http.routers.whoami.service" = "whoami";
+      "traefik.http.services.whoami.loadbalancer.server.port" = "8080";
     };
   };
 }
