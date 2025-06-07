@@ -9,9 +9,8 @@ in {
     extraOptions = ["--net=external"];
     labels = {
       "traefik.enable" = "true";
-      "traefik.http.routers.authentik.rule" = "Host(`${fqdn}`) && PathPrefix(`/outpost.goauthentik.io/`)";
       "traefik.http.routers.whoami.rule" = "Host(`${fqdn}`)";
-      #"traefik.http.routers.whoami.middlewares" = "authentik@docker";
+      "traefik.http.routers.atuin.tls.certresolver" = "generic";
     };
   };
 }

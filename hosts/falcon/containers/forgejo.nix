@@ -2,7 +2,7 @@
   sops.secrets."forgejo/env" = {};
 
   virtualisation.oci-containers.containers.forgejo = {
-    autoStart = false;
+    autoStart = true;
     image = "codeberg.org/forgejo/forgejo:11@sha256:d0e930ee26d71e27582200a365d1014faa6da95250c494c002afa87db51575f1";
     environment = {
       "USER_UID" = "1000";
@@ -23,7 +23,7 @@
     labels = {
       "traefik.enable" = "true";
       "traefik.http.routers.forgejo-web.rule" = "Host(`git.andrewzah.com`)";
-      "traefik.http.routers.forgejo-web.entrypoints" = "anubis";
+      "traefik.http.routers.forgejo-web.entrypoints" = "websecure";
       "traefik.http.routers.forgejo-web.tls.certresolver" = "cloudflare";
       "traefik.http.routers.forgejo-web.service" = "forgejo-web";
       "traefik.http.services.forgejo-web.loadbalancer.server.port" = "3000";

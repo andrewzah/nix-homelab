@@ -8,7 +8,7 @@
     labels = {
       "traefik.enable" = "true";
       "traefik.http.routers.com-andrewzah.rule" = "Host(`andrewzah.com`)";
-      "traefik.http.routers.com-andrewzah.entrypoints" = "anubis";
+      "traefik.http.routers.com-andrewzah.entrypoints" = "websecure";
       "traefik.http.routers.com-andrewzah.tls.certresolver" = "cloudflare";
       "traefik.http.routers.com-andrewzah.service" = "com-andrewzah";
       "traefik.http.services.com-andrewzah.loadbalancer.server.port" = "2020";
