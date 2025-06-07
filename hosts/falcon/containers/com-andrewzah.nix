@@ -5,7 +5,7 @@
     labels = {
       "traefik.enable" = "true";
       "traefik.http.routers.com-andrewzah.rule" = "Host(`andrewzah.com`)";
-      "traefik.http.routers.com-andrewzah.entrypoints" = "websecure";
+      "traefik.http.routers.com-andrewzah.entrypoints" = "anubis";
       "traefik.http.routers.com-andrewzah.tls.certresolver" = "cloudflare";
     };
     extraOptions = ["--net=external"];

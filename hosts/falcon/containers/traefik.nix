@@ -21,6 +21,7 @@
       "--entrypoints.web.address=:80"
       "--entrypoints.websecure.address=:443"
       "--entrypoints.ssh.address=:22"
+      "--entrypoints.anubis.address=:3923"
       #"--entryPoints.servatrice.address=:4747/tcp"
       #"--entryPoints.servatrice-wss.address=:4748"
       "--entrypoints.web.forwardedHeaders.insecure"
@@ -54,6 +55,7 @@
       #"4748:4748"
       "8080:8080"
       "11371:11371"
+      "3923" # for anubis; do NOT expose this
     ];
     environmentFiles = [config.sops.secrets."traefik/env".path];
     extraOptions = [
