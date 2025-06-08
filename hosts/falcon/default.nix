@@ -20,6 +20,7 @@
     ./containers/postgres.nix
     ./containers/redis.nix
     ./containers/scrutiny.nix
+    ./containers/stirling-pdf.nix
     ./containers/traefik.nix
     ./containers/vaultwarden.nix
     ./containers/whoami.nix

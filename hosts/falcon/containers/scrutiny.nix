@@ -1,6 +1,7 @@
 {...}: {
+  # needs influxdb?
   virtualisation.oci-containers.containers.scrutiny = {
-    autoStart = true;
+    autoStart = false;
     image = "ghcr.io/analogj/scrutiny:master-web@sha256:120e271f71b74de976502fedd5dc691c730a9ae1e117a38fd4e61371e69ff483 ";
     extraOptions = ["--cap-add=SYS_RAWIO"];
     ports = ["21080:8080"];
