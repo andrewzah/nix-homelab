@@ -20,7 +20,7 @@
       ## entrypoints
       "--entrypoints.web.address=:80"
       "--entrypoints.websecure.address=:443"
-      "--entrypoints.ssh.address=:22"
+      "--entrypoints.ssh.address=:2222"
       "--entrypoints.anubis.address=:3923"
       #"--entryPoints.servatrice.address=:4747/tcp"
       #"--entryPoints.servatrice-wss.address=:4748"
@@ -48,7 +48,7 @@
       #"--certificatesResolvers.cloudflare.acme.caServer=https://acme-staging-v02.api.letsencrypt.org/directory"
     ];
     ports = [
-      "2222:22"
+      "2222:2222"
       "80:80"
       "443:443"
       #"4747:4747"
