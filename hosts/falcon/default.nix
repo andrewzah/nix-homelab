@@ -10,6 +10,7 @@
     #./services/prometheus.nix
 
     ## containers
+    ./containers/affine.nix
     ./containers/anubis.nix
     ./containers/atuin.nix
     ./containers/baikal.nix

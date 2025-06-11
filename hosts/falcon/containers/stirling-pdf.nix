@@ -2,6 +2,8 @@
   sops.secrets."stirling-pdf/env" = {};
 
   virtualisation.oci-containers.containers.stirling-pdf = {
+    # don't enable until we set up oauth proxying
+    # i REALLY don't want upload forms exposed publicly
     autoStart = false;
     image = "docker.io/stirlingtools/stirling-pdf:latest@sha256:396ca949b81198a65b9abfec38518fa44e871b1970dad9f9718ffd030eef9b92";
     environment = {
