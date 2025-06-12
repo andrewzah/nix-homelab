@@ -1,6 +1,11 @@
-## possible
+## URGENT
+- fix forgejo persistence issue
+- fix ssh issue (probably due to the above)
+
+## when possible
+- push & update nixseoul.club sha
 - https://github.com/dgtlmoon/changedetection.io?tab=readme-ov-file
-- 
+
 ## to investigate
 - postgres fixup:
   - ? custom image + entrypoint.sh
