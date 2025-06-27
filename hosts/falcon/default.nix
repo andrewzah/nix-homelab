@@ -60,6 +60,6 @@
     packages = [];
   };
 
-  environment.systemPackages = (with pkgs; [git vim tcpdump]);
+  environment.systemPackages = with pkgs; [git vim tcpdump nh nix-output-monitor];
   system.stateVersion = "24.11";
 }
