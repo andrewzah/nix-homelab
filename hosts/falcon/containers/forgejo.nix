@@ -7,6 +7,8 @@
     environment = {
       "USER_UID" = "1000";
       "USER_GID" = "1000";
+      "FORGEJO_WORK_DIR" = "/data/forgejo";
+      "GITEA_WORK_DIR" = "/data/forgejo";
     };
     environmentFiles = [config.sops.secrets."forgejo/env".path];
     extraOptions = [
