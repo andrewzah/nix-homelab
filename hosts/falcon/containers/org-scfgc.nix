@@ -1,7 +1,7 @@
 {...}: {
   virtualisation.oci-containers.containers.org-scfgc = {
     autoStart = true;
-    image = "docker.io/andrewzah/scfgc-org:latest@sha256:83f5314e2f3e864c22c94f62de6b09ebea8763e9dd5e0414485d9aa6a5bb0158";
+    image = "docker.io/andrewzah/org-scfgc:latest@sha256:e7a6a3b1b03151c602697a205f9fcc8eaa4cdd6853ce06236cc9e3b8bdcae127";
     labels = {
       "traefik.enable" = "true";
       "traefik.http.routers.org-scfgc.rule" = "Host(`scfgc.org`)";
