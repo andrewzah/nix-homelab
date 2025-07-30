@@ -9,7 +9,7 @@
     environment = {
       RUST_LOG = "INFO";
     };
-    environmentFiles = [config.sops.secrets."atuin/env".path];
+    environmentFiles = [config.sops.secrets."knot/env".path];
     volumes = ["/eagle/data/docker/knot1/:/home/git/:rw"];
     dependsOn = ["traefik" "postgres"];
     extraOptions = ["--net=internal" "--net=external"];

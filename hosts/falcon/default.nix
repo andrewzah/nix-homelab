@@ -38,6 +38,7 @@
     ./containers/keycloak.nix
     ./containers/openldap.nix
   ];
+
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   sops.defaultSopsFile = ../../secrets.yaml;

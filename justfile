@@ -9,3 +9,6 @@ falcon:
 
 updatekeys:
   sops updatekeys secrets.yaml
+
+tree:
+  nix-tree --derivation '.#nixosConfigurations.falcon.config.system.build.toplevel'

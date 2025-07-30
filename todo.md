@@ -1,6 +1,9 @@
+## prio
+
+- https://github.com/sissbruecker/linkding
+
 ## when possible
 
-- push & update nixseoul.club sha
 - https://github.com/dgtlmoon/changedetection.io?tab=readme-ov-file
 - refactor machines to use metadata/etc to provision machine details, user info,
   etc, in a standard way
