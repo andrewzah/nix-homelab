@@ -21,7 +21,6 @@
       "--entrypoints.web.address=:80"
       "--entrypoints.websecure.address=:443"
       "--entrypoints.ssh.address=:2222"
-      "--entrypoints.anubis.address=:3923"
       #"--entryPoints.servatrice.address=:4747/tcp"
       #"--entryPoints.servatrice-wss.address=:4748"
       "--entrypoints.web.forwardedHeaders.insecure"
@@ -55,7 +54,6 @@
       #"4748:4748"
       "8080:8080"
       "11371:11371"
-      "3923" # for anubis; do NOT expose this
     ];
     environmentFiles = [config.sops.secrets."traefik/env".path];
     extraOptions = [
@@ -70,6 +68,8 @@
       "traefik.http.routers.http-catchall.middlewares" = "redirect-to-https@docker";
       "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme" = "https";
       "traefik.http.middlewares.redir.redirectScheme.scheme" = "https";
+      # anubis
+      "traefik.http.middlewares.anubis.forwardauth.address" = "http://anubis:8080/.within.website/x/cmd/anubis/api/check";
     };
     volumes = [
       "/eagle/data/docker/traefik/letsencrypt/:/letsencrypt/:rw"
