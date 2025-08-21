@@ -68,8 +68,8 @@
       "traefik.http.routers.http-catchall.middlewares" = "redirect-to-https@docker";
       "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme" = "https";
       "traefik.http.middlewares.redir.redirectScheme.scheme" = "https";
-      # anubis
-      "traefik.http.middlewares.anubis.forwardauth.address" = "http://anubis:8080/.within.website/x/cmd/anubis/api/check";
+      # anubis -- disable for now; see containers/anubis.nix
+      # "traefik.http.middlewares.anubis.forwardauth.address" = "http://anubis:8080/.within.website/x/cmd/anubis/api/check";
     };
     volumes = [
       "/eagle/data/docker/traefik/letsencrypt/:/letsencrypt/:rw"

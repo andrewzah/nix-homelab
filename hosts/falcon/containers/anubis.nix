@@ -1,13 +1,20 @@
 {...}: {
   virtualisation.oci-containers.containers.anubis = {
-    autoStart = true;
+    autoStart = false;
+    # tracking issues:
+    # https://github.com/TecharoHQ/anubis/issues/974
+    # https://github.com/TecharoHQ/anubis/issues/970
+
     image = "ghcr.io/techarohq/anubis:main@sha256:47f889145f29b9d0e6dffd999dcb3294c01621d8829c8f9a2991d2e7f0941867";
     environment = {
-      BIND = "0.0.0.0:8080";
+      BIND = ":8080";
+      METRICS_BIND = ":9000";
       TARGET = " ";
-      REDIRECT_DOMAINS = "andrewzah.com";
       COOKIE_DOMAIN = "andrewzah.com";
+      COOKIE_DYNAMIC_DOMAIN = "false";
       PUBLIC_URL = "https://anubis.andrewzah.com";
+      WEBMASTER_EMAIL = "admin@andrewzah.com";
+      #REDIRECT_DOMAINS = "andrewzah.com";
     };
     ports = ["8080"];
     dependsOn = ["traefik"];
