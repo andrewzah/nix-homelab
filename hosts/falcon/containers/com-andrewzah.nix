@@ -1,7 +1,7 @@
 {...}: {
   virtualisation.oci-containers.containers.com-andrewzah = {
     autoStart = true;
-    image = "docker.io/andrewzah/com-andrewzah:latest@sha256:a28fb83b08d2a2569a77d7c8ab8e2937ee116d7d8abeb1da3b512e91f538c71d";
+    image = "docker.io/andrewzah/com-andrewzah:latest@sha256:de0209fcba7080ad567543203dbe74c466918c6af06d3f6e55eecd69b1ac5711";
     dependsOn = ["traefik"];
     extraOptions = ["--net=external"];
     ports = ["2020"];
@@ -14,7 +14,7 @@
       "traefik.http.services.com-andrewzah.loadbalancer.server.port" = "2020";
 
       # anubis -- disable for now; see containers/anubis.nix
-      "traefik.http.routers.com-andrewzah.middlewares" = "anubis@docker";
+      #"traefik.http.routers.com-andrewzah.middlewares" = "anubis@docker";
     };
   };
 }
