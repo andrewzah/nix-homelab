@@ -33,6 +33,9 @@
       EULA = "TRUE";
     };
     ports = ["25565"];
+    extraOptions = [
+      "--net=internal"
+    ];
     volumes = [
       "/blanka/horangi-minecraft/mc-survival/mods/:/mods/:rw"
       "/blanka/horangi-minecraft/mc-survival/data/:/data/:rw"

@@ -7,6 +7,9 @@
       MEMORY = "512m";
     };
     ports = ["25565:25565"];
+    extraOptions = [
+      "--net=internal"
+    ];
     volumes = [
       "/blanka/horangi-minecraft/mc-proxy/config/:/config/:rw"
     ];
