@@ -15,7 +15,10 @@
     description = "Create docker networks manually";
     after = ["docker.service"];
     wants = ["docker.service"];
-    wantedBy = [];
+    wantedBy = [
+      "docker-mc-proxy.service"
+      "docker-mc-survival.service"
+    ];
 
     serviceConfig = {
       Type = "oneshot";
