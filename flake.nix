@@ -50,6 +50,16 @@
           sops-nix.nixosModules.sops
         ];
       };
+
+      # da server
+      blanka = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./hosts/blanka/default.nix
+          sops-nix.nixosModules.sops
+        ];
+      };
     };
   };
 
