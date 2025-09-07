@@ -2,6 +2,7 @@
   virtualisation.oci-containers.containers.mc-survival = {
     autoStart = false;
     image = "itzg/minecraft-server:java21-graalvm@sha256:cac38d2436520305bbec676723dbabd072d14f1cd6c6e893aa62f77aacd51ff7";
+    hostname = "mc-survival";
     environment = {
       VERSION = "1.21.8";
       TYPE = "FABRIC";
