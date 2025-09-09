@@ -35,6 +35,7 @@
   environment.systemPackages = [
     pkgs.vim
     pkgs.git
+    pkgs.tmux
   ];
 
   networking.firewall.enable = true;
