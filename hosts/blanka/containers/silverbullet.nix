@@ -1,7 +1,7 @@
 {config, ...}: {
   sops.secrets."silverbullet/env" = {};
 
-  virtualisation.oci-containers.containers.whoami = {
+  virtualisation.oci-containers.containers.silverbullet = {
     autoStart = true;
     image = "docker.io/zefhemel/silverbullet:v2@sha256:3b4291dad5d8e8521ca70818a3a12d7c06a5d0eac11c2a5d6a5060f067422bff";
     environment = {
