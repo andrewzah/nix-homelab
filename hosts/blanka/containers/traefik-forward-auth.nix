@@ -8,6 +8,7 @@
     environmentFiles = [config.sops.secrets."traefik-forward-auth/env".path];
     ports = ["4181"];
     extraOptions = [
+      "--net=external"
       "--net=internal"
     ];
     labels = {

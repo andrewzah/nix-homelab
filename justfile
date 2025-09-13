@@ -12,3 +12,7 @@ updatekeys:
 
 tree:
   nix-tree --derivation '.#nixosConfigurations.falcon.config.system.build.toplevel'
+
+push:
+  git push origin master
+  git push gh master
