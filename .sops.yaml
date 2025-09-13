@@ -1,16 +1,22 @@
 ---
-
 keys:
   - &admin_andrew D87BD9DCF11BACD6CDB40CB213732FB13E61E0BE
   - &server_eternia age190ap7t3z5pvntgypd64zanz9anzmpna7fksusuajnedwzewfkqlqum4ncz
   - &server_falcon age1snlxjncwc47x3kz57ay7pren83x0c4yd2nsurdpfnflghf3mlq5swp3uxv
   - &server_sparrow age13ga3v53gnhw0sk5506yl25xzgjmqjlrkc5f8hyw2teyz40p6sdvqx47kya
+  - &server_blanka age1gxylhtpg0mq3dyn6qjszlgc4hvmw0cy5q7jfvr3x9glf4uwlr3lsew4883
 creation_rules:
-  - path_regex: secrets.yaml$
+  - path_regex: ^secrets.yaml$
     key_groups:
-    - pgp:
-      - *admin_andrew
-      age:
-      - *server_eternia
-      - *server_falcon
-      - *server_sparrow
+      - pgp:
+          - *admin_andrew
+        age:
+          - *server_eternia
+          - *server_falcon
+          - *server_sparrow
+  - path_regex: ^hosts/blanka/secrets.yaml$
+    key_groups:
+      - pgp:
+          - *admin_andrew
+        age:
+          - *server_blanka

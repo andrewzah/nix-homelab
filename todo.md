@@ -1,5 +1,13 @@
 ## prio
 
+- notes: determine app
+  - https://notesnook.com/
+    - https://github.com/beardedtek/notesnook-docker
+    - https://github.com/streetwriters/notesnook
+    - https://github.com/streetwriters/notesnook-sync-server
+  - https://github.com/TriliumNext/Trilium
+  - https://github.com/docmost/docmost
+  - https://github.com/outline/outline
 - https://github.com/sissbruecker/linkding
 
 ## when possible
