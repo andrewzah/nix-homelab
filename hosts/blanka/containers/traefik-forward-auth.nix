@@ -4,7 +4,10 @@
   virtualisation.oci-containers.containers.forwardauth = {
     image = "docker.io/mesosphere/traefik-forward-auth:v3.2.1@sha256:7b0159e59f7b4d2ffd484371fb44f0502434991e2b8070c85460b319a8bfc035";
     hostname = "forwardauth";
-    autoStart = false;
+    autoStart = true;
+    environment = {
+      "LOG_LEVEL" = "trace";
+    };
     environmentFiles = [config.sops.secrets."traefik-forward-auth/env".path];
     ports = ["4181"];
     extraOptions = [
