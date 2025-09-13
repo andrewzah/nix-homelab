@@ -14,6 +14,7 @@
 
     ./containers/mc-proxy.nix
     ./containers/mc-survival.nix
+    ./containers/whoami.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];

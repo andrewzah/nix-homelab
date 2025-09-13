@@ -24,7 +24,7 @@
       ## generic resolver
       "--certificatesresolvers.generic.acme.tlschallenge=true"
       "--certificatesresolvers.generic.acme.email=admin@andrewzah.com"
-      #"--certificatesresolvers.generic.acme.storage=/letsencrypt/acme.json"
+      "--certificatesresolvers.generic.acme.storage=/letsencrypt/acme.json"
       "--certificatesResolvers.generic.acme.caServer=https://acme-staging-v02.api.letsencrypt.org/directory"
 
       ## cloudflare resolver
