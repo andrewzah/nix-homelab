@@ -14,7 +14,7 @@ creation_rules:
           - *server_eternia
           - *server_falcon
           - *server_sparrow
-  - path_regex: ^hosts/blanka/secrets.yaml$
+  - path_regex: hosts/blanka/secrets.yaml$
     key_groups:
       - pgp:
           - *admin_andrew
