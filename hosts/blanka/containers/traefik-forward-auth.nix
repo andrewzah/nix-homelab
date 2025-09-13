@@ -14,6 +14,7 @@
       "--net=external"
       "--net=internal"
     ];
+    dependsOn = ["traefik"];
     labels = {
       "traefik.enable" = "true";
       "traefik.http.routers.forwardauth.entrypoints" = "websecure";
