@@ -15,7 +15,7 @@
       "traefik.enable" = "true";
       "traefik.http.routers.forwardauth.entrypoints" = "websecure";
       "traefik.http.routers.forwardauth.rule" = "Path(`/_oauth`)";
-      "traefik.http.routers.forwardauth.middlewares" = "traefik-forward-auth";
+      "traefik.http.routers.forwardauth.middlewares" = "forwardauth";
       "traefik.http.middlewares.forwardauth.forwardauth.address" = "http://forwardauth:4181";
       "traefik.http.middlewares.forwardauth.forwardauth.authResponseHeaders" = "X-Forwarded-User";
       "traefik.http.middlewares.forwardauth.forwardauth.trustForwardHeader" = "true";
