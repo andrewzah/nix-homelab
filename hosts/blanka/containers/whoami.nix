@@ -12,6 +12,7 @@
       "traefik.http.routers.whoami.tls.certresolver" = "generic";
       "traefik.http.routers.whoami.service" = "whoami";
       "traefik.http.services.whoami.loadbalancer.server.port" = "8080";
+      "traefik.http.routers.whoami.middlewares" = "forwardauth";
     };
   };
 }
