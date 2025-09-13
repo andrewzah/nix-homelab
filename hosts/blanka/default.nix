@@ -9,6 +9,9 @@
     ./services.nix
     ./virtualisation.nix
 
+    ./containers/traefik-forward-auth.nix
+    ./containers/traefik.nix
+
     ./containers/mc-proxy.nix
     ./containers/mc-survival.nix
   ];
