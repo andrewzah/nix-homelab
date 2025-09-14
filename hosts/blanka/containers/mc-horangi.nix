@@ -90,12 +90,12 @@
       TZ = "America/New_York";
       MODRINTH_ALLOWED_VERSION_TYPE = "release";
       ENFORCE_SECURE_PROFILE = "false"; # chat signing off
-      WHITELIST_FILE = "/data/whitelist.json";
-      ENFORCE_WHITELIST = "true";
-      EXISTING_WHITELIST_FILE = "SYNC_FILE_MERGE_LIST";
-      OPS_FILE = "/data/ops.json";
-      OVERRIDE_OPS = "TRUE";
-      EXISTING_OPS_FILE = "SYNC_FILE_MERGE_LIST";
+      #WHITELIST_FILE = "/data/whitelist.json";
+      #ENFORCE_WHITELIST = "true";
+      ##EXISTING_WHITELIST_FILE = "SYNC_FILE_MERGE_LIST";
+      #OPS_FILE = "/data/ops.json";
+      #OVERRIDE_OPS = "TRUE";
+      #EXISTING_OPS_FILE = "SYNC_FILE_MERGE_LIST";
       MODS = "/mods";
       EULA = "TRUE";
     };
