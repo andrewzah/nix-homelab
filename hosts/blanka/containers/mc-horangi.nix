@@ -88,11 +88,19 @@
                           "height": 1
                       },
                       {
-                          "block": "minecraft:stone",
-                          "height": 7
+                          "block": "minecraft:stone_bricks",
+                          "height": 1
                       },
                       {
-                          "block": "minecraft:carpet:13",
+                          "block": "minecraft:air",
+                          "height": 10
+                      },
+                      {
+                          "block": "minecraft:grass",
+                          "height": 1
+                      },
+                      {
+                          "block": "minecraft:white_wool",
                           "height": 1
                       }
                   ],
