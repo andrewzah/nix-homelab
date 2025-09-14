@@ -79,6 +79,26 @@
       USE_AIKAR_FLAGS = "FALSE";
       MODE = "creative";
       LEVEL = "horangi-creative";
+      LEVEL_TYPE = "FLAT";
+      GENERATOR_SETTINGS = ''
+        {
+                  "layers": [
+                      {
+                          "block": "minecraft:bedrock",
+                          "height": 1
+                      },
+                      {
+                          "block": "minecraft:stone",
+                          "height": 9
+                      },
+                      {
+                          "block": "minecraft:grass",
+                          "height": 2
+                      }
+                  ],
+                  "biome": "minecraft:plains"
+              }
+      '';
       SERVER_NAME = "horangi-creative";
       SPAWN_PROTECTION = "0";
       ONLINE_MODE = "false";
