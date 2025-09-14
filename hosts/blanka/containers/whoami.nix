@@ -9,7 +9,7 @@
       "traefik.enable" = "true";
       "traefik.http.routers.whoami.rule" = "Host(`whoami.abare.party`)";
       "traefik.http.routers.whoami.entrypoints" = "websecure";
-      "traefik.http.routers.whoami.tls.certresolver" = "generic";
+      "traefik.http.routers.whoami.tls.certresolver" = "porkbun";
       "traefik.http.routers.whoami.service" = "whoami";
       "traefik.http.services.whoami.loadbalancer.server.port" = "8080";
       "traefik.http.routers.whoami.middlewares" = "forwardauth";

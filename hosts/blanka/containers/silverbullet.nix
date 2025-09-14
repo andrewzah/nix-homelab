@@ -19,7 +19,7 @@
       "traefik.enable" = "true";
       "traefik.http.routers.silverbullet.rule" = "Host(`silverbullet.abare.party`)";
       "traefik.http.routers.silverbullet.entrypoints" = "websecure";
-      "traefik.http.routers.silverbullet.tls.certresolver" = "generic";
+      "traefik.http.routers.silverbullet.tls.certresolver" = "bullet";
       "traefik.http.routers.silverbullet.service" = "silverbullet";
       "traefik.http.services.silverbullet.loadbalancer.server.port" = "3000";
       "traefik.http.routers.silverbullet.middlewares" = "forwardauth";
