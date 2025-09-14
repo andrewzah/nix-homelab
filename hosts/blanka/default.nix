@@ -49,8 +49,8 @@
   ];
 
   networking.firewall.enable = true;
-  networking.firewall.allowedTCPPorts = [22];
-  networking.firewall.allowedUDPPorts = [22];
+  networking.firewall.allowedTCPPorts = [22 80 443];
+  networking.firewall.allowedUDPPorts = [22 80 443];
 
   system.stateVersion = "25.05"; # Did you read the comment?
 }
