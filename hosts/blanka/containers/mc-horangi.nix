@@ -79,26 +79,26 @@
       USE_AIKAR_FLAGS = "FALSE";
       MODE = "creative";
       LEVEL = "horangi-creative";
-      LEVEL_TYPE = "flat -e 'GENERATOR_SETTINGS=3;1*minecraft:bedrock,10*minecraft:stone,1*minecraft:carpet:13;1;lake'";
-      #GENERATOR_SETTINGS = ''
-      #  {
-      #            "layers": [
-      #                {
-      #                    "block": "minecraft:bedrock",
-      #                    "height": 1
-      #                },
-      #                {
-      #                    "block": "minecraft:stone",
-      #                    "height": 9
-      #                },
-      #                {
-      #                    "block": "minecraft:grass",
-      #                    "height": 2
-      #                }
-      #            ],
-      #            "biome": "minecraft:plains"
-      #        }
-      #'';
+      LEVEL_TYPE = "flat";
+      GENERATOR_SETTINGS = ''
+        {
+                  "layers": [
+                      {
+                          "block": "minecraft:bedrock",
+                          "height": 1
+                      },
+                      {
+                          "block": "minecraft:stone",
+                          "height": 7
+                      },
+                      {
+                          "block": "minecraft:carpet:13",
+                          "height": 1
+                      }
+                  ],
+                  "biome": "minecraft:plains"
+              }
+      '';
       SERVER_NAME = "horangi-creative";
       SPAWN_PROTECTION = "0";
       ONLINE_MODE = "false";
