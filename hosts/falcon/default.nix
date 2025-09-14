@@ -57,7 +57,7 @@
 
   users.users.dragon = {
     isNormalUser = true;
-    extraGroups = ["wheel"];
+    extraGroups = ["wheel" "docker"];
     packages = [];
   };
 
