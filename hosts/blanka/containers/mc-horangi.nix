@@ -102,6 +102,7 @@
     environmentFiles = [config.sops.secrets."mc-creative/env".path];
     dependsOn = ["mc-proxy"];
     ports = ["25565" "25957:25957"];
+    extraOptions = ["--net=internal"];
     volumes = [
       "/blanka/horangi-minecraft/mc-creative/mods/:/mods/:rw"
       "/blanka/horangi-minecraft/mc-creative/data/:/data/:rw"
