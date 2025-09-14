@@ -12,7 +12,7 @@
     ./containers/traefik-forward-auth.nix
     ./containers/traefik.nix
 
-    ./containers/mc-horgangi.nix
+    ./containers/mc-horangi.nix
     ./containers/whoami.nix
     ./containers/silverbullet.nix
   ];
