@@ -33,8 +33,9 @@
       TZ = "Asia/Seoul";
       EULA = "TRUE";
     };
-    ports = ["25565"];
+    ports = ["25565" "8100"];
     extraOptions = [
+      "--net=external"
       "--net=internal"
     ];
     volumes = [
