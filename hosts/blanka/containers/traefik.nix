@@ -30,6 +30,14 @@
       "--certificatesresolvers.generic.acme.storage=/letsencrypt/acme.json"
       "--certificatesResolvers.generic.acme.caServer=https://acme-staging-v02.api.letsencrypt.org/directory"
 
+      ## porkbun resolver
+      "--certificatesresolvers.porkbun.acme.storage=/letsencrypt/cloudflare-acme.json"
+      "--certificatesresolvers.porkbun.acme.email=admin@andrewzah.com"
+      "--certificatesresolvers.porkbun.acme.dnschallenge=true"
+      "--certificatesresolvers.porkbun.acme.dnsChallenge.provider=cloudflare"
+      "--certificatesresolvers.porkbun.acme.dnsChallenge.delayBeforeCheck=0"
+      "--certificatesresolvers.porkbun.acme.dnsChallenge.resolvers=1.1.1.1:53"
+
       ## cloudflare resolver
       "--certificatesresolvers.cloudflare.acme.storage=/letsencrypt/cloudflare-acme.json"
       "--certificatesresolvers.cloudflare.acme.email=admin@andrewzah.com"
