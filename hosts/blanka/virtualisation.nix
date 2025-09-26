@@ -18,6 +18,7 @@
     wantedBy = [
       "docker-mc-proxy.service"
       "docker-mc-survival.service"
+      "docker-home-gallery.service"
     ];
 
     serviceConfig = {
@@ -28,6 +29,7 @@
     script = ''
       ${pkgs.docker}/bin/docker network inspect internal || ${pkgs.docker}/bin/docker network create internal
       ${pkgs.docker}/bin/docker network inspect external || ${pkgs.docker}/bin/docker network create external
+      ${pkgs.docker}/bin/docker network inspect home-gallery || ${pkgs.docker}/bin/docker network create home-gallery
     '';
   };
 }
