@@ -16,8 +16,8 @@
     image = "docker.io/xemle/home-gallery:c2b5674a@sha256:74be27e2f8e631a3f17a3a447d3c18acbaad3beee82e261e44d4c4faeb7cfd3a";
     environment = {
       GALLERY_API_SERVER = "http://home-gallery-api:3000";
-      GALLERY_API_SERVER_CONCURRENT = 5;
-      GALLERY_API_SERVER_TIMEOUT = 30;
+      GALLERY_API_SERVER_CONCURRENT = "5";
+      GALLERY_API_SERVER_TIMEOUT = "30";
     };
     ports = ["32655:3000" "3000"];
     cmd = ["run" "server"];
