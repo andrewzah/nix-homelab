@@ -14,7 +14,7 @@
 
     ./containers/mc-horangi.nix
     ./containers/whoami.nix
-    ./containers/silverbullet.nix
+    ./containers/home-gallery.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -42,9 +42,9 @@
   };
 
   environment.systemPackages = [
-    pkgs.vim
     pkgs.git
     pkgs.tmux
+    pkgs.vim
   ];
 
   networking.firewall.enable = true;
