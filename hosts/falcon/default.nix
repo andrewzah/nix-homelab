@@ -30,7 +30,7 @@
 
     ## websites
     ./containers/club-nixseoul.nix
-    ./containers/com-andrewzah.nix
+    ./containers/com-andrewzah-blog.nix
     ./containers/org-scfgc.nix
 
     ## idp/sso
