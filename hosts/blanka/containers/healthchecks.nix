@@ -15,7 +15,7 @@
       "traefik.enable" = "true";
       "traefik.http.routers.healthchecks.rule" = "Host(`healthchecks.abare.party`)";
       "traefik.http.routers.healthchecks.entrypoints" = "websecure";
-      "traefik.http.routers.healthchecks.tls.certresolver" = "generic";
+      "traefik.http.routers.healthchecks.tls.certresolver" = "porkbun";
       "traefik.http.routers.healthchecks.service" = "healthchecks";
       "traefik.http.services.healthchecks.loadbalancer.server.port" = "8000";
     };
