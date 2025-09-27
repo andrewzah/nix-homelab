@@ -10,7 +10,7 @@
     dependsOn = ["traefik"];
     extraOptions = ["--net=external"];
     environmentFiles = [config.sops.secrets."healthchecks/env".path];
-    volumes = ["/blanka/healthchecks/data/:/space/:rw"];
+    volumes = ["/blanka/healthchecks/data/:/data/:rw"];
     labels = {
       "traefik.enable" = "true";
       "traefik.http.routers.healthchecks.rule" = "Host(`healthchecks.abare.party`)";
