@@ -18,7 +18,6 @@
       "traefik.http.routers.healthchecks.tls.certresolver" = "generic";
       "traefik.http.routers.healthchecks.service" = "healthchecks";
       "traefik.http.services.healthchecks.loadbalancer.server.port" = "3000";
-      "traefik.http.routers.healthchecks.middlewares" = "forwardauth";
     };
   };
 }
