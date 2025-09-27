@@ -12,9 +12,10 @@
     ./containers/traefik-forward-auth.nix
     ./containers/traefik.nix
 
+    ./containers/healthchecks.nix
+    ./containers/home-gallery.nix
     ./containers/mc-horangi.nix
     ./containers/whoami.nix
-    ./containers/home-gallery.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
