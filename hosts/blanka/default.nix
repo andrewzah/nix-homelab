@@ -12,6 +12,7 @@
     ./containers/traefik-forward-auth.nix
     ./containers/traefik.nix
 
+    ./containers/attic.nix
     ./containers/healthchecks.nix
     ./containers/home-gallery.nix
     ./containers/linkding.nix

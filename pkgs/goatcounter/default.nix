@@ -1,5 +1,12 @@
-{pkgs, lib, buildGoModule, fetchFromGitHub, dockerTools, writeShellScript, ...}:
-rec {
+{
+  pkgs,
+  lib,
+  buildGoModule,
+  fetchFromGitHub,
+  dockerTools,
+  writeShellScript,
+  ...
+}: rec {
   goatcounter = buildGoModule rec {
     pname = "goatcounter";
     version = "c059188a3";
@@ -12,7 +19,7 @@ rec {
     };
 
     vendorHash = "sha256-8W/xQ8jkNjjmaAvdoY/66HCW7dA+pFC4MVc17J/3B5o=";
-    subPackages = [ "cmd/goatcounter" ];
+    subPackages = ["cmd/goatcounter"];
     modroot = ".";
 
     allowReference = true;
@@ -42,13 +49,14 @@ rec {
         -smtp="''${GOATCOUNTER_SMTP}" \
         -automigrate
     '';
-  in dockerTools.buildImage {
-    name = "docker.io/andrewzah/goatcounter";
-    tag = "${goatcounter.version}";
+  in
+    dockerTools.buildImage {
+      name = "docker.io/andrewzah/goatcounter";
+      tag = "${goatcounter.version}";
 
-    config = {
-      entrypoint = [ "${entrypoint}" ];
-      exposedPorts = { "3443" = {}; };
+      config = {
+        entrypoint = ["${entrypoint}"];
+        exposedPorts = {"3443" = {};};
+      };
     };
-  };
 }
