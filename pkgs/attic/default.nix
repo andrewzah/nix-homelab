@@ -67,6 +67,7 @@ in rec {
   container = dockerTools.buildImage {
     name = "docker.io/andrewzah/attic";
     tag = "${attic-server'.version}";
+
     copyToRoot = pkgs.buildEnv {
       name = "pkgs-attic-container";
       paths = [attic-client' attic-server'];
