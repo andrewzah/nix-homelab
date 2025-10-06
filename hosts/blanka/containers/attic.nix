@@ -1,5 +1,6 @@
 {config, ...}: {
   sops.secrets."attic/env" = {};
+  sops.secrets."attic/config" = {};
 
   virtualisation.oci-containers.containers.attic = {
     autoStart = false;
