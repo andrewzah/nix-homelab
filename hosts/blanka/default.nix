@@ -14,6 +14,7 @@
 
     ./containers/healthchecks.nix
     ./containers/home-gallery.nix
+    ./containers/linkding.nix
     ./containers/mc-horangi.nix
     ./containers/whoami.nix
   ];

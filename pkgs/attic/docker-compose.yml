@@ -1,0 +1,10 @@
+---
+services:
+  attic:
+    image: docker.io/andrewzah/attic:2025-07-17
+    volumes:
+      - "./config/server.toml:/var/attic/server.toml"
+      - "./config/token:/var/attic/init-token"
+      - "./x-data/:/data/:rw"
+    ports:
+      - "8082:8080"

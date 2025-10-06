@@ -1,11 +1,14 @@
 ## prio
 
+- https://github.com/sissbruecker/linkding
+- matrix: conduit / continuwuity
+- jails? https://git.sr.ht/~alexdavid/jail.nix
+- syncthing: https://pastebin.com/FrSgKRYm
 - automate openldap?
 - forgejo / codeberg code host - CI builds?
 
 - https://github.com/docmost/docmost
 - https://github.com/outline/outline
-- https://github.com/sissbruecker/linkding
 
 ## when possible
 
