@@ -10,7 +10,7 @@
     extraOptions = ["--net=external"];
     labels = {
       "traefik.enable" = "true";
-      "traefik.http.routers.matrix-conduit.rule" = "Host(`matrix-conduit.abare.party`)";
+      "traefik.http.routers.matrix-conduit.rule" = "Host(`matrix.abare.party`)";
       "traefik.http.routers.matrix-conduit.entrypoints" = "websecure";
       "traefik.http.routers.matrix-conduit.tls.certresolver" = "porkbun";
     };
