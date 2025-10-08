@@ -1,7 +1,7 @@
 {config, ...}: {
   sops.secrets."knot/env" = {};
 
-  virtualisation.oci-containers.containers.atuin = {
+  virtualisation.oci-containers.containers.knot = {
     autoStart = false;
     image = "docker.io/andrewzah/knot:0.1.0@sha256:644ba631b926c1e649e76a937c608c7e914e5965fae473312c7603022e9f58a5";
     ports = ["22" "5555"];
