@@ -16,7 +16,7 @@
     ./containers/healthchecks.nix
     ./containers/home-gallery.nix
     ./containers/linkding.nix
-    ./containers/matrix-conduit.nix.nix
+    ./containers/matrix-conduit.nix
     ./containers/mc-horangi.nix
     ./containers/whoami.nix
   ];
