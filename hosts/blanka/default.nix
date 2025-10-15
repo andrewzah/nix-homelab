@@ -19,6 +19,7 @@
     ./containers/matrix-conduit.nix
     ./containers/mc-horangi.nix
     ./containers/whoami.nix
+    ./containers/vaultwarden.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];

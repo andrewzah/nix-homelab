@@ -1,7 +1,8 @@
 ## prio
 
-- https://github.com/sissbruecker/linkding
-- matrix: conduit / continuwuity
+- migrate / cluster vaultwarden to KR servers
+- look into colmena/clan.lol
+- https://github.com/mautrix/telegram
 - jails? https://git.sr.ht/~alexdavid/jail.nix
 - syncthing: https://pastebin.com/FrSgKRYm
 - automate openldap?
