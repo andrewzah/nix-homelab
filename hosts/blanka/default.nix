@@ -18,8 +18,9 @@
     ./containers/linkding.nix
     ./containers/matrix-conduit.nix
     ./containers/mc-horangi.nix
-    ./containers/whoami.nix
+    ./containers/postgres.nix
     ./containers/vaultwarden.nix
+    ./containers/whoami.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
