@@ -2,8 +2,8 @@
   sops.secrets."vaultwarden/env" = {};
 
   virtualisation.oci-containers.containers.vaultwarden = {
-    autoStart = false;
-    image = "docker.io/vaultwarden/server:sha256-3afff94efefc5a4bb89af2fb86f3ac27dff197089e8749ef3c903ed781debd78@sha256:fa5a37f290bc735dfbfe56be09f4ec5f47eb4f5cfbe3b4cb62753af6bee945bd";
+    autoStart = true;
+    image = "docker.io/vaultwarden/server:1.34.3@sha256:84fd8a47f58d79a1ad824c27be0a9492750c0fa5216b35c749863093bfa3c3d7";
     ports = ["4080" "3012"];
     environment = {
       DOMAIN = "http://blanka:4080";
