@@ -4,7 +4,7 @@
   virtualisation.oci-containers.containers.vaultwarden = {
     autoStart = true;
     image = "docker.io/vaultwarden/server:1.34.3@sha256:84fd8a47f58d79a1ad824c27be0a9492750c0fa5216b35c749863093bfa3c3d7";
-    ports = ["4080" "3012"];
+    ports = ["4080:80" "3012:3012"];
     environment = {
       DOMAIN = "http://blanka:4080";
       WEBSOCKET_ENABLED = "true";
