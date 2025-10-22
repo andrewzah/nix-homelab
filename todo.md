@@ -1,5 +1,10 @@
-## prio
+## 
 
+- discord alternatives:
+  - https://github.com/stoatchat/
+- fix minecraft server sleeping:
+  - https://github.com/joesturge/lazymc-docker-proxy?tab=readme-ov-file
+  - https://docker-minecraft-server.readthedocs.io/en/latest/misc/examples/#lazymc-put-your-minecraft-server-to-rest-when-idle
 - migrate / cluster vaultwarden to KR servers
 - look into colmena/clan.lol
 - https://github.com/mautrix/telegram
