@@ -1,0 +1,32 @@
+{pkgs, ...}: {
+  virtualisation = {
+    docker.rootless.enable = true;
+    docker.autoPrune.enable = true;
+    containerd.enable = true;
+
+    oci-containers.backend = "docker"; # defaults to podman
+  };
+
+  environment.sessionVariables = {
+    DOCKER_HOST = "unix:///run/docker.sock"; # fix for rootless docker
+  };
+
+  systemd.services.create-docker-networks = {
+    description = "Create docker networks manually";
+    after = ["docker.service"];
+    wants = ["docker.service"];
+    #wantedBy = [];
+
+    serviceConfig = {
+      Type = "oneshot";
+      RemainAfterExit = true;
+    };
+
+    script = let
+      docker_bin = "${pkgs.docker}/bin/docker";
+    in ''
+      ${docker_bin} network create internal || 0
+      ${docker_bin} network create external || 0
+    '';
+  };
+}

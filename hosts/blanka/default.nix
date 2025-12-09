@@ -1,7 +1,7 @@
 {
-  config,
-  lib,
   pkgs,
+  lib,
+  config,
   ...
 }: {
   imports = [
@@ -19,6 +19,7 @@
     ./containers/matrix-conduit.nix
     ./containers/mc-horangi.nix
     ./containers/postgres.nix
+    ./containers/tailscale.nix
     ./containers/vaultwarden.nix
     ./containers/whoami.nix
   ];

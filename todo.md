@@ -1,7 +1,17 @@
-## 
+## current prio!
 
-- discord alternatives:
-  - https://github.com/stoatchat/
+- get hedgedoc data off of server
+- rss reader
+- sync phone contacts w/ caldav (baikal?)
+
+## general
+
+- pdf tools: bentopdf instead of sterlingpdf
+- monitoring:
+  - https://beszel.dev/
+- collaborative docs:
+  - https://github.com/suitenumerique/docs
+- https://github.com/defnull/fediwall
 - fix minecraft server sleeping:
   - https://github.com/joesturge/lazymc-docker-proxy?tab=readme-ov-file
   - https://docker-minecraft-server.readthedocs.io/en/latest/misc/examples/#lazymc-put-your-minecraft-server-to-rest-when-idle

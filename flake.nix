@@ -11,6 +11,7 @@
     pkgs = import nixpkgs {
       inherit system;
     };
+    inherit (nixpkgs.lib) nixosSystem;
   in {
     devShells."${system}".default = pkgs.mkShellNoCC {
       packages = with pkgs; [
@@ -22,7 +23,7 @@
 
     nixosConfigurations = {
       # dev machine; currently WNDWKR02 SFF
-      sparrow = nixpkgs.lib.nixosSystem {
+      sparrow = nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs;};
         modules = [
@@ -32,7 +33,7 @@
       };
 
       # framework
-      eternia = nixpkgs.lib.nixosSystem {
+      eternia = nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs;};
         modules = [
@@ -42,7 +43,7 @@
       };
 
       # da server
-      falcon = nixpkgs.lib.nixosSystem {
+      falcon = nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs;};
         modules = [
@@ -51,8 +52,18 @@
         ];
       };
 
+      # dad server
+      nappa = nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./hosts/nappa/default.nix
+          sops-nix.nixosModules.sops
+        ];
+      };
+
       # da server
-      blanka = nixpkgs.lib.nixosSystem {
+      blanka = nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs;};
         modules = [

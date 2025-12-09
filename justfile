@@ -7,6 +7,9 @@ sparrow:
 falcon:
   nixos-rebuild switch --flake .#falcon --target-host falcon --build-host falcon
 
+blanka:
+  nixos-rebuild switch --flake .#blanka --target-host blanka --build-host blanka
+
 updatekeys:
   sops updatekeys secrets.yaml
 
