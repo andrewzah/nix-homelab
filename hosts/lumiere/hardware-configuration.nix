@@ -9,7 +9,18 @@
   ];
 
   boot = {
-    initrd.availableKernelModules = ["nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod"];
+    kernelModules = ["i915" "kvm-amd"];
+    extraModulePackages = [];
+
+    initrd.availableKernelModules = [
+      "nvme"
+      "xhci_pci"
+      "ahci"
+      "usb_storage"
+      "usbhid"
+      "sd_mod"
+      "igb"
+    ];
     initrd.kernelModules = [];
     initrd.network = {
       enable = true;
@@ -24,9 +35,6 @@
         ];
       };
     };
-
-    kernelModules = ["kvm-amd"];
-    extraModulePackages = [];
 
     zfs.extraPools = ["zpool"];
     zfs.devNodes = "/dev/disk/by-id";
@@ -66,6 +74,12 @@
 
   fileSystems."/lumiere/media" = {
     device = "zpool/media";
+    fsType = "zfs";
+    options = ["zfsutil"];
+  };
+
+  fileSystems."/lumiere/data" = {
+    device = "zpool/data";
     fsType = "zfs";
     options = ["zfsutil"];
   };
