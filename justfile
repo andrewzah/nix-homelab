@@ -18,4 +18,4 @@ tree:
 
 push:
   git push gh master
-  git push origin master
+  #git push origin master
