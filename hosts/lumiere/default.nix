@@ -2,7 +2,7 @@
   imports = [
     ./hardware-configuration.nix
     ./services.nix
-    ./virtualisation.nix.nix
+    ./irtualisation.nix
 
     ./containers/traefik.nix
     ./containers/jellyfin.nix
