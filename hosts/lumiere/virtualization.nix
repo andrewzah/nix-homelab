@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   virtualisation = {
     docker.rootless.enable = true;
-    docker.enableNvidia = true;
     docker.autoPrune.enable = true;
     containerd.enable = true;
 
