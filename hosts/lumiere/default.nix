@@ -32,7 +32,7 @@
 
   users.users."zah" = {
     isNormalUser = true;
-    extraGroups = ["wheel"];
+    extraGroups = ["wheel" "docker"];
     packages = with pkgs; [
       tree
       neovim
