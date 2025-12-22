@@ -2,7 +2,9 @@
   imports = [
     ./hardware-configuration.nix
     ./services.nix
-    ./virtualisation.nix
+    ./virtualization.nix
+    ./nvidia.nix
+    ./unfree.nix
 
     ./containers/traefik.nix
     ./containers/jellyfin.nix

@@ -33,7 +33,4 @@
         || ${pkgs.docker}/bin/docker network create external
     '';
   };
-
-  hardware.nvidia-container-toolkit.enable = true;
-  services.xserver.videoDrivers = ["nvidia"];
 }
