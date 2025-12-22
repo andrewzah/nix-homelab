@@ -42,12 +42,12 @@
         ];
       };
 
-      # da server
-      falcon = nixosSystem {
+      # ben server
+      lumiere = nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs;};
         modules = [
-          ./hosts/falcon/default.nix
+          ./hosts/lumiere/default.nix
           sops-nix.nixosModules.sops
         ];
       };

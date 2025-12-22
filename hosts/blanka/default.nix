@@ -38,7 +38,6 @@
   networking.hostId = "5e7b30ea";
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
   time.timeZone = "Asia/Seoul";
   i18n.defaultLocale = "en_US.UTF-8";
 

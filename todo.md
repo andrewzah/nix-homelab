@@ -6,6 +6,8 @@
 
 ## general
 
+- distributed file hosting:
+  https://github.com/deuxfleurs-org/garage?ref=selfh.st
 - pdf tools: bentopdf instead of sterlingpdf
 - monitoring:
   - https://beszel.dev/
