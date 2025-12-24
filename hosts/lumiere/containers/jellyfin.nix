@@ -2,7 +2,7 @@
   sops.secrets."jellyfin/env" = {};
 
   virtualisation.oci-containers.containers.jellyfin = {
-    autoStart = false;
+    autoStart = true;
     image = "docker.io/linuxserver/jellyfin:10.11.5@sha256:ed5dc797d12089271e0e61a740cbf9626c4e513400ca2d96c54d35500eeb907c";
     ports = [
       "8096/tcp"
