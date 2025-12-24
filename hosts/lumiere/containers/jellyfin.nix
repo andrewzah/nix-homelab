@@ -33,7 +33,7 @@
       "traefik.enable" = "true";
       "traefik.http.routers.jellyfin.rule" = "Host(`jellyfin.lumiere.wtf`)";
       "traefik.http.routers.jellyfin.entrypoints" = "websecure";
-      "traefik.http.routers.jellyfin.tls.certresolver" = "generic";
+      "traefik.http.routers.jellyfin.tls.certresolver" = "porkbun";
       "traefik.http.routers.jellyfin.service" = "jellyfin";
       "traefik.http.services.jellyfin.loadbalancer.server.port" = "8096";
     };
