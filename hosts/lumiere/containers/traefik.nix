@@ -46,7 +46,7 @@
     ];
 
     ports = [
-      "80" # http
+      "80:80" # http
       "443:443" # https
       "2223:2223" # ssh alternate port
       "8080:8080" # dashboard
