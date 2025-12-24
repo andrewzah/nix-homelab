@@ -3,10 +3,13 @@
 
   virtualisation.oci-containers.containers.jellyfin = {
     autoStart = false;
-    image = "docker.io/jellyfin/jellyfin:2025121505@sha256:81721f1a09eab9e459eaea1c080b53308eb464c7c0d4b135a616561f8c4b6c23";
+    image = "docker.io/linuxserver/jellyfin:10.11.5@sha256:ed5dc797d12089271e0e61a740cbf9626c4e513400ca2d96c54d35500eeb907c";
     ports = [
       "8096/tcp"
       "7359:7359/udp"
+    ];
+    devices = [
+      "/dev/dri:/dev/dri"
     ];
     environment = {
       TZ = "America/New_York";
@@ -25,11 +28,7 @@
       "/lumiere/data/docker/jellyfin/cache/:/cache/:rw"
     ];
     dependsOn = ["traefik"];
-    extraOptions = [
-      "--runtime=nvidia"
-      "--gpus=all"
-      "--net=external"
-    ];
+    extraOptions = ["--net=external"];
     labels = {
       "traefik.enable" = "true";
       "traefik.http.routers.jellyfin.rule" = "Host(`jellyfin.lumiere.wtf`)";
