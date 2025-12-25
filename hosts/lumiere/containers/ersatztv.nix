@@ -1,7 +1,7 @@
 {config, ...}: {
   #sops.secrets."ersat/env" = {};
 
-  virtualisation.oci-containers.containers.jellyfin = {
+  virtualisation.oci-containers.containers.ersatztv = {
     autoStart = false;
     image = "ghcr.io/ersatztv/ersatztv:2f0cd1eb6c2bf1207678e1d1967fe2432c80a740@sha256:edda3746b6794cbd44c9523dc2de49919b798862280c8c5ad9946df51b2373c9";
     ports = [
