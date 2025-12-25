@@ -8,6 +8,7 @@
 
     ./containers/traefik.nix
     ./containers/jellyfin.nix
+    ./containers/ersatztv.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];

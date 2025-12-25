@@ -1,6 +1,7 @@
 ## current prio!
 
-- get hedgedoc data off of server
+- ersatz tv
+- https://otterwiki.com/Configuration
 - rss reader
 - sync phone contacts w/ caldav (baikal?)
 
