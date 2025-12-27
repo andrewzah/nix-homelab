@@ -7,7 +7,7 @@
     ./unfree.nix
 
     #./containers/pocketid.nix
-    ./containers/zitadel.nix
+    ./containers/keycloak.nix
 
     ./containers/arr.nix
     ./containers/atuin.nix
