@@ -55,6 +55,7 @@
     extraOptions = [
       "--net=external"
       "--net=internal"
+      "--network-alias=idp.zah.rocks"
     ];
     labels = {
       "traefik.enable" = "true";
