@@ -6,6 +6,9 @@
     ./nvidia.nix
     ./unfree.nix
 
+    #./containers/pocketid.nix
+    ./containers/zitadel.nix
+
     ./containers/arr.nix
     ./containers/atuin.nix
     ./containers/ersatztv.nix
@@ -13,7 +16,6 @@
     ./containers/grafana.nix
     ./containers/jellyfin.nix
     ./containers/mealie.nix
-    ./containers/pocketid.nix
     ./containers/postgres.nix
     ./containers/prometheus.nix
     ./containers/scrutiny.nix
