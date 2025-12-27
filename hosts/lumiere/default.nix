@@ -16,6 +16,7 @@
     ./containers/postgres.nix
     ./containers/prometheus.nix
     ./containers/scrutiny.nix
+    ./containers/static-sites.nix
     ./containers/traefik.nix
   ];
 
