@@ -7,8 +7,6 @@
     ports = ["1411"];
     environment = {
       TZ = "America/New_York";
-      ETV_UI_PORT = "8409";
-      ETV_STREAMING_PORT = "8410";
     };
     environmentFiles = [config.sops.secrets."pocketid/env".path];
     volumes = ["/lumiere/data/docker/pocketid/data/:/app/data/:rw"];
