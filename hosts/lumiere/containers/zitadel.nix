@@ -30,7 +30,7 @@
       "traefik.http.routers.zitadel.entrypoints" = "websecure";
       "traefik.http.routers.zitadel.tls.certresolver" = "porkbun";
       "traefik.http.routers.zitadel.service" = "zitadel";
-      "traefik.http.services.zitadel.loadbalancer.server.port" = "8080";
+      "traefik.http.services.zitadel.loadbalancer.server.port" = "3000";
     };
   };
 }
