@@ -15,9 +15,7 @@
       TZ = "America/New_York";
       PUID = "1000";
       PGID = "1000";
-
       JELLYFIN_PublishedServerUrl = "https://jellyfin.lumiere.wtf";
-
       NVIDIA_VISIBLE_DEVICES = "all";
       NVIDIA_DRIVER_CAPABILITIES = "all";
     };

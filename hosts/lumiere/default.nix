@@ -6,9 +6,11 @@
     ./nvidia.nix
     ./unfree.nix
 
-    ./containers/traefik.nix
-    ./containers/jellyfin.nix
+    ./containers/arr.nix
     ./containers/ersatztv.nix
+    ./containers/gluetun.nix.nix
+    ./containers/jellyfin.nix
+    ./containers/traefik.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];

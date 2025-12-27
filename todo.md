@@ -1,9 +1,45 @@
-## current prio!
+## lumiere
 
-- ersatz tv
-- https://otterwiki.com/Configuration
+- vaultwarden
+- linkding
+- ! OIDC: keycloak alternative,
+  https://github.com/pocket-id/pocket-id?tab=readme-ov-file
+- ! HDD analysis: https://github.com/AnalogJ/scrutiny
+  - or: beszel, seems better
+- manga:
+  - kavita: https://github.com/Kareadita/Kavita
+  - or komga: https://komga.org/
+  - downloading: suwayomi
+- ebooks: booklore: https://github.com/booklore-app/booklore
+- ersatz tv + jellyfin integration
+- small wikis: https://otterwiki.com/Configuration
+- recipes: https://docs.mealie.io/
+- atuin: e2ee sync shell history
+- notes:
+  - hedgedoc
+
+## general
+
+- dns: https://technitium.com/dns/
+- monitoring:
+  - healthchecks.io
+  - uptime kuma (or gatus)
+  - https://github.com/dgtlmoon/changedetection.io
+- metrics/dashboard
+  - grafana
+  - prometheus
+  - telegraf / node_exporter
+  - https://github.com/Checkmk/checkmk
+- ntfy/gotify -> pushover
+- https://github.com/louislam/uptime-kuma
 - rss reader
 - sync phone contacts w/ caldav (baikal?)
+- file mgmt: https://github.com/cloudreve/cloudreve
+- paperless-ngx
+- automation: https://github.com/n8n-io/n8n
+- docker registry?
+  - https://hub.docker.com/_/registry
+  - https://github.com/Joxit/docker-registry-ui
 
 ## general
 
