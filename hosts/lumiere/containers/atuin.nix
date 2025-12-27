@@ -13,8 +13,8 @@
     labels = {
       "traefik.enable" = "true";
       "traefik.http.routers.atuin.rule" = "Host(`atuin.lumiere.wtf`)";
-      "traefik.http.routers.atuin.entrypoints" = "porkbun";
-      "traefik.http.routers.atuin.tls.certresolver" = "generic";
+      "traefik.http.routers.atuin.entrypoints" = "websecure";
+      "traefik.http.routers.atuin.tls.certresolver" = "porkbun";
     };
   };
 }
