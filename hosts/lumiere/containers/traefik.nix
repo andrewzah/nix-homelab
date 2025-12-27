@@ -55,7 +55,7 @@
     extraOptions = [
       "--net=external"
       "--net=internal"
-      "--network-alias=idp.zah.rocks"
+      "--network-alias=idp.lumiere.wtf"
     ];
     labels = {
       "traefik.enable" = "true";
