@@ -3,7 +3,7 @@
 
   virtualisation.oci-containers.containers.grafana = {
     autoStart = true;
-    image = "docker.io/library/grafana:v3.8.1@sha256:2b6f734e372c1b4717008f7d0a0152316aedd4d13ae17ef1e3268dbfaf68041b";
+    image = "docker.io/grafana/grafana:12.4.0-20447603318@sha256:890e279baf676d2314832c24d86b32035fb22656b6e6b6d7f3eca1c826abbcb4";
     ports = ["3000"];
     dependsOn = ["postgres" "prometheus"];
     extraOptions = [
