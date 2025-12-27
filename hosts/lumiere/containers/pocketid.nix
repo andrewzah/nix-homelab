@@ -23,8 +23,6 @@
       "traefik.http.routers.pocketid.rule" = "Host(`idp.lumiere.wtf`)";
       "traefik.http.routers.pocketid.entrypoints" = "websecure";
       "traefik.http.routers.pocketid.tls.certresolver" = "porkbun";
-      "traefik.http.routers.pocketid.service" = "pocketid";
-      "traefik.http.services.pocketid.loadbalancer.server.port" = "8409";
     };
   };
 }
