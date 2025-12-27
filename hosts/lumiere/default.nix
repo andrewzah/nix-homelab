@@ -13,6 +13,7 @@
     ./containers/grafana.nix
     ./containers/jellyfin.nix
     ./containers/mealie.nix
+    ./containers/pocketid.nix
     ./containers/postgres.nix
     ./containers/prometheus.nix
     ./containers/scrutiny.nix
