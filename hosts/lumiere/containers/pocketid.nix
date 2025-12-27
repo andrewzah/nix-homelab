@@ -3,11 +3,9 @@
 
   virtualisation.oci-containers.containers.pocketid = {
     autoStart = true;
-    image = "ghcr.io/pocket-id/pocket-id:next-distroless@sha256:4380c78ade4f77c6e352ef5bad641100f01bf4e70c03d2ab2bfa081e8def6997";
+    image = "ghcr.io/pocket-id/pocket-id:v2@sha256:8c9d376c0d7c8118c691d3582b36c4448012b9a0a8a7b2c8161a93eea204e6dd";
     ports = ["1411"];
-    environment = {
-      TZ = "America/New_York";
-    };
+    environment.TZ = "America/New_York";
     environmentFiles = [config.sops.secrets."pocketid/env".path];
     volumes = ["/lumiere/data/docker/pocketid/data/:/app/data/:rw"];
     dependsOn = ["traefik"];
