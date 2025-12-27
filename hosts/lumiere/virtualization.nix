@@ -1,6 +1,9 @@
 {pkgs, ...}: {
   virtualisation = {
     docker.rootless.enable = true;
+    docker.rootless.daemon.settings = {
+      "metrics-addr" = "127.0.0.1:9323";
+    };
     docker.autoPrune.enable = true;
     containerd.enable = true;
 

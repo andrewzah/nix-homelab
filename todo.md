@@ -4,8 +4,6 @@
 - linkding
 - ! OIDC: keycloak alternative,
   https://github.com/pocket-id/pocket-id?tab=readme-ov-file
-- ! HDD analysis: https://github.com/AnalogJ/scrutiny
-  - or: beszel, seems better
 - manga:
   - kavita: https://github.com/Kareadita/Kavita
   - or komga: https://komga.org/

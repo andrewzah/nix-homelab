@@ -7,9 +7,12 @@
     ./unfree.nix
 
     ./containers/arr.nix
+    ./containers/atuin.nix
     ./containers/ersatztv.nix
     ./containers/gluetun.nix
     ./containers/jellyfin.nix
+    ./containers/postgres.nix
+    ./containers/scrutiny.nix
     ./containers/traefik.nix
   ];
 
@@ -48,8 +51,18 @@
     tmux
   ];
 
-  networking.firewall.allowedTCPPorts = [22 2222];
-  networking.firewall.allowedUDPPorts = [22 2222];
+  networking.firewall.allowedTCPPorts = [
+    22
+    2222
+    9000
+    51820
+  ];
+  networking.firewall.allowedUDPPorts = [
+    22
+    2222
+    9000
+    51820
+  ];
 
   system.stateVersion = "25.11";
 }
