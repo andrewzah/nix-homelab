@@ -1,5 +1,6 @@
 {...}: {
   services.openssh.enable = true;
+  services.tailscale.enable = true;
 
   services.prometheus.exporters.node = {
     enable = true;
