@@ -10,6 +10,11 @@
       "8888:8888/tcp"
       "8388:8388/tcp"
       "8388:8388/udp"
+
+      # transmission
+      "9091:9091"
+      "51413:51413"
+      "51413:51413/udp"
     ];
     environment = {
       TZ = "America/New_York";
