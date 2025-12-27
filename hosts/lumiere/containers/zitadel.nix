@@ -5,8 +5,8 @@
     autoStart = false;
     image = "ghcr.io/zitadel/zitadel:v4.7.6@sha256:de025f0e7aa95c5780afa1f9f913f9522a4a21fae7abc8a8912f8002a1dd5d0b";
     ports = [
-      "8080:8080"
-      "3000:3000"
+      "8080"
+      "3000"
     ];
     cmd = ["start-from-init" "--masterkeyFromEnv"];
     environment.TZ = "America/New_York";
