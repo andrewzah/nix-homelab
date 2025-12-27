@@ -8,7 +8,7 @@
 
     ./containers/arr.nix
     ./containers/ersatztv.nix
-    ./containers/gluetun.nix.nix
+    ./containers/gluetun.nix
     ./containers/jellyfin.nix
     ./containers/traefik.nix
   ];
