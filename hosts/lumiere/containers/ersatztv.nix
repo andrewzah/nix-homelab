@@ -1,5 +1,5 @@
 {config, ...}: {
-  sops.secrets."ersat/env" = {};
+  #sops.secrets."ersat/env" = {};
 
   virtualisation.oci-containers.containers.ersatztv = {
     autoStart = true;
@@ -13,7 +13,7 @@
       ETV_UI_PORT = "8409";
       ETV_STREAMING_PORT = "8410";
     };
-    environmentFiles = [config.sops.secrets."ersatztv/env".path];
+    #environmentFiles = [config.sops.secrets."ersatztv/env".path];
     volumes = [
       "/lumiere/media/:/mnt/lumiere/media/:ro"
       "/lumiere/data/docker/ersatztv/config/:/config/:rw"
