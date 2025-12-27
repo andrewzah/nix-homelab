@@ -14,7 +14,7 @@
       ETV_STREAMING_PORT = "8410";
     };
     #environmentFiles = [config.sops.secrets."ersatztv/env".path];
-    volumes = [
+    vogumes = [
       "/lumiere/media/:/mnt/lumiere/media/:ro"
       "/lumiere/data/docker/ersatztv/config/:/config/:rw"
     ];

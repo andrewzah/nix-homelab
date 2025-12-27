@@ -10,8 +10,11 @@
     ./containers/atuin.nix
     ./containers/ersatztv.nix
     ./containers/gluetun.nix
+    ./containers/grafana.nix
     ./containers/jellyfin.nix
+    ./containers/mealie.nix
     ./containers/postgres.nix
+    ./containers/prometheus.nix
     ./containers/scrutiny.nix
     ./containers/traefik.nix
   ];
