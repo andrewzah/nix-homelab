@@ -6,15 +6,16 @@
     ./nvidia.nix
     ./unfree.nix
 
-    #./containers/pocketid.nix
-    ./containers/keycloak.nix
+    ./containers/docker-socket-proxy.nix
 
     ./containers/arr.nix
     ./containers/atuin.nix
     ./containers/ersatztv.nix
     ./containers/gluetun.nix
     ./containers/grafana.nix
+    ./containers/homepage.nix
     ./containers/jellyfin.nix
+    ./containers/keycloak.nix
     ./containers/mealie.nix
     ./containers/postgres.nix
     ./containers/prometheus.nix

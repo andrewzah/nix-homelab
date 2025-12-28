@@ -1,5 +1,17 @@
 ## lumiere
 
+- ! idp: keycloak
+- https://github.com/glanceapp/glance
+- inbound request monitoring + automated firewall banning
+- homepage/launchpage to keep track of services
+  - https://github.com/Lissy93/dashy
+  - https://gethomepage.dev/
+- monitoring/dashboard: prometheus + netdata + influx + grafana + thanos
+- UPS data
+
+---
+
+- request manager: https://github.com/seerr-team/seerr
 - vaultwarden
 - linkding
 - ! OIDC: keycloak alternative,
@@ -21,7 +33,8 @@
 - dns: https://technitium.com/dns/
 - monitoring:
   - healthchecks.io
-  - uptime kuma (or gatus)
+  - uptime kuma
+  - https://github.com/TwiN/gatus
   - https://github.com/dgtlmoon/changedetection.io
 - metrics/dashboard
   - grafana

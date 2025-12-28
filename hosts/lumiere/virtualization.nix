@@ -2,7 +2,14 @@
   virtualisation = {
     docker.rootless.enable = true;
     docker.rootless.daemon.settings = {
+      # for prometheus
       "metrics-addr" = "127.0.0.1:9323";
+
+      # for homepage.dev
+      #"hosts" = [
+      #  "tcp://0.0.0.0:2375"
+      #  "unix:///var/run/docker.sock"
+      #];
     };
     docker.autoPrune.enable = true;
     containerd.enable = true;
