@@ -10,7 +10,7 @@
 			"19999:19999"
 		];
 		devices = [
-			"dev/dri:dev/dri"
+			"/dev/dri:/dev/dri"
 		];
 		environment = {
 			DOCKER_HOST = "socket_proxy:2375";
