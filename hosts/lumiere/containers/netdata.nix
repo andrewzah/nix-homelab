@@ -5,7 +5,7 @@
 		autoStart = true;
 		image = "docker.io/netdata/netdata:v2.8.4@sha256:321fb7c3f854401a329798392cd681367fa528e95a7dfa7d539546d83ae1dd18";
 		capabilities.SYS_PTRACE = true;
-		capabilities.SYS_ADMIM = true;
+		capabilities.SYS_ADMIN = true;
 		ports = [
 			"19999:19999"
 		];
