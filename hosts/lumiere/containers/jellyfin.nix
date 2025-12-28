@@ -27,7 +27,10 @@
       "/lumiere/data/docker/jellyfin/cache/:/cache/:rw"
     ];
     dependsOn = ["traefik"];
-    extraOptions = ["--net=external"];
+    extraOptions = [
+      "--net=external"
+      "--net=media"
+    ];
     labels = {
       "traefik.enable" = "true";
       "traefik.http.routers.jellyfin.rule" = "Host(`jellyfin.lumiere.wtf`)";
