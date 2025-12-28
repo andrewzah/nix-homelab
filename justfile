@@ -12,6 +12,8 @@ blanka:
 
 updatekeys:
   sops updatekeys secrets.yaml
+  sops updatekeys hosts/blanka/secrets.yaml
+  sops updatekeys hosts/lumiere/secrets.yaml
 
 tree:
   nix-tree --derivation '.#nixosConfigurations.falcon.config.system.build.toplevel'

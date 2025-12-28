@@ -23,9 +23,8 @@ creation_rules:
         age:
           - *server_blanka
   - path_regex: hosts/lumiere/secrets.yaml$
-    key_groups:
-      - pgp:
-          - *admin_andrew
-          - *admin_ben
-        age:
-          - *server_lumiere
+    pgp: >-
+      D87BD9DCF11BACD6CDB40CB213732FB13E61E0BE,
+      C709F1FD85C0948FB61AE4147AB2884BD92C5B81
+    age:
+      - *server_lumiere
