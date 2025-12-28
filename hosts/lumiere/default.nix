@@ -8,9 +8,11 @@
 
     ./containers/docker-socket-proxy.nix
 
+    ./containers/tunarr.nix
+
     ./containers/arr.nix
     ./containers/atuin.nix
-    ./containers/ersatztv.nix
+    #./containers/ersatztv.nix
     ./containers/gluetun.nix
     ./containers/grafana.nix
     ./containers/homepage.nix
