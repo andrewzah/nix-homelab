@@ -27,6 +27,11 @@
       "traefik.http.routers.ersatztv.tls.certresolver" = "porkbun";
       "traefik.http.routers.ersatztv.service" = "ersatztv";
       "traefik.http.services.ersatztv.loadbalancer.server.port" = "8409";
+
+      "homepage.group" = "Media";
+      "homepage.name" = "Ersatz TV";
+      "homepage.href" = "https://ersatztv.lumiere.wtf";
+      "homepage.description" = "Create TV channels from local media.";
     };
   };
 }
