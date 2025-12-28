@@ -11,5 +11,6 @@
       POST = "0";
     };
     volumes = ["/var/run/docker.sock:/var/run/docker.sock:ro"];
+    extraOptions = ["--net=socket_proxy"];
   };
 }

@@ -40,6 +40,9 @@
 
       ${pkgs.docker}/bin/docker network inspect external \
         || ${pkgs.docker}/bin/docker network create external
+
+      ${pkgs.docker}/bin/docker network inspect socket_proxy \
+        || ${pkgs.docker}/bin/docker network create socket_proxy
     '';
   };
 }

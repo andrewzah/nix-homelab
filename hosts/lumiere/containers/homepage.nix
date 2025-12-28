@@ -13,7 +13,10 @@
     #environmentFiles = [config.sops.secrets."homepage/env".path];
     volumes = ["/lumiere/data/docker/homepage/config/:/config/:rw"];
     dependsOn = ["traefik"];
-    extraOptions = ["--net=external"];
+    extraOptions = [
+      "--net=external"
+      "--net=socket_proxy"
+    ];
     labels = {
       #"traefik.enable" = "true";
       #"traefik.http.routers.homepage.rule" = "Host(`homepage.lumiere.wtf`)";
