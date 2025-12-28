@@ -6,7 +6,7 @@
     image = "ghcr.io/gethomepage/homepage:dev@sha256:a44cc71200afb26d35b0478008b37399d82ff0c73f81be4088f1d857dffbb4d7";
     ports = ["3000" "31300:3000"];
     environment = {
-      HOMEPAGE_ALLOWED_HOSTS = "lumiere.wtf,localhost:31300";
+      HOMEPAGE_ALLOWED_HOSTS = "lumiere,lumiere.wtf,localhost:31300";
       PUID = "1000";
       PGID = "1000";
     };
