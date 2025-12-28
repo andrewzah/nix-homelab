@@ -6,6 +6,7 @@
     image = "docker.io/linuxserver/jellyfin:10.11.5@sha256:ed5dc797d12089271e0e61a740cbf9626c4e513400ca2d96c54d35500eeb907c";
     ports = [
       "8096/tcp"
+      "8096:8096/tcp"
       "7359:7359/udp"
     ];
     devices = [
