@@ -1,6 +1,7 @@
 ---
 keys:
   - &admin_andrew D87BD9DCF11BACD6CDB40CB213732FB13E61E0BE
+  - &admin_ben C709F1FD85C0948FB61AE4147AB2884BD92C5B81
   - &server_eternia age190ap7t3z5pvntgypd64zanz9anzmpna7fksusuajnedwzewfkqlqum4ncz
   - &server_falcon age1snlxjncwc47x3kz57ay7pren83x0c4yd2nsurdpfnflghf3mlq5swp3uxv
   - &server_sparrow age13ga3v53gnhw0sk5506yl25xzgjmqjlrkc5f8hyw2teyz40p6sdvqx47kya
@@ -25,5 +26,6 @@ creation_rules:
     key_groups:
       - pgp:
           - *admin_andrew
+          - *admin_ben
         age:
           - *server_lumiere

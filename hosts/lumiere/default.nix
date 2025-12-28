@@ -24,6 +24,7 @@
     ./containers/scrutiny.nix
     ./containers/static-sites.nix
     ./containers/traefik.nix
+    ./containers/netdata.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
