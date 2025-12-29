@@ -47,16 +47,18 @@
   users.users."zah" = {
     isNormalUser = true;
     extraGroups = ["wheel" "docker"];
-    packages = with pkgs; [
-      tree
-      neovim
-    ];
+    packages = with pkgs; [];
   };
 
   environment.systemPackages = with pkgs; [
-    vim
+    btop
+    dig
     git
+    inetutils
+    neovim
     tmux
+    tree
+    vim
   ];
 
   networking.firewall.allowedTCPPorts = [
