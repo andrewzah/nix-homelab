@@ -9,9 +9,7 @@
       "8096:8096/tcp"
       "7359:7359/udp"
     ];
-    devices = [
-      "/dev/dri:/dev/dri"
-    ];
+    devices = ["/dev/dri:/dev/dri"];
     environment = {
       TZ = "America/New_York";
       PUID = "1000";

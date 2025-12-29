@@ -6,12 +6,15 @@
       "8409:8409"
       "8410:8410"
     ];
+    devices = ["/dev/dri:/dev/dri"];
     environment = {
       TZ = "America/New_York";
       ETV_UI_PORT = "8409";
       ETV_STREAMING_PORT = "8410";
       ETV_CONFIG_FOLDER = "/config";
       ETV_TRANSCODE_FOLDER = "/transcode";
+      NVIDIA_VISIBLE_DEVICES = "all";
+      NVIDIA_DRIVER_CAPABILITIES = "all";
     };
     volumes = [
       "/lumiere/media/:/mnt/lumiere/media/:ro"
