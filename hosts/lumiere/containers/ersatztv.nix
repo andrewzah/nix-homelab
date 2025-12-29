@@ -6,7 +6,6 @@
       "8409:8409"
       "8410:8410"
     ];
-    devices = ["/dev/dri:/dev/dri"];
     environment = {
       TZ = "America/New_York";
       ETV_UI_PORT = "8409";
@@ -21,6 +20,9 @@
       "/lumiere/data/docker/ersatztv/config/:/config/:rw"
       "/lumiere/data/docker/ersatztv/transcode/:/transcode/:rw"
     ];
-    extraOptions = ["--net=media"];
+    extraOptions = [
+      "--net=media"
+      "--gpus=all"
+    ];
   };
 }
