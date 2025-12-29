@@ -6,25 +6,22 @@
     ./nvidia.nix
     ./unfree.nix
 
-    ./containers/docker-socket-proxy.nix
-
-    ./containers/tunarr.nix
-
     ./containers/arr.nix
     ./containers/atuin.nix
-    #./containers/ersatztv.nix
+    ./containers/docker-socket-proxy.nix
+    ./containers/ersatztv.nix
     ./containers/gluetun.nix
     ./containers/grafana.nix
     ./containers/homepage.nix
     ./containers/jellyfin.nix
     ./containers/keycloak.nix
     ./containers/mealie.nix
+    ./containers/netdata.nix
     ./containers/postgres.nix
     ./containers/prometheus.nix
     ./containers/scrutiny.nix
     ./containers/static-sites.nix
     ./containers/traefik.nix
-    ./containers/netdata.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];

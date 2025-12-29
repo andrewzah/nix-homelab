@@ -10,10 +10,14 @@
       TZ = "America/New_York";
       ETV_UI_PORT = "8409";
       ETV_STREAMING_PORT = "8410";
+      ETV_CONFIG_FOLDER = "/config";
+      ETV_TRANSCODE_FOLDER = "/transcode";
     };
     volumes = [
       "/lumiere/media/:/mnt/lumiere/media/:ro"
       "/lumiere/data/docker/ersatztv/config/:/config/:rw"
+      "/lumiere/data/docker/ersatztv/transcode/:/transcode/:rw"
     ];
+    extraOptions = ["--net=media"];
   };
 }
