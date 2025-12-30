@@ -41,6 +41,9 @@
 
       ${pkgs.docker}/bin/docker network inspect media \
         || ${pkgs.docker}/bin/docker network create media
+
+      ${pkgs.docker}/bin/docker network inspect idp \
+        || ${pkgs.docker}/bin/docker network create idp
     '';
   };
 }

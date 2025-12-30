@@ -16,5 +16,6 @@
     };
     environmentFiles = [config.sops.secrets."lldap/env".path];
     volumes = ["/lumiere/data/docker/lldap/data/:/data/:rw"];
+    extraOptions = ["--net=idp"];
   };
 }

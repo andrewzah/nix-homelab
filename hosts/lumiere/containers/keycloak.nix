@@ -17,7 +17,7 @@
     ];
     environmentFiles = [config.sops.secrets."keycloak/env".path];
     dependsOn = ["traefik" "postgres"];
-    extraOptions = ["--net=internal" "--net=external"];
+    extraOptions = ["--net=internal" "--net=external" "--net=idp"];
     labels = {
       "traefik.enable" = "true";
       "traefik.http.routers.keycloak.rule" = "Host(`idp.lumiere.wtf`)";
