@@ -1,11 +1,18 @@
 {pkgs, ...}: {
   imports = [
+    ## system configs
     ./hardware-configuration.nix
     ./services.nix
     ./virtualization.nix
     ./nvidia.nix
     ./unfree.nix
 
+    ## Security / OIDC containers
+    ./containers/lldap.nix # user source-of-truth
+    ./containers/keycloak.nix # OIDC
+    ./containers/traefik.nix # routing
+
+    ## misc containers
     ./containers/arr.nix
     ./containers/atuin.nix
     ./containers/docker-socket-proxy.nix
@@ -14,14 +21,12 @@
     ./containers/grafana.nix
     ./containers/homepage.nix
     ./containers/jellyfin.nix
-    ./containers/keycloak.nix
     ./containers/mealie.nix
     ./containers/netdata.nix
     ./containers/postgres.nix
     ./containers/prometheus.nix
     ./containers/scrutiny.nix
     ./containers/static-sites.nix
-    ./containers/traefik.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
