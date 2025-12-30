@@ -3,7 +3,6 @@
 
   virtualisation.oci-containers.containers.keycloak = {
     autoStart = true;
-    ports = ["8080"];
     image = "quay.io/keycloak/keycloak:26.4.7@sha256:9409c59bdfb65dbffa20b11e6f18b8abb9281d480c7ca402f51ed3d5977e6007";
     cmd = [
       "start"
@@ -12,9 +11,11 @@
       "--http-enabled=true"
       "--db=postgres"
       "--log=console"
-      "--log-level=DEBUG"
+
+      #"--log-level=DEBUG"
       #"--proxy-headers=xforwarded"
     ];
+    ports = ["8080"];
     environmentFiles = [config.sops.secrets."keycloak/env".path];
     dependsOn = ["traefik" "postgres" "lldap"];
     extraOptions = ["--net=internal" "--net=external" "--net=idp"];
