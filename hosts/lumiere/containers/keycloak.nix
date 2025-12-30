@@ -16,7 +16,7 @@
       #"--proxy-headers=xforwarded"
     ];
     environmentFiles = [config.sops.secrets."keycloak/env".path];
-    dependsOn = ["traefik" "postgres"];
+    dependsOn = ["traefik" "postgres" "lldap"];
     extraOptions = ["--net=internal" "--net=external" "--net=idp"];
     labels = {
       "traefik.enable" = "true";
