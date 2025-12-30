@@ -1,10 +1,4 @@
-{
-  config,
-  DOMAIN,
-  ...
-}: {
-  sops.secrets."jellyseerr/env" = {};
-
+{config, ...}: {
   virtualisation.oci-containers.containers.jellyseerr = {
     autoStart = true;
     user = "1000:1000";
@@ -14,7 +8,6 @@
       TZ = config.time.timeZone;
       PORT = "5055";
     };
-    environmentFiles = [config.sops.secrets."jellyseerr/env".path];
     volumes = [
       "/lumiere/data/docker/jellyseerr/config/:/app/config/:rw"
     ];
