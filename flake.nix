@@ -45,7 +45,10 @@
       # ben server
       lumiere = nixosSystem {
         system = "x86_64-linux";
-        specialArgs = {inherit inputs;};
+        specialArgs = {
+          inherit inputs;
+          DOMAIN = "lumiere.wtf";
+        };
         modules = [
           ./hosts/lumiere/default.nix
           sops-nix.nixosModules.sops

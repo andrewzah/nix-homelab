@@ -7,7 +7,7 @@
       "8410:8410"
     ];
     environment = {
-      TZ = "America/New_York";
+      TZ = config.time.timeZone;
       ETV_UI_PORT = "8409";
       ETV_STREAMING_PORT = "8410";
       ETV_CONFIG_FOLDER = "/config";
@@ -20,9 +20,7 @@
       "/lumiere/data/docker/ersatztv/config/:/config/:rw"
       "/lumiere/data/docker/ersatztv/transcode/:/transcode/:rw"
     ];
-    extraOptions = [
-      "--net=media"
-      "--gpus=all"
-    ];
+    devices = ["nvidia.com/gpu=all"];
+    extraOptions = ["--net=media"];
   };
 }
