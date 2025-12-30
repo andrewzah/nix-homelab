@@ -14,7 +14,6 @@
     ./containers/grafana.nix
     ./containers/homepage.nix
     ./containers/jellyfin.nix
-    ./containers/jellyseerr.nix
     ./containers/keycloak.nix
     ./containers/mealie.nix
     ./containers/netdata.nix
