@@ -1,12 +1,8 @@
 ## lumiere
 
-- ! idp: keycloak
-- https://github.com/glanceapp/glance
+- https://github.com/gtsteffaniak/filebrowser
 - inbound request monitoring + automated firewall banning
-- homepage/launchpage to keep track of services
-  - https://github.com/Lissy93/dashy
-  - https://gethomepage.dev/
-- monitoring/dashboard: prometheus + netdata + influx + grafana + thanos
+- monitoring/dashboard: set up grafana dashboard w/ prometheus data, + thanos
 - UPS data
 
 ---

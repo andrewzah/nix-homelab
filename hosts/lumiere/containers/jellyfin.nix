@@ -9,7 +9,6 @@
       "8096:8096/tcp"
       "7359:7359/udp"
     ];
-    devices = ["/dev/dri:/dev/dri"];
     environment = {
       TZ = "America/New_York";
       PUID = "1000";
@@ -37,5 +36,6 @@
       "traefik.http.routers.jellyfin.service" = "jellyfin";
       "traefik.http.services.jellyfin.loadbalancer.server.port" = "8096";
     };
+    devices = ["nvidia.com/gpu=all"];
   };
 }
