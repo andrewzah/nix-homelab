@@ -20,7 +20,7 @@
     };
     environmentFiles = [config.sops.secrets."jellyfin/env".path];
     volumes = [
-      "/lumiere/media/:/mnt/lumiere/media/:ro"
+      "/lumiere/media/:/mnt/lumiere/media/:rw"
       "/lumiere/data/docker/jellyfin/config/:/config/:rw"
       "/lumiere/data/docker/jellyfin/cache/:/cache/:rw"
     ];
