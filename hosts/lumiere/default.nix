@@ -19,6 +19,7 @@
     ./containers/ersatztv.nix
     ./containers/gluetun.nix
     ./containers/grafana.nix
+    ./containers/healthchecks.nix
     ./containers/homepage.nix
     ./containers/jellyfin.nix
     ./containers/mealie.nix
