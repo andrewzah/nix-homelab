@@ -2,7 +2,7 @@
   sops.secrets."healthchecks/env" = {};
 
   virtualisation.oci-containers.containers.healthchecks = {
-    autoStart = false;
+    autoStart = true;
     image = "docker.io/healthchecks/healthchecks:v3.13@sha256:228137b2fe50f8c4b3f6f1a8ef3970cc74ee84b56075bcf79381fc35a50b295d";
     environment = {};
     ports = ["8000"];

@@ -1,6 +1,6 @@
 {config, ...}: {
   virtualisation.oci-containers.containers.uptimekuma = {
-    autoStart = false;
+    autoStart = true;
     image = "docker.io/louislam/uptime-kuma:2.1.0-beta-slim.0@sha256:9aec713997a014fe5fa5fad4cddde319ed2cb36606001b62304e73844004cee8";
     ports = ["3001"];
     environment = {
@@ -11,7 +11,10 @@
     };
     volumes = ["/lumiere/data/docker/uptimekuma/data/:/app/data/:rw"];
     dependsOn = ["traefik"];
-    extraOptions = ["--net=external"];
+    extraOptions = [
+      "--net=external"
+      "--net=socket_proxy"
+    ];
     labels = {
       "traefik.enable" = "true";
       "traefik.http.routers.uptimekuma.rule" = "Host(`uptimekuma.lumiere.wtf`)";
