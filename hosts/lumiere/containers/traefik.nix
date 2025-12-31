@@ -35,6 +35,7 @@
       "--certificatesresolvers.porkbun.acme.email=admin@andrewzah.com"
       "--certificatesresolvers.porkbun.acme.dnschallenge=true"
       "--certificatesresolvers.porkbun.acme.dnsChallenge.provider=porkbun"
+      "--certificatesresolvers.porkbun.acme.dnsChallenge.resolvers=1.1.1.1:53,1.0.0.1:53"
 
       ## cloudflare resolver
       "--certificatesresolvers.cloudflare.acme.storage=/letsencrypt/cloudflare-acme.json"
