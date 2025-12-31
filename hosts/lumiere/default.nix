@@ -27,6 +27,7 @@
     ./containers/prometheus.nix
     ./containers/scrutiny.nix
     ./containers/static-sites.nix
+    ./containers/uptimekuma.nix
     ./containers/ytdl-sub.nix
   ];
 
