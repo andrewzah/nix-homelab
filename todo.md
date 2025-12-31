@@ -1,5 +1,6 @@
 ## lumiere
 
+- healthchecks: fix db: https://healthchecks.io/docs/self_hosted/
 - https://github.com/gtsteffaniak/filebrowser
 - inbound request monitoring + automated firewall banning
 - monitoring/dashboard: set up grafana dashboard w/ prometheus data, + thanos
