@@ -1,9 +1,4 @@
-{
-  pkgs,
-  lib,
-  config,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
     ./services.nix
@@ -13,6 +8,7 @@
     ./containers/traefik.nix
 
     ./containers/attic.nix
+    ./containers/baikal.nix
     ./containers/healthchecks.nix
     ./containers/home-gallery.nix
     ./containers/linkding.nix
