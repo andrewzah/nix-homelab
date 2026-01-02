@@ -32,7 +32,14 @@
     ./containers/ytdl-sub.nix
   ];
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix = {
+    settings.experimental-features = ["nix-command" "flakes"];
+    gc = {
+      automatic = true;
+      dates = "monthly";
+      options = "--delete-older-than 14d";
+    };
+  };
 
   sops.defaultSopsFile = ./secrets.yaml;
   sops.age.sshKeyPaths = ["/etc/ssh/ssh_host_ed25519_key"];
