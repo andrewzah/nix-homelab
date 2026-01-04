@@ -16,6 +16,7 @@
     ./containers/arr.nix
     ./containers/atuin.nix
     ./containers/docker-socket-proxy.nix
+    ./containers/docmost.nix
     ./containers/ersatztv.nix
     ./containers/gluetun.nix
     ./containers/grafana.nix
@@ -26,6 +27,7 @@
     ./containers/netdata.nix
     ./containers/postgres.nix
     ./containers/prometheus.nix
+    ./containers/redis.nix
     ./containers/scrutiny.nix
     ./containers/static-sites.nix
     ./containers/syncthing.nix
