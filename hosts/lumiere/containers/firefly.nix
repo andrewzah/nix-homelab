@@ -23,7 +23,7 @@
   virtualisation.oci-containers.containers.firefly-pico = {
     autoStart = true;
     image = "docker.io/cioraneanu/firefly-pico:1.9.3@sha256:60dcfc2467e66d047ef1298a86dd5ed0fb45464c604e7ccd088597131e350b40";
-    ports = ["80"];
+    ports = ["3000"];
     environment.TZ = config.time.timeZone;
     environmentFiles = [config.sops.secrets."firefly-pico/env".path];
     dependsOn = ["traefik" "firefly"];
