@@ -48,6 +48,7 @@
       "docker-atuin.service"
       "docker-docmost.service"
       "docker-keycloak.service"
+      "docker-windmill.service"
     ];
 
     serviceConfig = {
