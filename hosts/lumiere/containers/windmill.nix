@@ -33,7 +33,7 @@ in {
       "traefik.http.services.windmill.loadbalancer.server.port" = "8000";
 
       # websockets
-      "traefik.http.routers.windmill-wss.rule" = "Host(`.zah.rocks`) && Path(`/ws`)";
+      "traefik.http.routers.windmill-wss.rule" = "Host(`windmill.lumiere.wtf`) && Path(`/ws`)";
       "traefik.http.routers.windmill-wss.tls.certresolver" = "porkbun";
       "traefik.http.routers.windmill-wss.entrypoints" = "websecure";
       "traefik.http.routers.windmill-wss.service" = "windmill-wss";
