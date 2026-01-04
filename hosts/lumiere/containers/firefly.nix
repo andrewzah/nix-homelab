@@ -27,7 +27,7 @@
     environment.TZ = config.time.timeZone;
     environmentFiles = [config.sops.secrets."firefly-pico/env".path];
     dependsOn = ["traefik" "firefly"];
-    extraOptions = ["--net=external"];
+    extraOptions = ["--net=external" "--net=internal"];
     labels = {
       "traefik.enable" = "true";
       "traefik.http.routers.firefly.rule" = "Host(`firefly-pico.lumiere.wtf`)";
