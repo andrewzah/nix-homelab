@@ -30,9 +30,9 @@
     extraOptions = ["--net=external" "--net=internal"];
     labels = {
       "traefik.enable" = "true";
-      "traefik.http.routers.firefly.rule" = "Host(`firefly-pico.lumiere.wtf`)";
-      "traefik.http.routers.firefly.entrypoints" = "websecure";
-      "traefik.http.routers.firefly.tls.certresolver" = "porkbun";
+      "traefik.http.routers.firefly-pico.rule" = "Host(`firefly-pico.lumiere.wtf`)";
+      "traefik.http.routers.firefly-pico.entrypoints" = "websecure";
+      "traefik.http.routers.firefly-pico.tls.certresolver" = "porkbun";
     };
   };
 }
