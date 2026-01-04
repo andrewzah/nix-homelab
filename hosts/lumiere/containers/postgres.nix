@@ -46,6 +46,8 @@
     ];
     wantedBy = [
       "docker-atuin.service"
+      "docker-docmost.service"
+      "docker-keycloak.service"
     ];
 
     serviceConfig = {
