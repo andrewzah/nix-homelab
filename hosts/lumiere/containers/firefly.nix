@@ -1,19 +1,19 @@
 {config, ...}: {
-  sops.secrets."docmost/env" = {};
-  virtualisation.oci-containers.containers.docmost = {
+  sops.secrets."firefly/env" = {};
+  virtualisation.oci-containers.containers.firefly = {
     autoStart = true;
-    image = "docker.io/docmost/docmost:0.24.1@sha256:ae9a964d58fe45071b2d87afe44ec1b0fb74a6e0124e831e906fce96b0258a84";
-    ports = ["3000"];
+    image = "docker.io/fireflyiii/core:version-6.4.14@sha256:b3958eb028ab85d9026a59af6fc25665088c714eb92fcd6cb4fb0f83a428335c";
+    ports = ["8080"];
     environment.TZ = config.time.timeZone;
-    environmentFiles = [config.sops.secrets."docmost/env".path];
-    volumes = ["/lumiere/data/docker/docmost/data/:/app/data/storage/:rw"];
+    environmentFiles = [config.sops.secrets."firefly/env".path];
+    volumes = ["/lumiere/data/docker/firefly/uploads/:/var/www/html/storage/upload/:rw"];
     dependsOn = ["traefik"];
     extraOptions = ["--net=external" "--net=internal"];
     labels = {
       "traefik.enable" = "true";
-      "traefik.http.routers.docmost.rule" = "Host(`docmost.lumiere.wtf`)";
-      "traefik.http.routers.docmost.entrypoints" = "websecure";
-      "traefik.http.routers.docmost.tls.certresolver" = "porkbun";
+      "traefik.http.routers.firefly.rule" = "Host(`firefly.lumiere.wtf`)";
+      "traefik.http.routers.firefly.entrypoints" = "websecure";
+      "traefik.http.routers.firefly.tls.certresolver" = "porkbun";
     };
   };
 }
