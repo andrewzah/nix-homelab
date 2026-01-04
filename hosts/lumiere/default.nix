@@ -18,6 +18,7 @@
     ./containers/docker-socket-proxy.nix
     ./containers/docmost.nix
     ./containers/ersatztv.nix
+    ./containers/firefly.nix
     ./containers/gluetun.nix
     ./containers/grafana.nix
     ./containers/healthchecks.nix
