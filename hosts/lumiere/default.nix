@@ -24,6 +24,7 @@
     ./containers/homepage.nix
     ./containers/jellyfin.nix
     ./containers/mealie.nix
+    ./containers/navidrome.nix
     ./containers/netdata.nix
     ./containers/postgres.nix
     ./containers/prometheus.nix
