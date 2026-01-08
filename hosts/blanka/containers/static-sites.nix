@@ -1,7 +1,7 @@
 {...}: {
   virtualisation.oci-containers.containers.com-andrewzah = {
     autoStart = true;
-    image = "docker.io/andrewzah/com-andrewzah:2026-01-08@sha256:5a279c9f0ede6aaecb91fdbbd09eb1fcc9b6df0b53d76cd941beb76b9e741410";
+    image = "docker.io/andrewzah/com-andrewzah:2026-01-08@sha256:2473b0bfc25c8fc92bf58fdd848b34e1ecc3c8959b340714bffeaddffecbdee6";
     dependsOn = ["traefik"];
     extraOptions = ["--net=external"];
     ports = ["2020"];
