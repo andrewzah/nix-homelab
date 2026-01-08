@@ -13,28 +13,9 @@
     ports = ["2020"];
   };
 
-  virtualisation.oci-containers.containers.com-andrewzah-blog = {
-    autoStart = true;
-    image = "docker.io/andrewzah/com-andrewzah-blog:2025-09-29@sha256:d5c75ac3577bbd65a76a6271e5720cdfa72cb4f0203a3aedcbfca1dfb5d4afd5";
-    dependsOn = ["traefik"];
-    extraOptions = ["--net=external"];
-    ports = ["2020"];
-    labels = {
-      "traefik.enable" = "true";
-      "traefik.http.routers.com-andrewzah-blog.rule" = "Host(`blog.andrewzah.com`)";
-      "traefik.http.routers.com-andrewzah-blog.entrypoints" = "websecure";
-      "traefik.http.routers.com-andrewzah-blog.tls.certresolver" = "cloudflare";
-
-      # "traefik.http.routers.com-andrewzah-blog.service" = "com-andrewzah";
-      # "traefik.http.services.com-andrewzah-blog.loadbalancer.server.port" = "2020";
-      # anubis -- disable for now; see containers/anubis.nix
-      #"traefik.http.routers.com-andrewzah-blog.middlewares" = "anubis@docker";
-    };
-  };
-
   virtualisation.oci-containers.containers.com-andrewzah = {
     autoStart = true;
-    image = "docker.io/andrewzah/com-andrewzah:2025-09-27@sha256:72bde57a91b299699e52eb37ab3261fca7e73c3d117a73feeddb8d4d61430972";
+    image = "docker.io/andrewzah/com-andrewzah:2026-01-08@sha256:6352ab5520254b647b64a2b2b4ded5332c170331e24cf1c05836fd62a047ea20";
     dependsOn = ["traefik"];
     extraOptions = ["--net=external"];
     ports = ["2020"];

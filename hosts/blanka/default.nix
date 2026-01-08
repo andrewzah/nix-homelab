@@ -15,6 +15,7 @@
     ./containers/matrix-conduit.nix
     ./containers/mc-horangi.nix
     ./containers/postgres.nix
+    ./containers/static-sites.nix
     ./containers/tailscale.nix
     ./containers/vaultwarden.nix
     ./containers/whoami.nix

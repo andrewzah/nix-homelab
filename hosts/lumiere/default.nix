@@ -31,7 +31,6 @@
     ./containers/prometheus.nix
     ./containers/redis.nix
     ./containers/scrutiny.nix
-    ./containers/static-sites.nix
     ./containers/syncthing.nix
     ./containers/uptimekuma.nix
     ./containers/windmill.nix
