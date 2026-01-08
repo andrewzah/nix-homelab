@@ -9,16 +9,16 @@
 }: rec {
   goatcounter = buildGoModule rec {
     pname = "goatcounter";
-    version = "c059188a3";
+    version = "2.7.0.1";
 
     src = fetchFromGitHub {
       owner = "arp242";
       repo = "goatcounter";
-      rev = "c059188a3c6064b2f32f0e80bf029b1eb1b1fdbf";
-      hash = "sha256-9oMdaJj2AziNH8aO4Wfdph+D3Ho/0u5uHC59vIJnMKM=";
+      rev = "9903e20a14297615a3bcb27c25669a572ca5d201";
+      hash = "sha256-utqKhXmqow7oItAe+quy2+FWUvwZADBQ3rCmMGyfzZE=";
     };
 
-    vendorHash = "sha256-8W/xQ8jkNjjmaAvdoY/66HCW7dA+pFC4MVc17J/3B5o=";
+    vendorHash = "sha256-cRABpWKp5FFSQ2l8a5Sk1tYoXq6EMUGlpd5HU8u2A5s=";
     subPackages = ["cmd/goatcounter"];
     modroot = ".";
 

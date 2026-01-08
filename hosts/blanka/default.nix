@@ -9,8 +9,8 @@
 
     ./containers/attic.nix
     ./containers/baikal.nix
+    ./containers/goatcounter.nix
     ./containers/healthchecks.nix
-    ./containers/home-gallery.nix
     ./containers/linkding.nix
     ./containers/matrix-conduit.nix
     ./containers/mc-horangi.nix
