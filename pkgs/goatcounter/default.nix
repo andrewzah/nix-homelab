@@ -54,6 +54,11 @@
       name = "docker.io/andrewzah/goatcounter";
       tag = "${goatcounter.version}";
 
+      copyToRoot = pkgs.buildEnv {
+        name = "image-root";
+        paths = [goatcounter];
+      };
+
       config = {
         entrypoint = ["${entrypoint}"];
         exposedPorts = {"3443" = {};};

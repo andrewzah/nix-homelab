@@ -3,7 +3,7 @@
 
   virtualisation.oci-containers.containers.goatcounter = {
     autoStart = true;
-    image = "docker.io/andrewzah/goatcounter:2.7.0.1@sha256:0c5c5619aba0e0bf33148c5925334b022a9796bf8593a0fb3be934520b4c78c4";
+    image = "docker.io/andrewzah/goatcounter:2.7.0.1@sha256:07b88a4d9ed2da822f8fa8dac8e582c373db2869f2fe13078e0bd93e71bc96bd";
     ports = ["3443"];
     environment = {
       GC_PORT = "3443";
