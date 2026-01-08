@@ -14,6 +14,7 @@
     ./containers/linkding.nix
     ./containers/matrix-conduit.nix
     ./containers/mc-horangi.nix
+    ./containers/miniflux.nix
     ./containers/postgres.nix
     ./containers/static-sites.nix
     ./containers/tailscale.nix
