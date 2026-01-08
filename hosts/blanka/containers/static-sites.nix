@@ -1,7 +1,7 @@
 {...}: {
   virtualisation.oci-containers.containers.com-andrewzah = {
     autoStart = true;
-    image = "docker.io/andrewzah/com-andrewzah:2026-01-08@sha256:2473b0bfc25c8fc92bf58fdd848b34e1ecc3c8959b340714bffeaddffecbdee6";
+    image = "docker.io/andrewzah/com-andrewzah:2026-01-08@sha256:2bc287779b8d8a2c9f76cbb3c2d2e1fbaa50cf9031587b4a944fba3bdb3cdbd8";
     dependsOn = ["traefik"];
     extraOptions = ["--net=external"];
     ports = ["2020"];
@@ -10,7 +10,6 @@
       "traefik.http.routers.com-andrewzah.rule" = "Host(`andrewzah.com`)";
       "traefik.http.routers.com-andrewzah.entrypoints" = "websecure";
       "traefik.http.routers.com-andrewzah.tls.certresolver" = "cloudflare";
-
       ## anubis -- disable for now; see containers/anubis.nix
       #"traefik.http.routers.com-andrewzah.service" = "com-andrewzah";
       #"traefik.http.services.com-andrewzah.loadbalancer.server.port" = "2020";
