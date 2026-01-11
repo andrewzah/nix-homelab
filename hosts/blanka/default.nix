@@ -9,6 +9,7 @@
 
     ./containers/attic.nix
     ./containers/baikal.nix
+    ./containers/beaverhabits.nix
     ./containers/goatcounter.nix
     ./containers/healthchecks.nix
     ./containers/linkding.nix
