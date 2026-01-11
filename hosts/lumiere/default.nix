@@ -24,6 +24,8 @@
     ./containers/healthchecks.nix
     ./containers/homepage.nix
     ./containers/jellyfin.nix
+    ./containers/keycloak.nix
+    ./containers/kavita.nix
     ./containers/mealie.nix
     ./containers/navidrome.nix
     ./containers/netdata.nix
