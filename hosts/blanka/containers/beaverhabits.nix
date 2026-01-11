@@ -10,7 +10,7 @@
     extraOptions = ["--net=external"];
     environmentFiles = [config.sops.secrets."beaverhabits/env".path];
     volumes = [
-      "/lumiere/data/docker/beaverhabits/data/:/app/.user/:rw"
+      "/blanka/beaverhabits/data/:/app/.user/:rw"
     ];
     labels = {
       "traefik.enable" = "true";
