@@ -1,7 +1,7 @@
 {config, ...}: {
 	virtualisation.oci-containers.containers.kavita = {
 		autoStart = true;
-		image = "docker.io/jvmilazz0/kavita:0.8.8@ssha256:22c42f3cc83fb98b98a6d6336200b615faf2cfd2db22dab363136744efda1bb0";
+		image = "docker.io/jvmilazz0/kavita:0.8.8@sha256:22c42f3cc83fb98b98a6d6336200b615faf2cfd2db22dab363136744efda1bb0";
 		ports = [
 			"5000:5000"
 		];
