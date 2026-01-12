@@ -9,9 +9,7 @@
     dependsOn = ["traefik"];
     extraOptions = ["--net=external"];
     environmentFiles = [config.sops.secrets."beaverhabits/env".path];
-    volumes = [
-      "/blanka/beaverhabits/data/:/app/.user/:rw"
-    ];
+    volumes = ["/blanka/beaverhabits/data/:/app/.user/:rw"];
     labels = {
       "traefik.enable" = "true";
       "traefik.http.routers.beaverhabits.rule" = "Host(`habits.abare.party`)";
