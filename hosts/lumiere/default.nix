@@ -77,10 +77,13 @@
     dig
     git
     inetutils
+    mediainfo
     neovim
     tmux
     tree
+    unzip
     vim
+    zip
   ];
 
   networking.firewall.allowedTCPPorts = [
