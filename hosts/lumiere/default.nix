@@ -15,6 +15,7 @@
     ## misc containers
     ./containers/arr.nix
     ./containers/atuin.nix
+    ./containers/beaverhabits.nix
     ./containers/docker-socket-proxy.nix
     ./containers/docmost.nix
     ./containers/ersatztv.nix
