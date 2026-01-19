@@ -1,4 +1,6 @@
 {config, ...}: {
+	sops.secrets."beaverhabits/env" = {};
+
 	virtualisation.oci-containers.containers.beaverhabits = {
 		autoStart = true;
     user = "1000:1000";
@@ -9,6 +11,7 @@
 		volumes = [
 			"/lumiere/data/docker/beaverhabits/:/app/user/:rw"
 		];
+		environmentFiles = [config.sops.secrets."beaverhabits/env".path];
 		extraOptions = [
 			"--net=external"
 		];
