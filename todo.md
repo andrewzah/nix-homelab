@@ -1,3 +1,7 @@
+## blanka
+
+- https://docs.monicahq.com/
+
 ## lumiere
 
 - https://listmonk.app/
