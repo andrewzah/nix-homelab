@@ -7,7 +7,7 @@
     volumes = [
       "/lumiere/data/docker/kavita/config/:/kavita/config/:rw"
       "/lumiere/media/manga/:/manga/:ro"
-      "/lumiere/media/manga-bw/:/manga-bw/:ro"
+      "/lumiere/media/manga-bw/:/manga-colored/:ro"
     ];
     extraOptions = ["--net=external"];
     labels = {
