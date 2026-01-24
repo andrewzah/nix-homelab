@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  hostConfig,
+  ...
+}: {
   imports = [
     ## system configs
     ./hardware-configuration.nix
@@ -59,7 +63,7 @@
 
   networking = {
     hostId = "f36e38e3";
-    hostName = "lumiere";
+    hostName = hostConfig.hostname;
     networkmanager.enable = true;
   };
   time.timeZone = "America/New_York";
@@ -67,7 +71,7 @@
   i18n.defaultLocale = "en_US.UTF-8";
   services.xserver.xkb.layout = "us";
 
-  users.users."zah" = {
+  users.users."${hostConfig.username}" = {
     isNormalUser = true;
     extraGroups = ["wheel" "docker"];
     packages = with pkgs; [];

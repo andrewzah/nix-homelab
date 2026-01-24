@@ -1,19 +1,14 @@
 {
   description = "Andrew's Homelab Flake: WIP";
 
-  outputs = {
-    self,
-    nixpkgs,
-    sops-nix,
-    ...
-  } @ inputs: let
+  outputs = {...} @ inputs: let
+    l = builtins // pkgs.lib;
     system = "x86_64-linux";
-    pkgs = import nixpkgs {
-      inherit system;
-    };
-    inherit (nixpkgs.lib) nixosSystem;
+
+    pkgs = import inputs.nixpkgs {inherit system;};
+    inherit (inputs.nixpkgs.lib) nixosSystem;
   in {
-    devShells."${system}".default = pkgs.mkShellNoCC {
+    devShells."${system}".default = pkgs.mkShell {
       packages = with pkgs; [
         age
         sops
@@ -21,68 +16,27 @@
       ];
     };
 
-    nixosConfigurations = {
-      # framework
-      eternia = nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {inherit inputs;};
-        modules = [
-          ./hosts/eternia/default.nix
-          sops-nix.nixosModules.sops
-        ];
-      };
-
-      # ben router
-      krillin = nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {inherit inputs;};
-        modules = [
-          ./hosts/krillin/default.nix
-          sops-nix.nixosModules.sops
-        ];
-      };
-
-      # ben server
-      lumiere = nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {
-          inherit inputs;
-          DOMAIN = "lumiere.wtf";
-        };
-        modules = [
-          ./hosts/lumiere/default.nix
-          sops-nix.nixosModules.sops
-        ];
-      };
-
-      # dad server
-      nappa = nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {inherit inputs;};
-        modules = [
-          ./hosts/nappa/default.nix
-          sops-nix.nixosModules.sops
-        ];
-      };
-
-      # da server
-      blanka = nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {inherit inputs;};
-        modules = [
-          ./hosts/blanka/default.nix
-          sops-nix.nixosModules.sops
-        ];
-      };
-    };
+    nixosConfigurations = l.pipe ./hosts [
+      (l.readDir)
+      (l.filterAttrs (_: type: type == "directory"))
+      (l.mapAttrs' (name: _: let
+        hostPath = ./hosts + "/${name}";
+        hostConfig = import (hostPath + "/config.nix");
+      in
+        l.nameValuePair name (nixosSystem {
+          system = hostConfig.system or "x86_64-linux";
+          modules = [
+            hostPath
+            inputs.sops-nix.nixosModules.sops
+          ];
+          specialArgs = {inherit hostConfig;};
+        })))
+    ];
   };
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     sops-nix.url = "github:Mic92/sops-nix";
-
-    #home-manager.url = "github:nix-community/home-manager/release-24.05";
-    #home-manager.inputs.nixpkgs.follows = "nixpkgs";
     #nix-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 }

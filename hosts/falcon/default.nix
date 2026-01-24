@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
     ./virtualisation.nix
@@ -52,11 +56,11 @@
   boot.supportedFilesystems = ["zfs" "btrfs"];
   boot.zfs.extraPools = ["eagle"];
 
-  networking.hostName = "falcon";
+  networking.hostName = config.hostname;
   networking.hostId = "958299a5";
   time.timeZone = "America/New_York";
 
-  users.users.dragon = {
+  users.users."${config.username}" = {
     isNormalUser = true;
     extraGroups = ["wheel" "docker"];
     packages = [];

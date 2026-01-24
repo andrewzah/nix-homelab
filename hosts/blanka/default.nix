@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
     ./services.nix
@@ -40,14 +44,14 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "blanka";
+  networking.hostName = config.hostname;
   networking.hostId = "5e7b30ea";
   networking.networkmanager.enable = true;
 
   time.timeZone = "Asia/Seoul";
   i18n.defaultLocale = "en_US.UTF-8";
 
-  users.users."dragon" = {
+  users.users."${config.username}" = {
     isNormalUser = true;
     extraGroups = ["wheel" "docker"];
     packages = [];

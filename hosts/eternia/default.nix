@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
     ./services.nix
@@ -14,7 +18,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "eternia";
+  networking.hostName = config.hostname;
   networking.networkmanager.enable = true;
 
   time.timeZone = "America/New_York";
@@ -33,7 +37,7 @@
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.junjae = {
+  users.users."${config.username}" = {
     isNormalUser = true;
     description = "junjae";
     extraGroups = ["networkmanager"];

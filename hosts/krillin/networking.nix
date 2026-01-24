@@ -1,6 +1,6 @@
 {
-  config,
   pkgs,
+  hostConfig,
   ...
 }: let
   WAN = "enp1s0";
@@ -31,7 +31,7 @@ in {
   };
 
   networking = {
-    hostName = "krillin-router";
+    hostName = "${hostConfig.hostname}-router";
     networkmanager.enable = false;
     useDHCP = false;
 

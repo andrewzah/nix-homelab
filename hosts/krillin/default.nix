@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  hostConfig,
   ...
 }: {
   imports = [
@@ -31,7 +32,7 @@
   i18n.defaultLocale = "en_US.UTF-8";
   services.xserver.xkb.layout = "us";
 
-  users.users."zah" = {
+  users.users."${hostConfig.username}" = {
     isNormalUser = true;
     extraGroups = ["wheel"];
   };
