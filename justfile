@@ -1,23 +1,33 @@
-eternia:
-  nixos-rebuild switch --flake .#eternia --target-host root@eternia --build-host root@eternia
+test HOST USER='zah':
+    #!/usr/bin/env bash
+    set -euo pipefail
 
-sparrow:
-  nixos-rebuild switch --flake .#sparrow --target-host root@sparrow --build-host root@sparrow
+    TARGET="{{ USER }}@{{ HOST }}"
 
-falcon:
-  nixos-rebuild switch --flake .#falcon --target-host falcon --build-host falcon
+    echo "Testing {{ HOST }} configuration using nixos-rebuild..."
+    nixos-rebuild test \
+      --flake ".#{{ HOST }}" \
+      --build-host "$TARGET" \
+      --target-host "${TARGET}" \
+      --use-remote-sudo
 
-blanka:
-  nixos-rebuild switch --flake .#blanka --target-host blanka --build-host blanka
+switch HOST USER='zah':
+    #!/usr/bin/env bash
+    set -euo pipefail
+
+    TARGET="{{ USER }}@{{ HOST }}"
+
+    echo "Testing {{ HOST }} configuration using nixos-rebuild..."
+    nixos-rebuild switch \
+      --flake ".#{{ HOST }}" \
+      --build-host "$TARGET" \
+      --target-host "${TARGET}" \
+      --use-remote-sudo
 
 updatekeys:
   sops updatekeys secrets.yaml
   sops updatekeys hosts/blanka/secrets.yaml
   sops updatekeys hosts/lumiere/secrets.yaml
 
-tree:
-  nix-tree --derivation '.#nixosConfigurations.falcon.config.system.build.toplevel'
-
-push:
-  git push gh master
-  #git push origin master
+tree HOST:
+  nix-tree --derivation '.#nixosConfigurations.{{ HOST }}.config.system.build.toplevel'
