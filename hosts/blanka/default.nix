@@ -1,6 +1,6 @@
 {
   pkgs,
-  config,
+  hostConfig,
   ...
 }: {
   imports = [
@@ -20,6 +20,7 @@
     ./containers/matrix-conduit.nix
     ./containers/mc-horangi.nix
     ./containers/miniflux.nix
+    ./containers/monica.nix
     ./containers/postgres.nix
     ./containers/static-sites.nix
     ./containers/tailscale.nix
@@ -44,14 +45,14 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = config.hostname;
+  networking.hostName = hostConfig.hostname;
   networking.hostId = "5e7b30ea";
   networking.networkmanager.enable = true;
 
   time.timeZone = "Asia/Seoul";
   i18n.defaultLocale = "en_US.UTF-8";
 
-  users.users."${config.username}" = {
+  users.users."${hostConfig.username}" = {
     isNormalUser = true;
     extraGroups = ["wheel" "docker"];
     packages = [];

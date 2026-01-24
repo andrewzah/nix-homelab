@@ -1,6 +1,7 @@
 ## blanka
 
 - https://docs.monicahq.com/
+- downloading: suwayomi
 
 ## lumiere
 
@@ -13,15 +14,9 @@
 
 ---
 
-- request manager: https://github.com/seerr-team/seerr
-- vaultwarden
-- linkding
-- ! OIDC: keycloak alternative,
-  https://github.com/pocket-id/pocket-id?tab=readme-ov-file
 - manga:
   - kavita: https://github.com/Kareadita/Kavita
   - or komga: https://komga.org/
-  - downloading: suwayomi
 - ebooks: booklore: https://github.com/booklore-app/booklore
 - ersatz tv + jellyfin integration
 - small wikis: https://otterwiki.com/Configuration

@@ -4,6 +4,7 @@
 
   virtualisation.oci-containers.containers.attic = {
     autoStart = false;
+
     image = "docker.io/andrewzah/attic:2025-07-17";
     ports = ["58080:8080" "8080"];
     dependsOn = ["traefik"];
