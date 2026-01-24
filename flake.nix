@@ -22,22 +22,22 @@
     };
 
     nixosConfigurations = {
-      # dev machine; currently WNDWKR02 SFF
-      sparrow = nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {inherit inputs;};
-        modules = [
-          ./hosts/sparrow/default.nix
-          sops-nix.nixosModules.sops
-        ];
-      };
-
       # framework
       eternia = nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs;};
         modules = [
           ./hosts/eternia/default.nix
+          sops-nix.nixosModules.sops
+        ];
+      };
+
+      # ben router
+      krillin = nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./hosts/krillin/default.nix
           sops-nix.nixosModules.sops
         ];
       };
