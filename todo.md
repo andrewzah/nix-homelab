@@ -1,10 +1,11 @@
 ## blanka
 
-- https://docs.monicahq.com/
-- downloading: suwayomi
+- https://b3log.org/siyuan/en/
+- https://docs.monicahq.com/ - postgres??
 
 ## lumiere
 
+- ? downloading: suwayomi
 - https://listmonk.app/
 - healthchecks: fix db: https://healthchecks.io/docs/self_hosted/
 - https://github.com/gtsteffaniak/filebrowser
@@ -14,11 +15,7 @@
 
 ---
 
-- manga:
-  - kavita: https://github.com/Kareadita/Kavita
-  - or komga: https://komga.org/
 - ebooks: booklore: https://github.com/booklore-app/booklore
-- ersatz tv + jellyfin integration
 - small wikis: https://otterwiki.com/Configuration
 - recipes: https://docs.mealie.io/
 - atuin: e2ee sync shell history

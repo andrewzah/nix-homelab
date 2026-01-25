@@ -11,9 +11,16 @@
     extraOptions = ["--net=external" "--net=internal"];
     labels = {
       "traefik.enable" = "true";
+
+      # regular https
       "traefik.http.routers.docmost.rule" = "Host(`docmost.lumiere.wtf`)";
       "traefik.http.routers.docmost.entrypoints" = "websecure";
       "traefik.http.routers.docmost.tls.certresolver" = "porkbun";
+
+      # websockets
+      "traefik.http.routers.docmost-wss.rule" = "Host(`docmost.lumiere.wtf`) && Path(`/collab`)";
+      "traefik.http.routers.docmost-wss.entrypoints" = "websecure";
+      "traefik.http.routers.docmost-wss.tls.certresolver" = "porkbun";
     };
   };
 }
