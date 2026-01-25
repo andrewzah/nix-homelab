@@ -16,6 +16,7 @@
     ./containers/beaverhabits.nix
     ./containers/goatcounter.nix
     ./containers/healthchecks.nix
+    ./containers/knot.nix
     ./containers/linkding.nix
     ./containers/matrix-conduit.nix
     ./containers/mc-horangi.nix
