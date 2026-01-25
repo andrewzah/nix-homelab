@@ -3,7 +3,7 @@
 
   virtualisation.oci-containers.containers.maedub = {
     autoStart = false;
-    image = "docker.io/andrewzah/knot:0.11.0-unstable-26-1-25@sha256:bc9ce3028730aac5324484f1f95716a6dcb17fcc00a7a53dfaa93510a7635f32";
+    image = "docker.io/andrewzah/knot:0.11.0-alpha@sha256:94267add7ca92bef460c9f8f507a797c12c020c97a9c1ed3f16a09077379cb76";
     ports = ["22" "5555"];
     environment = {
       RUST_LOG = "INFO";

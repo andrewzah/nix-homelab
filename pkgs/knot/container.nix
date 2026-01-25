@@ -1,5 +1,4 @@
 {
-  pkgs,
   knot,
   dockerTools,
   buildEnv,
@@ -34,6 +33,7 @@ in
         fakeNss'
         openssh
         authorizedKeysCommand
+        dockerTools.caCertificates
       ];
       pathsToLink = ["/bin" "/etc"];
     };

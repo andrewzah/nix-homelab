@@ -2,28 +2,34 @@
   pkgs,
   lib,
   buildGoModule,
+  glibc,
+  pkg-config,
   ...
 }: rec {
-  knot = buildGoModule {
+  knot = buildGoModule (finalAttrs: {
     pname = "knot";
-    version = "0.11.0-unstable-26-1-25";
+    version = "1.11.0-alpha";
+
+    nativeBuildInputs = [pkg-config];
+    buildInputs = [glibc.static];
 
     src = fetchGit {
       url = "https://tangled.sh/@tangled.sh/core";
-      rev = "8fab832af89cb344048a9bb52740044211a5372b";
-      ref = "master";
+      ref = "refs/tags/v${finalAttrs.version}";
     };
-    vendorHash = "sha256-aHJWmrfba7dAwiUJQvGW1r8zr8askb2B86cRAuc8zwk=";
+    vendorHash = "sha256-yPLS7JCTqHvWYMp3opn3aqm7ImGQTLYK0qIOmQU9YLk="; # 0.11.0-alpha
+    #vendorHash = "sha256-YAG39KDuurwajlt0XR+OK8DF8C9fcEDrcg/LowcZ2eE=";
 
-    subPackages = [
-      "cmd/knot"
-    ];
+    subPackages = ["cmd/knot"];
     modroot = ".";
+
+    env.CGO_ENABLED = true;
 
     # go build -ldflags="-help"
     ldflags = [
       "-s" # disable symbol table
       "-w" # disable dwarf generation
+      "-extldflags '-static'"
     ];
 
     meta = {
@@ -32,8 +38,7 @@
       homepage = "https://tangled.sh/@tangled.sh/core";
       license = lib.licenses.mit;
     };
-  };
+  });
 
-  # add git user
   container = pkgs.callPackage ./container.nix {inherit knot;};
 }

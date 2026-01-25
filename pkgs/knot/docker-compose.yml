@@ -2,7 +2,8 @@
 
 services:
   knot:
-    image: andrewzah/knot:0.11.0-unstable-26-1-25
+    #image: docker.io/tngl/knot:v1.10.0-alpha
+    image: andrewzah/knot:1.11.0-alpha
     ports:
       - "5555:5555"
     env_file:
