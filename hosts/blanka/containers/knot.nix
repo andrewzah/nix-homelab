@@ -17,7 +17,7 @@
       "traefik.http.routers.maedub.rule" = "Host(`maedub.abare.party`)";
       "traefik.http.routers.maedub.entrypoints" = "websecure";
       "traefik.http.routers.maedub.tls.certresolver" = "porkbun";
-      "traefik.http.routers.maedub.service" = "vaultwarden-ui";
+      "traefik.http.routers.maedub.service" = "maedub";
       "traefik.http.services.maedub.loadbalancer.server.port" = "5555";
     };
   };
