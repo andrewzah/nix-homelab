@@ -18,7 +18,7 @@
       "traefik.http.routers.docmost.tls.certresolver" = "porkbun";
 
       # websockets
-      "traefik.http.routers.docmost-wss.rule" = "Host(`docmost.lumiere.wtf`) && Path(`/collab`)";
+      "traefik.http.routers.docmost-wss.rule" = "Host(`docmost.lumiere.wtf`) && (PathPrefix(`/collab`) || PathPrefix(`/socket.io`))";
       "traefik.http.routers.docmost-wss.entrypoints" = "websecure";
       "traefik.http.routers.docmost-wss.tls.certresolver" = "porkbun";
     };
