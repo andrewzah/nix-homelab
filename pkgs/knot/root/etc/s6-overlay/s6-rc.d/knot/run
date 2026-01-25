@@ -1,0 +1,3 @@
+#!/command/with-contenv sh
+
+exec s6-setuidgid git /bin/knot server

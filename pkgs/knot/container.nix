@@ -6,20 +6,44 @@
   fakeNss,
   openssh,
   netcat-openbsd,
+  callPackage,
+  symlinkJoin,
+  pkgs,
   ...
 }: let
+  s6-overlay = (callPackage ../s6-overlay {}).s6-overlay;
+  s6Merged = symlinkJoin {
+    name = "s6-merged";
+    paths = [s6-overlay ./root];
+  };
   nc = netcat-openbsd;
 
   fakeNss' = fakeNss.override {
-    extraPasswdLines = ["git:x:10000:10000:new user:/var/empty:/bin/nologin"];
+    extraPasswdLines = [
+      "git:x:10000:10000:new user:/var/empty:/bin/nologin"
+      "sshd:x:996:994:SSH privilege separation user:/var/empty:/bin/nologin"
+    ];
     extraGroupLines = ["git:x:10000:"];
   };
 
-  authorizedKeysCommand = writeTextDir "/etc/ssh/sshd_config.d/authorized_keys_command.conf" ''
+  openssh' = pkgs.runCommand "openssh-custom" {} ''
+    mkdir -p $out/etc/ssh
+    cp -r ${pkgs.openssh}/* $out/
+    chmod -R u+w $out/etc/ssh
+
+    echo "Include /etc/ssh/sshd_config.d/*.conf" >> $out/etc/ssh/sshd_config
+  '';
+
+  authorizedKeysCommand = writeTextDir "/etc/ssh/sshd_config.d/tangled_sshd.conf" ''
+    HostKey /etc/ssh/keys/ssh_host_rsa_key
+    HostKey /etc/ssh/keys/ssh_host_ecdsa_key
+    HostKey /etc/ssh/keys/ssh_host_ed25519_key
+
+    PasswordAuthentication no
+
     Match User git
-      AuthorizedKeysCommand /usr/local/bin/knot keys -o authorized-keys
+      AuthorizedKeysCommand /etc/s6-overlay/scripts/keys-wrapper
       AuthorizedKeysCommandUser nobody
-    EOF
   '';
 in
   dockerTools.buildImage {
@@ -30,21 +54,36 @@ in
       name = "knot-root";
       paths = [
         knot
-        fakeNss'
-        openssh
-        authorizedKeysCommand
+        openssh'
         dockerTools.caCertificates
+        dockerTools.binSh
+        pkgs.busybox
+
+        fakeNss'
+        authorizedKeysCommand
+        s6Merged
       ];
-      pathsToLink = ["/bin" "/etc"];
+      pathsToLink = [
+        "/bin"
+        "/command"
+        "/etc"
+        "/include"
+        "/lib"
+        "/libexec"
+        "/package"
+        "/var"
+      ];
     };
 
     config = {
-      Entrypoint = ["${knot}/bin/knot"];
-      Cmd = ["server"];
+      Entrypoint = ["/command/init"];
+      Environment = ["PATH=/command:/bin"];
+
       ExposedPorts = {
-        "22" = {};
         "5555" = {};
+        "22" = {};
       };
+
       HealthCheck = {
         # nanoseconds
         Interval = 3000000000;

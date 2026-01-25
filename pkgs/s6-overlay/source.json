@@ -1,0 +1,12 @@
+{
+  "3.2.1.0": {
+    "x86_64-linux": {
+      "arch": "sha256-pZ00UYtHJob8R4JFGgFvuf+Wh/+xjc3HnmQVLnHF7YU=",
+      "noarch": "sha256-CfDuBaOQjsUIyWOw5WjJj2C5DMgY5i545Of4T8yz3W4="
+    },
+    "aarch64-linux": {
+      "arch": "sha256-E3iGvBRgCINY7Wh5VIbFEOOjwI4ianCrzgzQIglPjUE=",
+      "noarch": "sha256-CfDuBaOQjsUIyWOw5WjJj2C5DMgY5i545Of4T8yz3W4="
+    }
+  }
+}

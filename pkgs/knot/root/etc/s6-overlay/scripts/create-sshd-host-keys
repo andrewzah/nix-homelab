@@ -1,0 +1,25 @@
+#!/command/execlineb -P
+
+foreground {
+  if -n { s6-test -d /etc/ssh/keys }
+  s6-mkdir /etc/ssh/keys
+}
+
+foreground {
+  if -n { s6-test -f /etc/ssh/keys/ssh_host_rsa_key }
+  ssh-keygen -t rsa -f /etc/ssh/keys/ssh_host_rsa_key -q -N ""
+}
+
+foreground {
+  if -n { s6-test -f /etc/ssh/keys/ssh_host_ecdsa_key }
+  ssh-keygen -t rsa -f /etc/ssh/keys/ssh_host_ecdsa_key -q -N ""
+}
+
+foreground {
+  if -n { s6-test -f /etc/ssh/keys/ssh_host_ed25519_key }
+  ssh-keygen -t rsa -f /etc/ssh/keys/ssh_host_ed25519_key -q -N ""
+}
+
+foreground {
+  s6-echo "completed create-sshd-host-keys script"
+}

@@ -1,0 +1,2 @@
+pkg:
+  nix-build --expr 'with import <nixpkgs>{}; (pkgs.callPackage ./default.nix {}).s6-overlay'
