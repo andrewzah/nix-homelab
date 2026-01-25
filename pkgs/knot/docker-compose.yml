@@ -1,0 +1,11 @@
+---
+
+services:
+  knot:
+    image: andrewzah/knot:0.11.0-unstable-26-1-25
+    ports:
+      - "5555:5555"
+    env_file:
+      - ./.env
+    volumes:
+      - "./data/git/:/data/git/"

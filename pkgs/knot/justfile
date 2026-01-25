@@ -1,0 +1,6 @@
+container:
+  nix-build --expr 'with import <nixpkgs>{}; (pkgs.callPackage ./default.nix {}).container'
+  docker load < ./result
+
+inspect:
+  dive andrewzah/knot:0.11.0-unstable-26-1-25

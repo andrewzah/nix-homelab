@@ -1,24 +1,26 @@
-{pkgs, lib, buildGoModule, dockerTools, ...}:
-rec {
-  knot = buildGoModule rec {
+{
+  pkgs,
+  lib,
+  buildGoModule,
+  ...
+}: rec {
+  knot = buildGoModule {
     pname = "knot";
-    version = "0.1.0";
+    version = "0.11.0-unstable-26-1-25";
 
     src = fetchGit {
       url = "https://tangled.sh/@tangled.sh/core";
-      rev = "ab0a5bd71147b02ec2cd56845d87fbee92367a5e";
+      rev = "8fab832af89cb344048a9bb52740044211a5372b";
       ref = "master";
     };
-    vendorHash = "sha256-EilWxfqrcKDaSR5zA3ZuDSCq7V+/IfWpKPu8HWhpndA=";
+    vendorHash = "sha256-aHJWmrfba7dAwiUJQvGW1r8zr8askb2B86cRAuc8zwk=";
 
     subPackages = [
-      "cmd/knotserver"
-      "cmd/keyfetch"
-      "cmd/repoguard"
+      "cmd/knot"
     ];
     modroot = ".";
 
-    # go build -ldflags="-help" 
+    # go build -ldflags="-help"
     ldflags = [
       "-s" # disable symbol table
       "-w" # disable dwarf generation
@@ -30,35 +32,8 @@ rec {
       homepage = "https://tangled.sh/@tangled.sh/core";
       license = lib.licenses.mit;
     };
-
   };
 
   # add git user
-  container = let
-    nc = pkgs.netcat-openbsd;
-  in dockerTools.buildImage {
-    name = "docker.io/andrewzah/knot";
-    tag = "${knot.version}";
-    copyToRoot = pkgs.buildEnv {
-      name = "knot-root";
-      paths = [knot];
-      pathsToLink = ["/bin"];
-    };
-
-    config = {
-      Entrypoint = [ "${knot}/bin/knotserver" ];
-      ExposedPorts = {
-        "22" = {};
-        "5555" = {};
-      };
-      HealthCheck= {
-        # nanoseconds
-        Interval = 3000000000;
-        Timeout = 1000000000;
-        StartPeriod = 3000000000;
-        Retries = 20;
-        Test = ["CMD" "${nc}/bin/nc" "-z" "localhost" "5555"];
-      };
-    };
-  };
+  container = pkgs.callPackage ./container.nix {inherit knot;};
 }

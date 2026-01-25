@@ -1,5 +1,6 @@
 result
-result-2
+result-*
 data
 x-data
 pkgs/attic/config/server.toml
+.env
