@@ -17,9 +17,14 @@
     ];
     labels = {
       "traefik.enable" = "true";
-      "traefik.http.routers.planka.rule" = "Host(`planka.abare.party`)";
-      "traefik.http.routers.planka.entrypoints" = "websecure";
-      "traefik.http.routers.planka.tls.certresolver" = "porkbun";
+      "traefik.http.routers.planka-ui.rule" = "Host(`planka.abare.party`)";
+      "traefik.http.routers.planka-ui.entrypoints" = "websecure";
+      "traefik.http.routers.planka-ui.tls.certresolver" = "porkbun";
+
+      # websockets
+      "traefik.http.routers.planka-wss.rule" = "Host(`planka.abare.party`) && PathPrefix(`/socket.io`)";
+      "traefik.http.routers.planka-wss.entrypoints" = "websecure";
+      "traefik.http.routers.planka-wss.tls.certresolver" = "porkbun";
     };
   };
 }
