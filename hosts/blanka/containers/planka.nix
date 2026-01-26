@@ -10,8 +10,10 @@
     extraOptions = ["--net=external"];
     environmentFiles = [config.sops.secrets."planka/env".path];
     volumes = [
-      "/blanka/planka/public/:/app/public/:rw"
-      "/blanka/planka/private/:/app/private/:rw"
+      "/blanka/planka/public/favicons/:/app/public/favicons/:rw"
+      "/blanka/planka/public/user-avatars/:/app/public/user-avatars/:rw"
+      "/blanka/planka/public/background-images/:/app/public/background-images/:rw"
+      "/blanka/planka/private/attachments/:/app/private/attachments/:rw"
     ];
     labels = {
       "traefik.enable" = "true";
