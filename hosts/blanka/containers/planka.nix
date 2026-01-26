@@ -7,7 +7,7 @@
     image = "ghcr.io/plankanban/planka:1.26.3@sha256:42c5e7a546d1cf082080fee06a922d1839157f479941a8a7c98e9d6a75c6d373";
     ports = ["1337"];
     dependsOn = ["traefik"];
-    extraOptions = ["--net=external"];
+    extraOptions = ["--net=external" "--net=internal"];
     environmentFiles = [config.sops.secrets."planka/env".path];
     volumes = [
       "/blanka/planka/public/favicons/:/app/public/favicons/:rw"
