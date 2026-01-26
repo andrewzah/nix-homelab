@@ -6,7 +6,7 @@
     user = "1000:1000";
     image = "ghcr.io/plankanban/planka:2.0.0-rc.4@sha256:1cb538e1a3476126e582e705b32a55adc940306d4ea09cca52dc4342803c11a7";
     ports = ["1337"];
-    dependsOn = ["traefik"];
+    dependsOn = ["traefik" "postgres"];
     extraOptions = ["--net=external" "--net=internal"];
     environmentFiles = [config.sops.secrets."planka/env".path];
     volumes = [
