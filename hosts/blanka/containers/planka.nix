@@ -4,7 +4,7 @@
   virtualisation.oci-containers.containers.planka = {
     autoStart = true;
     user = "1000:1000";
-    image = "ghcr.io/plankanban/planka:1.26.3@sha256:42c5e7a546d1cf082080fee06a922d1839157f479941a8a7c98e9d6a75c6d373";
+    image = "ghcr.io/plankanban/planka:@sha256:2.0.0-rc.4@sha256:1cb538e1a3476126e582e705b32a55adc940306d4ea09cca52dc4342803c11a7";
     ports = ["1337"];
     dependsOn = ["traefik"];
     extraOptions = ["--net=external" "--net=internal"];
