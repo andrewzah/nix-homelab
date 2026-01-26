@@ -22,6 +22,7 @@
     ./containers/mc-horangi.nix
     ./containers/miniflux.nix
     ./containers/monica.nix
+    ./containers/planka.nix
     ./containers/postgres.nix
     ./containers/static-sites.nix
     ./containers/tailscale.nix
