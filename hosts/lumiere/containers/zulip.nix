@@ -20,8 +20,8 @@
       "traefik.http.routers.zulip.tls.certresolver" = "cloudflare";
       "traefik.http.routers.zulip.service" = "zulip";
       "traefik.http.services.zulip.loadbalancer.server.port" = "80";
-      #"traefik.http.routers.zulip.middlewares" = "zulip-headers";
-      #"traefik.http.middlewares.zulip-headers.headers.customrequestheaders.X-Forwarded-Proto" = "https";
+      "traefik.http.routers.zulip.middlewares" = "zulip-headers";
+      "traefik.http.middlewares.zulip-headers.headers.customrequestheaders.X-Forwarded-Proto" = "https";
     };
   };
 }
