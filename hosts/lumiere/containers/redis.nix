@@ -1,4 +1,6 @@
 {config, ...}: {
+  sops.secrets."redisp/env" = {};
+
   virtualisation.oci-containers.containers.redis = {
     autoStart = true;
     hostname = "redis";
