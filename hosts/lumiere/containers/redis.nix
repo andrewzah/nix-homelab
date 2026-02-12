@@ -31,7 +31,7 @@
       "sh"
       "-euc"
       ''
-        /usr/local/bin/docker-entrypoint.sh --requirepass "$REDIS_PASSWORD_FILE"
+        /usr/local/bin/docker-entrypoint.sh --requirepass "$REDIS_PASSWORD"
       ''
     ];
     dependsOn = ["postgres" "redis"];
