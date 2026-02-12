@@ -15,7 +15,7 @@
       paths = [galene cacert];
     };
 
-    config.Entrypoint = "${lib.getExe galene}";
+    config.Entrypoint = "${lib.getExe' galene "galene"}";
     config.WorkingDir = "/config";
   };
 }
