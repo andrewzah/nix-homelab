@@ -7,7 +7,7 @@ in {
   sops.secrets."postgres/creds/windmill/username" = {};
 
   virtualisation.oci-containers.containers.windmill = {
-    autoStart = true;
+    autoStart = false;
     inherit image;
     ports = [
       "8000"
@@ -42,7 +42,7 @@ in {
   };
 
   virtualisation.oci-containers.containers.windmill-worker = {
-    autoStart = true;
+    autoStart = false;
     inherit image;
     environment = {
       TZ = config.time.timeZone;

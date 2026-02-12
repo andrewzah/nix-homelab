@@ -1,13 +1,17 @@
 ## blanka
 
+- ! https://platform.openmeet.net/
+- fix linkding oidc
+  - linkding: https://listmonk.app/
 - https://b3log.org/siyuan/en/
 - https://docs.monicahq.com/ - postgres??
 
 ## lumiere
 
+- tty/zsh: alias for switching
+
 - ? downloading: suwayomi
-- https://listmonk.app/
-- healthchecks: fix db: https://healthchecks.io/docs/self_hosted/
+-
 - https://github.com/gtsteffaniak/filebrowser
 - inbound request monitoring + automated firewall banning
 - monitoring/dashboard: set up grafana dashboard w/ prometheus data, + thanos

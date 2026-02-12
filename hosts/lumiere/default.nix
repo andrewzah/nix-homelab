@@ -29,19 +29,22 @@
     ./containers/healthchecks.nix
     ./containers/homepage.nix
     ./containers/jellyfin.nix
-    ./containers/keycloak.nix
     ./containers/kavita.nix
+    ./containers/keycloak.nix
     ./containers/mealie.nix
+    ./containers/memcached.nix
     ./containers/navidrome.nix
     ./containers/netdata.nix
     ./containers/postgres.nix
     ./containers/prometheus.nix
+    ./containers/rabbitmq.nix
     ./containers/redis.nix
     ./containers/scrutiny.nix
     ./containers/syncthing.nix
     ./containers/uptimekuma.nix
     ./containers/windmill.nix
     ./containers/ytdl-sub.nix
+    ./containers/zulip.nix
   ];
 
   nix = {
@@ -74,7 +77,6 @@
   users.users."${hostConfig.username}" = {
     isNormalUser = true;
     extraGroups = ["wheel" "docker"];
-    packages = with pkgs; [];
   };
 
   environment.systemPackages = with pkgs; [
@@ -84,6 +86,7 @@
     inetutils
     mediainfo
     neovim
+    nh
     tmux
     tree
     unzip
