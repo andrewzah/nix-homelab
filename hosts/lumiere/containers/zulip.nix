@@ -3,7 +3,7 @@
 
   virtualisation.oci-containers.containers.zulip = {
     autoStart = false;
-    image = "docker.io/zulip/docker-zulip:11.5-0@sha256:423e96e151a7bb8f90795eb97e24933a92bd7b5e217349398c5018f18a183bc9";
+    image = "ghcr.io/zulip/zulip-server:11.5-2@sha256:699259272824daf404d302ae2412b127771ff3bdc96f6406635942894994833e";
     ports = ["80" "25"];
     environment.TZ = config.time.timeZone;
     environmentFiles = [config.sops.secrets."zulip/env".path];
