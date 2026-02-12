@@ -11,9 +11,9 @@
       "sh"
       "-euc"
       ''
-        echo 'mech_list: plain' > "$$SASL_CONF_PATH"
-        echo "zulip@$$HOSTNAME:$$MEMCACHED_PASSWORD" > "$$MEMCACHED_SASL_PWDB"
-        echo "zulip@localhost:$$MEMCACHED_PASSWORD" >> "$$MEMCACHED_SASL_PWDB"
+        echo 'mech_list: plain' > "$SASL_CONF_PATH"
+        echo "zulip@$HOSTNAME:$MEMCACHED_PASSWORD" > "$MEMCACHED_SASL_PWDB"
+        echo "zulip@localhost:$MEMCACHED_PASSWORD" >> "$MEMCACHED_SASL_PWDB"
         exec memcached -S
       ''
     ];
