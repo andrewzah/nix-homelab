@@ -17,6 +17,9 @@
         exec memcached -S
       ''
     ];
+    volumes = [
+      "/lumiere/data/docker/memcached/config/:/config/:rw"
+    ];
     environment.TZ = config.time.timeZone;
     extraOptions = ["--net=internal"];
   };

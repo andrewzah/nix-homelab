@@ -2,7 +2,7 @@
   sops.secrets."galene/env" = {};
 
   virtualisation.oci-containers.containers.galene = {
-    autoStart = true;
+    autoStart = false;
     #user = "1000:1000";
     image = "";
     ports = []; # STUN/TURN ?
