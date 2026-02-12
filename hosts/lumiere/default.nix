@@ -24,6 +24,7 @@
     ./containers/docmost.nix
     ./containers/ersatztv.nix
     ./containers/firefly.nix
+    ./containers/galene.nix
     ./containers/gluetun.nix
     ./containers/grafana.nix
     ./containers/healthchecks.nix
