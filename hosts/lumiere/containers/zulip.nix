@@ -15,6 +15,9 @@
       "traefik.http.routers.zulip.rule" = "Host(`zulip.andrewzah.com`)";
       "traefik.http.routers.zulip.entrypoints" = "websecure";
       "traefik.http.routers.zulip.tls.certresolver" = "cloudflare";
+
+      #"traefik.http.routers.zulip.middlewares" = "zulip-headers";
+      #"traefik.http.middlewares.zulip-headers.headers.customrequestheaders.X-Forwarded-Proto" = "https";
     };
   };
 }
