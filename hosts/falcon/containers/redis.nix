@@ -16,6 +16,6 @@
       "--health-retries=5"
       "--health-start-period=5s"
     ];
-    volumes = [ "/eagle/data/docker/redis/data/:/data/:rw" ];
+    volumes = ["/eagle/data/docker/redis/data/:/data/:rw"];
   };
 }

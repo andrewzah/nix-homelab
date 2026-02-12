@@ -2,7 +2,7 @@
   sops.secrets."zulip/env" = {};
 
   virtualisation.oci-containers.containers.zulip = {
-    autoStart = false;
+    autoStart = true;
     image = "ghcr.io/zulip/zulip-server:11.5-2@sha256:699259272824daf404d302ae2412b127771ff3bdc96f6406635942894994833e";
     ports = ["80" "25"];
     environment.TZ = config.time.timeZone;
