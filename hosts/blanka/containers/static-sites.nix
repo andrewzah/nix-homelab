@@ -7,9 +7,10 @@
     ports = ["2020"];
     labels = {
       "traefik.enable" = "true";
-      "traefik.http.routers.com-andrewzah.rule" = "Host(`andrewzah.com`)";
+      "traefik.http.routers.com-andrewzah.rule" = "Host(`andrewzah.com`) || Host(`blog.andrewzah.com`)";
       "traefik.http.routers.com-andrewzah.entrypoints" = "websecure";
       "traefik.http.routers.com-andrewzah.tls.certresolver" = "cloudflare";
+
       ## anubis -- disable for now; see containers/anubis.nix
       #"traefik.http.routers.com-andrewzah.service" = "com-andrewzah";
       #"traefik.http.services.com-andrewzah.loadbalancer.server.port" = "2020";
