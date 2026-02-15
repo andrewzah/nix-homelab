@@ -42,7 +42,7 @@
       "--certificatesresolvers.cloudflare.acme.email=admin@andrewzah.com"
       "--certificatesresolvers.cloudflare.acme.dnschallenge=true"
       "--certificatesresolvers.cloudflare.acme.dnsChallenge.provider=cloudflare"
-      "--certificatesresolvers.cloudflare.acme.dnsChallenge.delayBeforeCheck=0"
+      "--certificatesresolvers.cloudflare.acme.dnsChallenge.delayBeforeCheck=15"
       "--certificatesresolvers.cloudflare.acme.dnsChallenge.resolvers=1.1.1.1:53,1.0.0.1:53"
       #"--certificatesResolvers.cloudflare.acme.caServer=https://acme-staging-v02.api.letsencrypt.org/directory"
     ];
