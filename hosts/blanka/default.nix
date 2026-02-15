@@ -60,10 +60,12 @@
     packages = [];
   };
 
-  environment.systemPackages = [
-    pkgs.git
-    pkgs.tmux
-    pkgs.vim
+  environment.systemPackages = with pkgs; [
+    dig
+    git
+    inetutils
+    tmux
+    vim
   ];
 
   networking.firewall.enable = true;
