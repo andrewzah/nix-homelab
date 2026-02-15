@@ -13,7 +13,7 @@
     extraOptions = ["--net=external"];
     labels = {
       "traefik.enable" = "true";
-      "traefik.http.routers.continuwuity.rule" = "Host(`matrix.andrewzah.com`) || (Host(`andrewzah.com`) && PathPrefix(`/.well-known/matrix`))) ";
+      "traefik.http.routers.continuwuity.rule" = "Host(`matrix.andrewzah.com`) || (Host(`andrewzah.com`) && PathPrefix(`/.well-known/matrix`)) ";
       "traefik.http.routers.continuwuity.entrypoints" = "websecure";
       "traefik.http.routers.continuwuity.tls.certresolver" = "cloudflare";
     };
