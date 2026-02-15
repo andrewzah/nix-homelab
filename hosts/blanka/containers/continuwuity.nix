@@ -12,7 +12,7 @@
       "traefik.enable" = "true";
       "traefik.http.routers.continuwuity.rule" = "Host(`matrix.andrewzah.com`)";
       "traefik.http.routers.continuwuity.entrypoints" = "websecure";
-      "traefik.http.routers.continuwuity.tls.certresolver" = "porkbun";
+      "traefik.http.routers.continuwuity.tls.certresolver" = "cloudflare";
     };
   };
 }
